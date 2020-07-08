@@ -1,23 +1,10 @@
-# Plantilla base
+# Prueba de aplicación de OMDB a través de localStorage
 
-Una plantilla de HTML, CSS y JavaScript básica para proyectos de páginas estáticas.
+## Requisitos
 
-Usa Gulp en su versión 4 para ejecutar las tareas.
-
-Transpila el HTML, el CSS y el JavaScript para que sea posible trabajar en una carpeta de desarrollo y otra carpeta con todos los archivos minificados y concatenados para subir a producción.
-
-También optimiza imágenes JPG, JPEG, GIF, PNG y SVG
-
-Utiliza Browser Sync para levantar un servidor de desarrollo en tiempo real.
-
-***
-
-## Cómo usarlo
-
-Descargue o clone este repositorio
-
-Ejecute en terminal `npm install`
-
-Ejecute en consola `gulp dev` para trabajar en desarrollo o `gulp production` para optimizar los archivos para producción
-
-Disfrute!
+* La página inicial debe ser un login con usuario y contraseña.
+* La contraseña determina si son el mismo usuario o es otro usuario con el mismo nombre.
+* También tendrá un buscador de películas.
+* Cada película tendrá su vista de detalles ofreciendo más información de la misma.
+* Se deben poder añadir películas a favoritos y constar con una vista de las mismas (Persistente en el tiempo).
+* Usar la API de OMDB para llevar a cabo la práctica.

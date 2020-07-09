@@ -1,3 +1,4 @@
+/* Forms container */
 .forms-account{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
@@ -9,15 +10,17 @@
     padding: var(--unit-rem);
     background-color: var(--dark-color);
 }
+
+/* All forms*/
 .form{
-    padding: 0 var(--unit-em);
+    padding: var(--unit-em);
     
     color: var(--light-color);
     background-color: var(--dark-color);
     border:1px solid rgba(100, 100, 100, .25);
 }
 .form__label{
-    margin: var(--unit-em) 0;
+    margin-bottom: var(--unit-em);
 }
 .form__input{
     margin: calc(var(--unit-em) / 2) 0;
@@ -26,19 +29,27 @@
     border:1px solid;
 }
 .form__button{
-    margin-bottom: var(--unit-em);
     background-color: var(--main-color);
     text-transform: uppercase;
 }
-
 .form__input,
 .form__button{
     padding: calc(var(--unit-em) / 2);
     width: 100%;
 }
-
 .form__label,
 .form__input,
 .form__button{
     display: block;
+}
+
+/* Form search */
+.form--search{
+    display:grid;
+    grid-template-columns: 9fr 1fr;
+    gap: var(--unit-em);
+}
+.form__input--search,
+.form__button--search{
+    margin: 0;
 }

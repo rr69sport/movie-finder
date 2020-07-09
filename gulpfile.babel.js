@@ -39,7 +39,7 @@ const cssPluginsDevelopment = [
 // Production
 gulp.task("html-production", () => {
     return gulp
-        .src("./src/*.html")
+        .src(["./src/*.html", "./src/**/*.html"])
         .pipe(plumber())
         .pipe(htmlmin({
             collapseWhitespace: true, // false o borrar para que no minifique
@@ -48,12 +48,12 @@ gulp.task("html-production", () => {
         .pipe(cacheBust({
             type: 'timestamp'
         }))
-        .pipe(gulp.dest("./public"))
+        .pipe(gulp.dest("./public/"))
 })
 // Docs folder
 gulp.task("html-docs", () => {
     return gulp
-        .src("./src/*.html")
+        .src(["./src/*.html", "./src/**/*.html"])
         .pipe(plumber())
         .pipe(htmlmin({
             collapseWhitespace: true, // false o borrar para que no minifique
@@ -62,17 +62,17 @@ gulp.task("html-docs", () => {
         .pipe(cacheBust({
             type: 'timestamp'
         }))
-        .pipe(gulp.dest("./docs"))
+        .pipe(gulp.dest("./docs/"))
 })
 // Development
 gulp.task("html-dev", () => {
     return gulp
-        .src("./src/*.html")
+        .src(["./src/*.html", "./src/**/*.html"])
         .pipe(plumber())
         .pipe(cacheBust({
             type: 'timestamp'
         }))
-        .pipe(gulp.dest("./public"))
+        .pipe(gulp.dest("./public/"))
 })
 
 // CSS
@@ -212,7 +212,7 @@ gulp.task('dev', () => {
     server({
         server: './public'
     })
-    gulp.watch('./src/*.html', gulp.series('html-dev')).on('change', reload)
+    gulp.watch(['./src/*.html', './src/**/*.html'], gulp.series('html-dev')).on('change', reload)
     gulp.watch('./src/css/*.css', gulp.series('css-dev'))
     gulp.watch('./src/js/*.js', gulp.series('scripts-dev')).on('change', reload)
     gulp.watch('./src/assets/images/**/*', gulp.series('images-dev'))

@@ -74,6 +74,7 @@ body{
 }
 .form__input{
     margin: calc(var(--unit-em) / 2) 0;
+    background-color: var(--light-color);
     font-size: 100%;
     border:1px solid;
 }

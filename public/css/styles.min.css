@@ -11,12 +11,6 @@
 
     --header-height: calc(var(--unit-rem) * 4)
 }
-
-@media screen and (min-width: 768px){
-    :root{
-        font-size: 18px;
-    }
-}
 *,
 *::after,
 *::before {
@@ -51,17 +45,51 @@ body{
 .main-title{
     margin: 0;
 }
+.button{
+    display: block;
+    
+    padding: calc(var(--unit-em) / 2);
+
+    color: currentColor;
+    background-color: var(--main-color);
+
+    font-size: inherit;
+
+    border: 1px solid; /* border-color si no se especifica toma el currentColor*/
+}
+.button:hover{
+    cursor: pointer;
+}
 /* Forms container */
 .forms-account{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap: var(--unit-em);
+    position: relative;
 
-    max-width: 768px;
+    max-width: 300px;
+
+    margin-top: var(--unit-em);
     margin-right: auto;
     margin-left: auto;
+
     padding: var(--unit-rem);
+
     background-color: var(--dark-color);
+}
+.forms-account__nav{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: var(--unit-em);
+
+    color: var(--light-color);
+}
+.forms-account__button{
+    text-align: center;
+    text-decoration: none;
+
+    border: none;
+}
+.forms-account__nav,
+.form-login{
+    margin-bottom: var(--unit-em);
 }
 
 /* All forms*/
@@ -70,6 +98,7 @@ body{
     
     color: var(--light-color);
     background-color: var(--dark-color);
+
     border:1px solid rgba(100, 100, 100, .25);
 }
 .form__label{
@@ -77,22 +106,23 @@ body{
 }
 .form__input{
     margin: calc(var(--unit-em) / 2) 0;
+    padding: calc(var(--unit-em) / 2);
+
     background-color: var(--light-color);
+
     font-size: 100%;
+
     border:1px solid;
 }
 .form__button{
-    background-color: var(--main-color);
     text-transform: uppercase;
 }
 .form__input,
 .form__button{
-    padding: calc(var(--unit-em) / 2);
     width: 100%;
 }
 .form__label,
-.form__input,
-.form__button{
+.form__input{
     display: block;
 }
 
@@ -106,16 +136,25 @@ body{
 .form__button--search{
     margin: 0;
 }
+.form-login,
+.form-sing-in{
+    position: absolute;
+    top: 66px;
+    left: 0;
 
-.button{
-    color: currentColor;
-    font-size: inherit;
+    width: 100%;
 
-    border: 1px solid; /* border-color si no se especifica toma el currentColor*/
+    z-index: -1;
 }
-.button:hover{
-    cursor: pointer;
+.form-sing-in{
+    transform: scale(0);
 }
+:target{
+    z-index: 1;
+    transform: scale(1);
+}
+
+
 .container{
     width: 95%;
     max-width: 1200px;

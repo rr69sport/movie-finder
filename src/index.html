@@ -15,7 +15,11 @@
             </h1>
         </header>
         <section class="forms-account">
-            <form class="form" id="form-login">
+            <nav class="forms-account__nav">
+                <a href="#form-login" class="forms-account__button button">Login</a>
+                <a href="#form-sing-in" class="forms-account__button button">Sing in</a>
+            </nav>
+            <form class="form form-login" id="form-login">
                 <label class="form__label">
                     User name
                     <input type="text" name="loginName" class="form__input">
@@ -26,7 +30,7 @@
                 </label>
                 <button class="button form__button">Login</button>
             </form>
-            <form class="form" id="form-sing-in">
+            <form class="form form-sing-in" id="form-sing-in">
                 <label class="form__label">
                     User name
                     <input type="text" name="singinName" class="form__input">
@@ -41,10 +45,10 @@
                 </label>
                 <button class="button form__button">Create Account</button>
             </form>
-            <form class="form form--search">
+            <!-- <form class="form form--search">
                 <input type="text" class="form__input form__input--search" placeholder="Search a movie">
                 <button class="button form__button form__button--search">Search</button>
-            </form>
+            </form> -->
         </section>
         <script src="./js/scripts.min.js"></script>
     </body>

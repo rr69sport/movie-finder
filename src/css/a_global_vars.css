@@ -11,9 +11,3 @@
 
     --header-height: calc(var(--unit-rem) * 4)
 }
-
-@media screen and (min-width: 768px){
-    :root{
-        font-size: 18px;
-    }
-}

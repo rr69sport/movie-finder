@@ -1,5 +1,11 @@
 .button{
+    display: block;
+    
+    padding: calc(var(--unit-em) / 2);
+
     color: currentColor;
+    background-color: var(--main-color);
+
     font-size: inherit;
 
     border: 1px solid; /* border-color si no se especifica toma el currentColor*/

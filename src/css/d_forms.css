@@ -1,14 +1,33 @@
 /* Forms container */
 .forms-account{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap: var(--unit-em);
+    position: relative;
 
-    max-width: 768px;
+    max-width: 300px;
+
+    margin-top: var(--unit-em);
     margin-right: auto;
     margin-left: auto;
+
     padding: var(--unit-rem);
+
     background-color: var(--dark-color);
+}
+.forms-account__nav{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: var(--unit-em);
+
+    color: var(--light-color);
+}
+.forms-account__button{
+    text-align: center;
+    text-decoration: none;
+
+    border: none;
+}
+.forms-account__nav,
+.form-login{
+    margin-bottom: var(--unit-em);
 }
 
 /* All forms*/
@@ -17,6 +36,7 @@
     
     color: var(--light-color);
     background-color: var(--dark-color);
+
     border:1px solid rgba(100, 100, 100, .25);
 }
 .form__label{
@@ -24,22 +44,23 @@
 }
 .form__input{
     margin: calc(var(--unit-em) / 2) 0;
+    padding: calc(var(--unit-em) / 2);
+
     background-color: var(--light-color);
+
     font-size: 100%;
+
     border:1px solid;
 }
 .form__button{
-    background-color: var(--main-color);
     text-transform: uppercase;
 }
 .form__input,
 .form__button{
-    padding: calc(var(--unit-em) / 2);
     width: 100%;
 }
 .form__label,
-.form__input,
-.form__button{
+.form__input{
     display: block;
 }
 
@@ -52,4 +73,21 @@
 .form__input--search,
 .form__button--search{
     margin: 0;
+}
+.form-login,
+.form-sing-in{
+    position: absolute;
+    top: 66px;
+    left: 0;
+
+    width: 100%;
+
+    z-index: -1;
+}
+.form-sing-in{
+    transform: scale(0);
+}
+:target{
+    z-index: 1;
+    transform: scale(1);
 }

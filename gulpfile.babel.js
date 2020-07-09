@@ -50,6 +50,20 @@ gulp.task("html-production", () => {
         }))
         .pipe(gulp.dest("./public"))
 })
+// Docs folder
+gulp.task("html-docs", () => {
+    return gulp
+        .src("./src/*.html")
+        .pipe(plumber())
+        .pipe(htmlmin({
+            collapseWhitespace: true, // false o borrar para que no minifique
+            removeComments: true // false o borrar para dejar comentarios
+        }))
+        .pipe(cacheBust({
+            type: 'timestamp'
+        }))
+        .pipe(gulp.dest("./docs"))
+})
 // Development
 gulp.task("html-dev", () => {
     return gulp
@@ -70,6 +84,16 @@ gulp.task("css-production", () => {
         .pipe(concat("styles.min.css"))
         .pipe(postcss(cssPluginsProduction))
         .pipe(gulp.dest("./public/css"))
+        .pipe(stream())
+})
+// Docs  folder
+gulp.task("css-docs", () => {
+    return gulp
+        .src("./src/css/*.css")
+        .pipe(plumber())
+        .pipe(concat("styles.min.css"))
+        .pipe(postcss(cssPluginsProduction))
+        .pipe(gulp.dest("./docs/css"))
         .pipe(stream())
 })
 // Development
@@ -93,6 +117,16 @@ gulp.task("scripts-production", () => {
         .pipe(babel())
         .pipe(terser())
         .pipe(gulp.dest("./public/js"))
+})
+// Docs folder
+gulp.task("scripts-docs", () => {
+    return gulp
+        .src("./src/js/*.js")
+        .pipe(plumber())
+        .pipe(concat("scripts.min.js"))
+        .pipe(babel())
+        .pipe(terser())
+        .pipe(gulp.dest("./docs/js"))
 })
 // Development
 gulp.task("scripts-dev", () => {
@@ -124,12 +158,30 @@ gulp.task("images-production", () => {
         ]))
         .pipe(gulp.dest("public/assets/images"))
 })
+// Docs folder
+gulp.task("images-docs", () => {
+    return gulp
+        .src("src/assets/images/**/*")
+        .pipe(plumber())
+        .pipe(imagemin([
+            imagemin.gifsicle({ interlaced: true }),
+            imagemin.mozjpeg({ quality: 75, progressive: true }),
+            imagemin.optipng({ optimizationLevel: 5 }),
+            imagemin.svgo({
+                plugins: [
+                    { removeViewBox: true },
+                    { cleanupIDs: false }
+                ]
+            })
+        ]))
+        .pipe(gulp.dest("docs/assets/images"))
+})
 // Development
 gulp.task("images-dev", () => {
     return gulp
         .src("src/assets/images/**/*")
         .pipe(plumber())
-        .pipe(gulp.dest("public/assets/images"))
+        .pipe(gulp.dest("public/assets/images/"))
 })
 
 // Watchers
@@ -144,6 +196,17 @@ gulp.task('production',
         )
     )
 )
+// Docs folder
+gulp.task('docs',
+    gulp.series(
+        gulp.parallel([
+            'html-docs',
+            'css-docs',
+            'scripts-docs',
+            'images-docs']
+        )
+    )
+)
 // Development
 gulp.task('dev', () => {
     server({
@@ -152,5 +215,5 @@ gulp.task('dev', () => {
     gulp.watch('./src/*.html', gulp.series('html-dev')).on('change', reload)
     gulp.watch('./src/css/*.css', gulp.series('css-dev'))
     gulp.watch('./src/js/*.js', gulp.series('scripts-dev')).on('change', reload)
-    gulp.watch('./src/images/**/*', gulp.series('images-dev'))
+    gulp.watch('./src/assets/images/**/*', gulp.series('images-dev'))
 })

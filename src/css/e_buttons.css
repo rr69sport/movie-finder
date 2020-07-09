@@ -1,0 +1,9 @@
+.button{
+    color: currentColor;
+    font-size: inherit;
+
+    border: 1px solid; /* border-color si no se especifica toma el currentColor*/
+}
+.button:hover{
+    cursor: pointer;
+}

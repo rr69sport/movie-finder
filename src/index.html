@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Plantilla Base</title>
+        <title>Movie Finder</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/styles.min.css">
     </head>
     <body>
-        <h1>HTML trabajando correctamente.</h1>
-        <p class="color-red">Si ves este párrafo en rojo, significa que el CSS también está siendo compilado correctamente!</p>
-        <p>Abriendo la consola del navegador, obtendrás información sobre JavaScript.</p>
-        <p>Muchas gracias por utilizar esta plantilla para tu proyecto!</p>
+        <header class="main-header">
+            <h1 class="main-title">
+                <span class="main-color">M</span>ovie 
+                <span class="main-color">F</span>inder
+            </h1>
+        </header>
+        <section class="forms-account">
+            <form class="form form-login" id="form-login">
+                <label class="form__label">
+                    User name
+                    <input type="text" name="loginName" class="form__input">
+                </label>
+                <label class="form__label">
+                    Password
+                    <input type="password" name="loginPass" class="form__input">
+                </label>
+                <button class="button form__button">Login</button>
+            </form>
+            <form class="form form-sing-in" id="form-sing-in">
+                <label class="form__label">
+                    User name
+                    <input type="text" name="singinName" class="form__input">
+                </label>
+                <label class="form__label">
+                    Password
+                    <input type="password" name="singinPass" class="form__input">
+                </label>
+                <label class="form__label">
+                    Repeat password
+                    <input type="password" name="singinPassRepeat" class="form__input">
+                </label>
+                <button class="button form__button">Create Account</button>
+            </form>
+        </section>
         <script src="./js/scripts.min.js"></script>
     </body>
 </html>

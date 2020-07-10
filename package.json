@@ -1,21 +1,21 @@
 {
-	"name": "plantilla-base",
+	"name": "movie-finder",
 	"version": "1.0.0",
-	"description": "plantilla básica para transpilar HTML, CSS y JavaScript usando Gulp 4",
+	"description": "Buscador de películas usando la API de OMDB",
 	"main": "src/index.html",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ramsua/plantilla-base.git"
+		"url": "git+https://github.com/ramsua/movie-finder.git"
 	},
 	"author": "RAMSUA",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/ramsua/plantilla-base/issues"
+		"url": "https://github.com/ramsua/movie-finder/issues"
 	},
-	"homepage": "https://github.com/ramsua/plantilla-base#readme",
+	"homepage": "https://github.com/ramsua/movie-finder#readme",
 	"browserslist": [
 		"defaults",
 		"not IE 11",

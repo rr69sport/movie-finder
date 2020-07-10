@@ -9,3 +9,12 @@
     margin-left: auto;
     padding: var(--unit);
 }
+.banner__animate{
+    animation: appear 1s ease;
+}
+@keyframes appear {
+    from {
+        transform: scale(.85) translateY(-15%);
+        opacity: 0;
+    }
+}

@@ -1,11 +1,22 @@
 .button{
     display: block;
+
     padding: calc(var(--unit) / 2);
 }
+.button:hover{
+    color: var(--main-color-hover);
+    cursor: pointer;
+}
 .button--call-to-action{
-    color: var(--main-color);
-    transition: color .10s ease;
+    color: var(--light-color);
+    background-color: var(--main-color);
 }
 .button--call-to-action:hover{
     color: var(--main-color-hover);
+    background-color: var(--dark-color);
+    
+}
+.button,
+.button--call-to-action{
+    transition: background-color var(--time) ease, color var(--time) ease;
 }

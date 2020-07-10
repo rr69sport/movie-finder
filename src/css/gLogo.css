@@ -1,16 +1,23 @@
 .logo{
-    text-transform: uppercase;
+    display: block;
+
+    padding: .35em;
+
+    transition: background-color var(--time) ease;
+}
+.logo:hover{
+    background-color: var(--dark-color);
 }
 .main-color{
     color:var(--main-color);
     font-size: calc(var(--unit) * 1.5);
     font-weight: 700;
 }
+
 @media screen and (min-width: 450px){
     .movie::after,
     .finder::after{
         color: var(--light-color);
-        text-transform: lowercase;
         font-weight: 100;
     }
     .movie::after{

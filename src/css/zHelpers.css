@@ -12,12 +12,9 @@
     margin-right: auto;
     margin-left: auto;
 }
-.animate{
-    animation: appear 1s ease;
-}
-@keyframes appear {
-    from {
-        transform: scale(.85) translateY(-15%);
-        opacity: 0;
-    }
+.link{
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: var(--main-color);
+    font-size: .85em;
 }

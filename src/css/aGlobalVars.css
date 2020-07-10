@@ -1,7 +1,7 @@
 :root{
     /* Colors */
-    --main-color       : rgb(0, 255, 0);
-    --main-color-hover : rgb(0, 255, 51);
+    --main-color       : rgb(255, 102, 0);
+    --main-color-hover : rgb(255, 102, 51);
 
     --light-color       : rgb(248, 248, 255);
     --light-color-hover : rgb(245, 245, 245);
@@ -13,4 +13,6 @@
     --unit: 1em;
     --header-height: calc(var(--unit) * 3);
     --max-with: 1000px;
+
+    --time: .10s;
 }

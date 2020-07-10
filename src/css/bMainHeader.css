@@ -1,0 +1,13 @@
+.main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--header-height);
+
+    padding: 0 var(--unit);
+
+    color: var(--light-color);
+    background-color: var(--dark-color-hover);
+}

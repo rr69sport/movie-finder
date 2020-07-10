@@ -1,0 +1,23 @@
+.display-flex{
+    display: flex;
+}
+.align-items-center{
+    align-items: center;
+}
+.just-cont-space-between{
+    justify-content: space-between;
+}
+.container{
+    max-width: var(--max-with);
+    margin-right: auto;
+    margin-left: auto;
+}
+.animate{
+    animation: appear 1s ease;
+}
+@keyframes appear {
+    from {
+        transform: scale(.85) translateY(-15%);
+        opacity: 0;
+    }
+}

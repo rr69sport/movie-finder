@@ -1,0 +1,22 @@
+.logo{
+    text-transform: uppercase;
+}
+.main-color{
+    color:var(--main-color);
+    font-size: calc(var(--unit) * 1.5);
+    font-weight: 700;
+}
+@media screen and (min-width: 450px){
+    .movie::after,
+    .finder::after{
+        color: var(--light-color);
+        text-transform: lowercase;
+        font-weight: 100;
+    }
+    .movie::after{
+    content: 'ovie'
+    }
+    .finder::after{
+        content: 'inder'
+    }
+}

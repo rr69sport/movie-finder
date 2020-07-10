@@ -1,0 +1,15 @@
+.main-nav,
+.menu{
+    height: var(--header-height);
+}
+.menu{
+    text-align: center;
+}
+.menu__item{
+    flex: 1 1 auto;
+    border-bottom: 3px solid transparent;
+    transition: border-color .10s ease;
+}
+.menu__item:hover{
+    border-color: inherit;
+}

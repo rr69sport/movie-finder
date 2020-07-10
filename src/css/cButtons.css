@@ -1,0 +1,11 @@
+.button{
+    display: block;
+    padding: calc(var(--unit) / 2);
+}
+.button--call-to-action{
+    color: var(--main-color);
+    transition: color .10s ease;
+}
+.button--call-to-action:hover{
+    color: var(--main-color-hover);
+}

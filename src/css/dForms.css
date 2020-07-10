@@ -1,0 +1,6 @@
+.equal-to{
+    outline: 2px solid var(--main-color);
+}
+input{
+    margin: 1em;
+}

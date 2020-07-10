@@ -9,18 +9,24 @@
     </head>
     <body>
         <header class="main-header">
-            <a href="../" class="">
-                <span class="">M</span>ovie 
-                <span class="">F</span>inder
-            </a>
-            <nav class="">
-                <a href="../" class="">Logout</a>
-            </nav>
+            <div class="container display-flex align-items-center just-cont-space-between">
+                <a class="logo" href="../" class="">
+                    <span class="main-color movie">M</span>
+                    <span class="main-color finder">F</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="menu display-flex align-items-center">
+                        <li class="menu__item button">
+                            <a id="logout" class="menu__link" href="../" class="">Logout</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
-        <section class="forms-account">
-            <form class="form form--search">
-                <input type="text" class="form__input form__input--search" placeholder="Search a movie">
-                <button class="button form__button form__button--search">Search</button>
+        <section class="">
+            <form class="" id="search-form">
+                <input type="text" class="" placeholder="Search a movie">
+                <button class="">Search</button>
             </form>
         </section>
         <script src="../js/scripts.min.js"></script>

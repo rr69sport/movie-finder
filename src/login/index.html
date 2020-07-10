@@ -9,24 +9,27 @@
     </head>
     <body>
         <header class="main-header">
-            <a href="../" class="">
-                <span class="">M</span>ovie 
-                <span class="">F</span>inder
-            </a>
-            <nav class="">
-                <a href="../" class="">Index</a>
-                <a href="../singin/" class="">Sing in</a>
-            </nav>
+            <div class="container display-flex align-items-center just-cont-space-between">
+                <a class="logo" href="../" class="">
+                    <span class="main-color movie">M</span>
+                    <span class="main-color finder">F</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="menu display-flex align-items-center">
+                        <li class="menu__item button">
+                            <a class="menu__link" href="../singin/" class="">Sing in</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <section class="">
-            <form class="" id="form-login">
+            <form class="" id="login-form">
                 <label class="">
-                    User name
-                    <input type="text" name="loginName" class="">
+                    <input type="text" name="loginName" class="" placeholder="User name">
                 </label>
                 <label class="">
-                    Password
-                    <input type="password" name="loginPass" class="">
+                    <input type="password" name="loginPass" class="" placeholder="Password">
                 </label>
                 <button class="">Login</button>
             </form>

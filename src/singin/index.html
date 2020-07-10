@@ -8,28 +8,30 @@
     </head>
     <body>
         <header class="main-header">
-            <a href="../" class="">
-                <span class="">M</span>ovie
-                <span class="">F</span>inder
-            </a>
-            <nav class="">
-                <a href="../" class="">Index</a>
-                <a href="../login/" class="">Login</a>
-            </nav>
+            <div class="container display-flex align-items-center just-cont-space-between">
+                <a class="logo" href="../" class="">
+                    <span class="main-color movie">M</span>
+                    <span class="main-color finder">F</span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="menu display-flex align-items-center">
+                        <li class="menu__item button">
+                            <a class="menu__link" href="../login/" class="">Login</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <section class="">
-            <form class="" id="form-sing-in">
+            <form class="" id="sing-in-form">
                 <label class="">
-                    User name
-                    <input type="text" name="singinName" class="">
+                    <input type="text" name="singInName" class="" placeholder="User name">
                 </label>
                 <label class="">
-                    Password
-                    <input type="password" name="singinPass" class="">
+                    <input type="password" name="singInPass" class="" placeholder="Password">
                 </label>
                 <label class="">
-                    Repeat password
-                    <input type="password" name="singinPassRepeat" class="">
+                    <input type="password" name="repeatPass" class="" placeholder="Repeat password">
                 </label>
                 <button class="">Create Account</button>
             </form>

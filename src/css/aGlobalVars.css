@@ -9,10 +9,14 @@
     --dark-color       : rgb(39, 55, 70);
     --dark-color-hover : rgb(23, 32, 42);
 
-    /* Units */
-    --unit: 1em;
-    --header-height: calc(var(--unit) * 3);
-    --max-with: 1000px;
 
-    --time: .10s;
+    /* Units */
+    --unit             : 1em;
+    --header-height    : calc(var(--unit) * 3);
+    --max-with         : 1000px;
+
+
+    /* Times */
+    --time-transition  : .15s;
+    --time-animation   : 1s;
 }

@@ -1,10 +1,7 @@
-.main-nav,
-.menu{
+.account{
     height: var(--header-height);
-}
-.menu{
     text-align: center;
 }
-.menu__item{
+.account__button{
     flex: 1 1 auto;
 }

@@ -14,7 +14,36 @@
 }
 .link{
     text-transform: uppercase;
-    text-decoration: underline;
     color: var(--main-color);
-    font-size: .85em;
+    font-size: .82em;
+}
+.link:hover{
+    text-decoration: underline;
+}
+
+/* Si la contraseña de usuario al repetirla es la misma, asigna esta clase */
+.equal-to,
+.alert{
+    outline-width: 3px;
+    outline-style: solid;
+}
+.equal-to{
+    outline-color: rgb(102, 255, 0);
+}
+.alert{
+    outline-color: var(--main-color);
+}
+.alert::placeholder{
+    color: var(--main-color);
+}
+
+/* Fade in */
+.fade-in{
+    animation: fadeIn .25s linear;
+}
+@keyframes fadeIn { 
+    from {
+        transform: scale(.95);
+        opacity: .75;
+    } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
 }

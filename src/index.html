@@ -10,28 +10,66 @@
     <body>
         <header class="main-header">
             <div class="container display-flex align-items-center just-cont-space-between">
-                <a class="logo" href="./" class="">
+                <a class="logo" href="./">
                     <span class="main-color movie">M</span> 
                     <span class="main-color finder">F</span>
                 </a>
-                <nav class="main-nav">
-                    <ul class="menu display-flex align-items-center">
-                        <li class="menu__item button">
-                            <a class="menu__link" href="./login/" class="">Login</a>
-                        </li>
-                        <li class="menu__item button button--call-to-action">
-                            <a class="menu__link" href="./singin/" class="">Sing in</a>
-                        </li>
-                    </ul>
-                </nav>
+                <ul id="account" class="account display-flex align-items-center">
+                    <li class="account__button">
+                        <button id="login-button" class="button">Login</button>
+                    </li>
+                    <li class="account__button">
+                        <button id="sing-in-button" class="button button--call-to-action">Sing in</button>
+                    </li>
+                </ul>
             </div>
         </header>
-        <section class="banner banner__animate">
-            <img class="animate" src="./assets/images/index/undraw_movie_night_fldd.svg" alt="Banner">
+        <section class="forms__modal" id="append-forms"></section>
+        <section class="banner ">
+            <img class="img img--animate" src="./assets/images/index/undraw_movie_night_fldd.svg" alt="Banner">
         </section>
         <footer class="main-footer">
-            <p>Imágen SVG extraída de <a class="link" target="_blanck" href="https://undraw.co/illustrations">undraw</a></p>
+            <p>Ilustración SVG extraída de <a class="link" target="_blanck" href="https://undraw.co/illustrations">undraw</a></p>
         </footer>
+
+        <!-- Formulario crear cuenta -->
+        <template id="sing-in-template">
+            <form class="form fade-in" id="sing-in-form">
+                <label class="form__label">
+                    <input type="text" name="singInName" class="form__input" placeholder="Nombre de usuario">
+                </label>
+                <label class="form__label">
+                    <input type="password" name="singInPass" class="form__input" placeholder="Contraseña">
+                </label>
+                <label class="form__label">
+                    <input type="password" name="repeatPass" class="form__input" placeholder="Repetir contraseña">
+                </label>
+                <button class="form__button button button--call-to-action">Create Account</button>
+            </form>
+        </template>
+
+        <!-- Formulario de login -->
+        <template id="login-template">
+            <form class="form fade-in" id="login-form">
+                <label class="form__label">
+                    <input type="text" name="loginName" class="form__input" placeholder="Nombre de usuario">
+                </label>
+                <label class="form__label">
+                    <input type="password" name="loginPass" class="form__input" placeholder="Contraseña">
+                </label>
+                <button class="form__button button button--call-to-action">Acceder</button>
+            </form>
+        </template>
+
+        <!-- Formulario de búsqueda -->
+        <template id="search-template">
+            <form class="form fade-in" id="search-form">
+                <label class="form__label">
+                    <input type="text" class="form__input" placeholder="Buscar una película">
+                </label>
+                <button class="form__button button button--search">Search</button>
+            </form>
+        </template>
         <script src="./js/scripts.min.js"></script>
     </body>
 </html>

@@ -9,12 +9,13 @@
     margin-left: auto;
     padding: var(--unit);
 }
-.banner__animate{
-    animation: appear 1s ease;
+.img--animate{
+    animation: appear var(--time-animation) ease;
 }
-@keyframes appear {
+
+@keyframes appear { 
     from {
-        transform: scale(.85) translateY(-15%);
+        transform: scale(.85) translateY(-55%);
         opacity: 0;
-    }
+    } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
 }

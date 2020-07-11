@@ -1,6 +1,31 @@
-.equal-to{
-    outline: 2px solid var(--main-color);
+.forms__modal{
+    position: fixed;
+    top: var(--header-height);
+    right: 50%;
+
+    width: 280px;
+    margin-top: var(--unit);
+
+    transform: translateX(50%);
+
+    z-index: 100;
 }
-input{
-    margin: 1em;
+.form{
+    padding: var(--unit);
+
+    background-color: var(--dark-color-hover);
+}
+.form__label{
+    margin-bottom: var(--unit);
+}
+.form__input{
+    padding: calc(var(--unit) / 2);
+}
+.form__button{
+    border: 1px solid var(--main-color);
+}
+.form__input,
+.form__button{
+    width: 100%;
+    font-size: 100%;
 }

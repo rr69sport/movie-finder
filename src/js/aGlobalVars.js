@@ -1,4 +1,13 @@
-let login = false // Da error de tipo si se declara en const
+// Parent Element to Forms
+const appendForms = document.getElementById('append-forms');
 
-const pathName = window.location.pathname
-const redirect = window.location.href
+// Accounts Buttons
+const account = document.getElementById('account');
+const loginButton = document.getElementById('login-button');
+const singInButton = document.getElementById('sing-in-button');
+
+// Time to change message in alerts
+const time = 1900
+
+// Login true or false
+let isLogin = false

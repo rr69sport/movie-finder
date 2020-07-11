@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 body{
-    /* Empuja hacia abajo lo mismo que tiene de altura el header */
-    position: relative;
-    top: var(--header-height);
-
     margin: 0;
 
     font-family: sans-serif;

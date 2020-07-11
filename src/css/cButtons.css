@@ -35,8 +35,11 @@
     color: var(--main-color);
     background-color: var(--dark-color);
 
-    transition-property: background-color;
+    border: 1px solid transparent;
+
+    transition-property: background-color, border-color;
 }
 .button--search:hover{
+    border-color: var(--dark-color);
     background-color: var(--dark-color-hover);
 }

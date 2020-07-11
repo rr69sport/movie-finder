@@ -1,15 +1,17 @@
+/* Contenedores de formularios */
 .forms__modal{
     position: fixed;
     top: var(--header-height);
     right: 50%;
 
-    width: 280px;
-    margin-top: var(--unit);
+    width: 290px;
 
     transform: translateX(50%);
 
     z-index: 100;
 }
+
+/* Formularios - Estilos comunes */
 .form{
     padding: var(--unit);
 
@@ -28,4 +30,37 @@
 .form__button{
     width: 100%;
     font-size: 100%;
+}
+
+/* Formularios de Login y Registro */
+.forms__modal--account{
+    margin-top: var(--unit);
+}
+
+/* Formulario de Búsqueda */
+.forms__modal--search{
+    width: 100%;
+}
+.form--search{
+    display: flex;
+    align-items: center;
+    height: var(--header-height);
+    padding: 0 .45em;
+}
+
+@media screen and (min-width: 800px){
+    .forms__modal--search{
+        top: 0;
+        max-width: 310px;
+    }
+}
+@media screen and (min-width: 950px){
+    .forms__modal--search{
+        max-width: 400px;
+    }
+}
+@media screen and (min-width: 1120px){
+    .forms__modal--search{
+        max-width: 450px;
+    }
 }

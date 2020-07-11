@@ -43,7 +43,6 @@
 }
 @keyframes fadeIn { 
     from {
-        transform: scale(.95);
         opacity: .75;
     } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
 }

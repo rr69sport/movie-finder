@@ -64,10 +64,10 @@ const redirect = () => {
 
     if (isLogin) {
 
-        urlPage.replace(`${urlPage.origin}/login/`)
+        urlPage.replace(`${urlPage.href}/login/`)
 
     } else if (!isLogin) {
 
-        urlPage.replace(`${urlPage.origin}/`)
+        urlPage.replace(`${urlPage.href}/`)
     }
 }

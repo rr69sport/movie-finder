@@ -9,7 +9,7 @@
 }
 
 .container{
-    max-width: var(--max-with);
+    max-width: var(--max-width);
     margin-right: auto;
     margin-left: auto;
 }
@@ -35,10 +35,9 @@ puede ser un link o un botón
 }
 
 /* Si un campo de formulario está vacío se asigna esta clase */
-.alert{
-    outline-color: var(--main-color);
-}
+.alert,
 .alert::placeholder{
+    outline-color: var(--main-color);
     color: var(--main-color);
 }
 

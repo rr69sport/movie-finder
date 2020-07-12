@@ -5,7 +5,7 @@
  * @param {string} insertInto - Elemento en el que será insertado el template
  * @param {boolean} replace - Si se define en true, no quita los hijos existentes. Por defecto en false
  */
-const insertForm = (template, insertInto, replace = false) => {
+const insertTemplate = (template, insertInto, replace = false) => {
 
     const templateForm = document.getElementById(template);
     const insertIn = document.getElementById(insertInto);
@@ -18,6 +18,8 @@ const insertForm = (template, insertInto, replace = false) => {
             insertIn.textContent = ''
         }
         insertIn.appendChild(form)
+    } else {
+        console.error(`La función insertTemplate() dice: El elemento ${template} o ${insertInto} no existen.`);
     }
 }
 
@@ -28,15 +30,35 @@ const insertForm = (template, insertInto, replace = false) => {
  * @param {string} attr - Clase de css que se le debe asignar
  * @param {number} timeout - El tiempo que debe pasar antes que la clase css que se asignó, se quite
  */
-const alertEmptyField = (elem, attr, timeout) => {
+const alertEmptyField = (elem, attr, timeout, typePassword = false) => {
 
-    elem.classList.add(attr)
+    if (elem) {
 
-    setTimeout(() => {
+        elem.classList.add(attr)
 
-        elem.classList.remove(attr)
+        if (typePassword) {
 
-    }, timeout);
+            elem.setAttribute('type', 'text')
+
+            elem.value = 'Las contraseñas deben coincidir'
+
+            setTimeout(() => {
+
+                elem.setAttribute('type', 'password')
+                elem.value = ''
+
+            }, timeout);
+        }
+
+        setTimeout(() => {
+
+            elem.classList.remove(attr)
+
+        }, timeout);
+
+    } else {
+        console.error(`La función "alertEmptyField()" dice: El elemento "${elem}" no existe.`);
+    }
 }
 
 /**
@@ -51,23 +73,53 @@ const alertEmptyField = (elem, attr, timeout) => {
  */
 const changePlaceholderValue = (elem, newContent, returnTo, timeout) => {
 
-    elem.placeholder = newContent
+    if (elem) {
+        elem.placeholder = newContent
 
-    setTimeout(() => {
+        setTimeout(() => {
 
-        elem.placeholder = returnTo
+            elem.placeholder = returnTo
 
-    }, timeout);
+        }, timeout);
+    } else {
+        console.error(`La función "changePlaceholderValue()" dice: El elemento "${elem}" no existe.`);
+    }
 }
 
-const redirect = () => {
+/**
+ * Alterna una clase de css por otra
+ * 
+ * @param {HTMLElement} elem - ID del elemento que se quiere reemplazar una clase
+ * @param {string} oldClass - Clase a reemplazar
+ * @param {string} newClass - Clase nueva
+ */
+const replaceClass = (elem, oldClass, newClass) => {
 
-    if (isLogin) {
+    if (elem && elem.classList.contains(oldClass)) {
 
-        urlPage.replace(`${urlPage.href}/login/`)
+        elem.classList.replace(oldClass, newClass)
 
-    } else if (!isLogin) {
+    } else {
+        console.error(`La función "replaceClass()" dice: El elemento "${elem}" no existe o no tiene la clase "${oldClass}".`);
+    }
+}
 
-        urlPage.replace(`${urlPage.href}/`)
+/**
+ * Inserta los templates en el html
+ * si la constante "isLoggedIn" es true, retorna true
+ * sino retirna false
+ */
+const insertIfLoggedIn = () => {
+    if (isLoggedIn) {
+        // Reemplaza la clase de donde se insertan los formularios
+        replaceClass(appendForms, 'forms__modal--account', 'forms__modal--search')
+
+        // Inserta el template de búsqueda
+        insertTemplate('search-template', 'append-forms', true)
+
+        // Cambia los botones de acceder y registrarse a
+        // favoritos y cerrar sesión
+        insertTemplate('logged-in-template', 'account', true)
+
     }
 }

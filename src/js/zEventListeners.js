@@ -1,148 +1,140 @@
-account.addEventListener('click', (e) => {
+document.addEventListener('DOMContentLoaded', () => {
 
-    // LOGIN
-    if (e.target === loginButton) {
+    insertTemplate('login-and-register-template', 'account')
 
-        // Inserta el template al html
-        insertForm('login-template', 'append-forms', true)
+    const loginButton = document.getElementById('login-button');
+    const singInButton = document.getElementById('sing-in-button');
 
-        const loginForm = document.getElementById('login-form');
+    account.addEventListener('click', (e) => {
 
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault()
+        // LOGIN
+        if (e.target === loginButton) {
 
-            const name = loginForm.loginName.value.trim()
-            const pass = loginForm.loginPass.value.trim()
+            // Inserta el template al html
+            insertTemplate('login-template', 'append-forms', true)
 
-            if (name !== '' && pass !== '') {
+            const loginForm = document.getElementById('login-form');
 
-                const user = {
-                    id: `${name}${pass}`,
-                    userName: name,
-                    password: pass
-                }
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault()
 
-                setUser(user)
+                const name = loginForm.loginName.value.trim()
+                const pass = loginForm.loginPass.value.trim()
 
-                loginForm.reset()
-
-                isLogin = true
-
-                redirect()
-
-            } else {
-                if (name == '') {
-
-                    alertEmptyField(loginForm.loginName, 'alert', time)
-                    changePlaceholderValue(loginForm.loginName, 'Ingresa un usuario', 'Usuario', time)
-                }
-                if (pass == '') {
-
-                    alertEmptyField(loginForm.loginPass, 'alert', time)
-                    changePlaceholderValue(loginForm.loginPass, 'Ingresa una contraseña', 'Contraseña', time)
-                }
-            }
-        })
-
-    }
-
-    // SING IN
-    if (e.target === singInButton) {
-
-        // Inserta el template al html
-        insertForm('sing-in-template', 'append-forms', true)
-
-        const singInForm = document.getElementById('sing-in-form')
-        const name = singInForm.singInName
-        const pass = singInForm.singInPass
-        const rPass = singInForm.repeatPass
-
-        singInForm.addEventListener('submit', (e) => {
-            e.preventDefault()
-
-            if (name.value.trim() !== '' &&
-                pass.value.trim() !== '' &&
-                rPass.value.trim() !== '') {
-
-                if (pass.value.trim() === rPass.value.trim()) {
+                if (name !== '' && pass !== '') {
 
                     const user = {
-                        // Pensé que no pero pasa la validación con .trim() teniendo espacios
-                        // La pasa y agrega esos espacios a los valores
-                        // Por eso se define aquí también .trim()
-                        id: `${name.value.trim()}${pass.value.trim()}`,
-                        favoriteMovies: []
+                        id: `${name}${pass}`
                     }
 
-                    setUser(user)
+                    // getUser(user)
+                    console.log(user);
 
-                    singInForm.reset()
+                    isLoggedIn = true
 
-                    rPass.classList.remove('equal-to')
-
-                    isLogin = true
-
-                    redirect()
+                    insertIfLoggedIn()
 
                 } else {
+                    if (name == '') {
 
-                    alertEmptyField(rPass, 'alert', time)
+                        alertEmptyField(loginForm.loginName, 'alert', time)
+                        changePlaceholderValue(loginForm.loginName, 'Ingresa un usuario', 'Usuario', time)
+                    }
+                    if (pass == '') {
+
+                        alertEmptyField(loginForm.loginPass, 'alert', time)
+                        changePlaceholderValue(loginForm.loginPass, 'Ingresa una contraseña', 'Contraseña', time)
+                    }
                 }
+            })
 
-            } else {
-                if (name.value.trim() == '') {
+        }
 
-                    alertEmptyField(name, 'alert', time)
+        // SING IN
+        if (e.target === singInButton) {
 
-                    changePlaceholderValue(name, 'Ingresa un usuario', 'Usuario', time)
-                }
-                if (pass.value.trim() == '') {
+            // Inserta el template al html
+            insertTemplate('sing-in-template', 'append-forms', true)
 
-                    alertEmptyField(pass, 'alert', time)
+            const singInForm = document.getElementById('sing-in-form')
 
-                    changePlaceholderValue(pass, 'Ingresa una contraseña', 'Contraseña', time)
-                }
-                if (rPass.value.trim() == '') {
+            const getName = singInForm.singInName
+            const getPass = singInForm.singInPass
+            const getRPass = singInForm.repeatPass
 
-                    alertEmptyField(rPass, 'alert', time)
+            singInForm.addEventListener('submit', (e) => {
+                e.preventDefault()
 
-                    changePlaceholderValue(rPass, 'Repite la contraseña', 'Repite la contraseña', time)
-                }
-            }
-        })
+                const name = getName.value.trim()
+                const pass = getPass.value.trim()
+                const rPass = getRPass.value.trim()
 
-        // Valida si las contraseñas son iguales
-        // Si lo son, agrega un color al outline del input correspondiente
-        singInForm.addEventListener('keyup', () => {
+                if (name !== '' &&
+                    pass !== '' &&
+                    rPass !== '') {
 
-            const equalTo = pass.value.trim()
-            const Pass = rPass.value.trim()
+                    if (pass === rPass) {
 
-            if (equalTo !== '' && rPass !== '') {
+                        const user = {
+                            id: `${name}${pass}`,
+                            favoriteMovies: []
+                        }
 
-                if (Pass === equalTo) {
+                        setUser(user)
 
-                    rPass.classList.add('equal-to')
+                        isLoggedIn = true
+
+                        insertIfLoggedIn()
+
+                    } else {
+
+                        alertEmptyField(getRPass, 'alert', time, true)
+
+                    }
 
                 } else {
+                    if (getName.value.trim() == '') {
 
-                    rPass.classList.remove('equal-to')
+                        alertEmptyField(singInForm.singInName, 'alert', time)
 
+                        changePlaceholderValue(singInForm.singInName, 'Ingresa un usuario', 'Usuario', time)
+                    }
+                    if (getPass.value.trim() == '') {
+
+                        alertEmptyField(singInForm.singInPass, 'alert', time)
+
+                        changePlaceholderValue(singInForm.singInPass, 'Ingresa una contraseña', 'Contraseña', time)
+                    }
+                    if (getRPass.value.trim() == '') {
+
+                        alertEmptyField(singInForm.repeatPass, 'alert', time)
+
+                        changePlaceholderValue(singInForm.repeatPass, 'Repite la contraseña', 'Repite la contraseña', time)
+                    }
                 }
-            }
-        })
-    }
+            })
 
-    // LOGOUT
-    if (e.target === logoutButton) {
+            // Valida si las contraseñas son iguales
+            // Si lo son, agrega un color al outline del input correspondiente
+            singInForm.addEventListener('keyup', () => {
 
-        isLogin = false
+                const equalTo = getPass.value.trim()
+                const Pass = getRPass.value.trim()
 
-        redirect()
-    }
+                if (equalTo !== '' && getRPass !== '') {
 
-    // DLETE ACCOUNT
-    if (e.target === deleteAccount) {
+                    if (Pass === equalTo) {
 
-    }
+                        getRPass.classList.add('equal-to')
+
+                    } else {
+
+                        getRPass.classList.remove('equal-to')
+
+                    }
+                }
+            })
+        }
+
+    })
 })

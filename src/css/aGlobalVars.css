@@ -13,7 +13,7 @@
     /* Units */
     --unit             : 1em;
     --header-height    : calc(var(--unit) * 3);
-    --max-with         : 1000px;
+    --max-width         : 1000px;
 
 
     /* Times */

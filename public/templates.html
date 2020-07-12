@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./css/styles.min.css"> -->
+</head>
+
+<body>
+    <!-- Formulario crear cuenta -->
+    <template id="sing-in-template">
+        <form class="form fade-in" id="sing-in-form">
+            <label class="form__label">
+                <input type="text" name="singInName" class="form__input" placeholder="Nombre de usuario">
+            </label>
+            <label class="form__label">
+                <input type="password" name="singInPass" class="form__input" placeholder="Contraseña">
+            </label>
+            <label class="form__label">
+                <input type="password" name="repeatPass" class="form__input" placeholder="Repetir contraseña">
+            </label>
+            <button class="form__button button button--call-to-action">Create Account</button>
+        </form>
+    </template>
+
+    <!-- Formulario de login -->
+    <template id="login-template">
+        <form class="form fade-in" id="login-form">
+            <label class="form__label">
+                <input type="text" name="loginName" class="form__input" placeholder="Nombre de usuario">
+            </label>
+            <label class="form__label">
+                <input type="password" name="loginPass" class="form__input" placeholder="Contraseña">
+            </label>
+            <button class="form__button button button--call-to-action">Acceder</button>
+        </form>
+    </template>
+    <script src="./js/scripts.min.js?t=1594528419713"></script>
+</body>
+
+</html>

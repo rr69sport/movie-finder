@@ -1,73 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Movie Finder</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/styles.min.css">
-    </head>
-    <body>
-        <header class="main-header">
-            <div class="container display-flex align-items-center just-cont-space-between">
-                <a class="logo" href="./">
-                    <span class="logo__first-letter logo__movie">M</span> 
-                    <span class="logo__first-letter logo__finder">F</span>
-                </a>
-                <ul id="account" class="account display-flex align-items-center">
-                    <li class="account__button">
-                        <button id="login-button" class="button">Login</button>
-                    </li>
-                    <li class="account__button">
-                        <button id="sing-in-button" class="button button--call-to-action">Sing in</button>
-                    </li>
-                </ul>
-            </div>
+
+<head>
+    <title>Movie Finder</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.min.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="container display-flex align-items-center just-cont-space-between">
+            <a class="logo" href="./">
+                <span class="logo__first-letter logo__movie">M</span>
+                <span class="logo__first-letter logo__finder">F</span>
+            </a>
+            <!-- Los botones se cargan por JavaScript -->
+            <ul id="account" class="account display-flex align-items-center"></ul>
+        </div>
+    </header>
+
+    <!-- FORMS -->
+    <section class="forms__modal forms__modal--account" id="append-forms"></section>
+
+    <!-- MOVIES -->
+    <section class="container movies">
+        <header class="movies__header">
+            <h1 class="movies__title">Peliculas</h1>
         </header>
-        <section class="forms__modal forms__modal--account" id="append-forms"></section>
-        <!-- <section class="banner ">
-            <img class="img img--animate" src="./assets/images/index/undraw_movie_night_fldd.svg" alt="Banner">
-        </section> -->
-        <footer class="main-footer">
-            <p>Ilustración SVG extraída de <a class="link" target="_blanck" href="https://undraw.co/illustrations">undraw</a></p>
-        </footer>
+        <div id="movies" class="movies__movie"></div>
+    </section>
 
-        <!-- Formulario crear cuenta -->
-        <template id="sing-in-template">
-            <form class="form fade-in" id="sing-in-form">
-                <label class="form__label">
-                    <input type="text" name="singInName" class="form__input" placeholder="Nombre de usuario">
-                </label>
-                <label class="form__label">
-                    <input type="password" name="singInPass" class="form__input" placeholder="Contraseña">
-                </label>
-                <label class="form__label">
-                    <input type="password" name="repeatPass" class="form__input" placeholder="Repetir contraseña">
-                </label>
-                <button class="form__button button button--call-to-action">Create Account</button>
-            </form>
-        </template>
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <p>Ilustración SVG extraída de <a class="link" target="_blanck"
+                href="https://undraw.co/illustrations">undraw</a></p>
+    </footer>
 
-        <!-- Formulario de login -->
-        <template id="login-template">
-            <form class="form fade-in" id="login-form">
-                <label class="form__label">
-                    <input type="text" name="loginName" class="form__input" placeholder="Nombre de usuario">
-                </label>
-                <label class="form__label">
-                    <input type="password" name="loginPass" class="form__input" placeholder="Contraseña">
-                </label>
-                <button class="form__button button button--call-to-action">Acceder</button>
-            </form>
-        </template>
+    <!-- Formulario crear cuenta -->
+    <template id="sing-in-template">
+        <form class="form fade-in" id="sing-in-form">
+            <label class="form__label">
+                <input type="text" name="singInName" class="form__input" placeholder="Nombre de usuario">
+            </label>
+            <label class="form__label">
+                <input type="password" name="singInPass" class="form__input" placeholder="Contraseña">
+            </label>
+            <label class="form__label">
+                <input type="password" name="repeatPass" class="form__input" placeholder="Repetir contraseña">
+            </label>
+            <button class="form__button button button--call-to-action">Create Account</button>
+        </form>
+    </template>
 
-        <!-- Formulario de búsqueda -->
-        <template id="search-template forms__modal--search">
-            <form class="form form--search" id="search-form">
-                <input type="text" class="form__input" placeholder="Search a movie">
-                <button class="button button--search">Search</button>
-            </form>
-        </template>
-        <script src="./js/scripts.min.js"></script>
-    </body>
+    <!-- Formulario de login -->
+    <template id="login-template">
+        <form class="form fade-in" id="login-form">
+            <label class="form__label">
+                <input type="text" name="loginName" class="form__input" placeholder="Nombre de usuario">
+            </label>
+            <label class="form__label">
+                <input type="password" name="loginPass" class="form__input" placeholder="Contraseña">
+            </label>
+            <button class="form__button button button--call-to-action">Acceder</button>
+        </form>
+    </template>
+
+    <!-- Formulario de búsqueda -->
+    <template id="search-template">
+        <form class="form form--search" id="search-form">
+            <input type="text" class="form__input" placeholder="Search a movie">
+            <button class="button button--search">Buscar</button>
+        </form>
+    </template>
+
+    <!-- Botones de Login y Registro -->
+    <template id="login-and-register-template">
+        <li class="account__button">
+            <button id="sing-in-button" class="button button--call-to-action">Registrarse</button>
+        </li>
+        <li class="account__button">
+            <button id="login-button" class="button">Acceder</button>
+        </li>
+    </template>
+
+    <!-- Botones de Favoritos y Cerrar Sesión -->
+    <template id="logged-in-template">
+        <li class="account__button">
+            <button id="favorites" class="button button--call-to-action">Favoritos</button>
+        </li>
+        <li class="account__button">
+            <button id="logout-button" class="button">Cerrar Sesión</button>
+        </li>
+    </template>
+
+    <!-- Película -->
+    <template id="movie-template">
+        <div class="movie">
+            <div class="movie__poster">
+                <img class="poster" data-poster="Poster"
+                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
+                    alt="Cap America">
+            </div>
+            <div class="movie__info">
+                <h2 data-title="Avenger" class="movie__title">Avenger</h2>
+                <p data-imdbRating="Rating">imdbRating: 5.6</p>
+            </div>
+        </div>
+    </template>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/scripts.min.js"></script>
+</body>
+
 </html>

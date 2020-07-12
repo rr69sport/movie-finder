@@ -1,17 +1,24 @@
 const ls = localStorage
 
 const setUser = (user) => {
-    ls.setItem(user.id, JSON.stringify(user))
+
+    if (ls.getItem('users') === null) {
+
+        const registeredUsers = []
+        registeredUsers.push(user)
+        ls.setItem('users', JSON.stringify(registeredUsers))
+
+    } else {
+
+        const users = JSON.parse(ls.getItem('users'))
+        users.push(user)
+        ls.setItem('users', JSON.stringify(users))
+    }
 }
 
 const getUsers = () => {
-    if (ls.length !== 0) {
-        for (const key in ls) {
-            if (ls.hasOwnProperty(key)) {
-                console.log(JSON.parse(ls.getItem(key)))
-            }
-        }
-    } else {
-        console.log('No hay usuarios registrados');
-    }
+    const users = JSON.parse(ls.getItem('users'))
+    users.forEach(user => {
+        console.log(user);
+    });
 }

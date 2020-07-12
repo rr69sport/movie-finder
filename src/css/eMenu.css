@@ -1,7 +1,10 @@
+/* Componente usado ordenar botones */
 .account{
     height: var(--header-height);
     text-align: center;
 }
+
+/* Debe tener como hijo un componente botón */
 .account__button{
     flex: 1 1 auto;
 }

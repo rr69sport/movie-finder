@@ -7,11 +7,19 @@
 .just-cont-space-between{
     justify-content: space-between;
 }
+
 .container{
     max-width: var(--max-with);
     margin-right: auto;
     margin-left: auto;
 }
+
+/* Estilos para los "a" */
+/*
+Reescribe estilos del reset.css
+Se tiene en cuenta que un "a" 
+puede ser un link o un botón
+*/
 .link{
     text-transform: uppercase;
     color: var(--main-color);
@@ -22,19 +30,22 @@
 }
 
 /* Si la contraseña de usuario al repetirla es la misma, asigna esta clase */
-.equal-to,
-.alert{
-    outline-width: 3px;
-    outline-style: solid;
-}
 .equal-to{
     outline-color: rgb(102, 255, 0);
 }
+
+/* Si un campo de formulario está vacío se asigna esta clase */
 .alert{
     outline-color: var(--main-color);
 }
 .alert::placeholder{
     color: var(--main-color);
+}
+
+.equal-to,
+.alert{
+    outline-width: 3px;
+    outline-style: solid;
 }
 
 /* Fade in */

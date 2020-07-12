@@ -4,12 +4,16 @@
     box-sizing: border-box;
 }
 body{
+    position: relative;
+    top: var(--header-height);
+
     margin: 0;
 
     font-family: sans-serif;
 
     color: var(--light-color);
-    background-color: var(--dark-color);
+    background: fixed var(--dark-color) url('../assets/images/index/undraw_movie_night_fldd.svg') center no-repeat;
+    background-size: contain;
 }
 ul {
     margin-top: 0;
@@ -33,4 +37,9 @@ label{
 }
 input{
     border: 1px solid #eee;
+}
+@media screen and (max-width: 800px) {
+    body{
+        top: calc(var(--header-height) * 2 + 1.29em);
+    }
 }

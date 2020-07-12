@@ -1,4 +1,4 @@
-/* Contenedores de formularios */
+/* Contenedor de formularios */
 .forms__modal{
     position: fixed;
     top: var(--header-height);
@@ -44,14 +44,19 @@
 .form--search{
     display: flex;
     align-items: center;
-    height: var(--header-height);
-    padding: 0 .45em;
+    padding: 1em 1.5em;
+    border-top: 1px solid var(--dark-color);
 }
 
 @media screen and (min-width: 800px){
     .forms__modal--search{
         top: 0;
         max-width: 310px;
+    }
+    .form--search{
+        padding: 0;
+        height: var(--header-height);
+        border: none;
     }
 }
 @media screen and (min-width: 950px){

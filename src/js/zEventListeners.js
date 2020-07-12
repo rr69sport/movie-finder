@@ -4,7 +4,7 @@ account.addEventListener('click', (e) => {
     if (e.target === loginButton) {
 
         // Inserta el template al html
-        insertForm('login-template', 'append-forms')
+        insertForm('login-template', 'append-forms', true)
 
         const loginForm = document.getElementById('login-form');
 
@@ -22,7 +22,13 @@ account.addEventListener('click', (e) => {
                     password: pass
                 }
 
+                setUser(user)
+
                 loginForm.reset()
+
+                isLogin = true
+
+                redirect()
 
             } else {
                 if (name == '') {
@@ -44,7 +50,7 @@ account.addEventListener('click', (e) => {
     if (e.target === singInButton) {
 
         // Inserta el template al html
-        insertForm('sing-in-template', 'append-forms')
+        insertForm('sing-in-template', 'append-forms', true)
 
         const singInForm = document.getElementById('sing-in-form')
         const name = singInForm.singInName
@@ -61,9 +67,10 @@ account.addEventListener('click', (e) => {
                 if (pass.value.trim() === rPass.value.trim()) {
 
                     const user = {
-                        id: `${name.value}${pass.value}`,
-                        username: name.value,
-                        password: pass.value,
+                        // Pensé que no pero pasa la validación con .trim() teniendo espacios
+                        // La pasa y agrega esos espacios a los valores
+                        // Por eso se define aquí también .trim()
+                        id: `${name.value.trim()}${pass.value.trim()}`,
                         favoriteMovies: []
                     }
 
@@ -72,6 +79,10 @@ account.addEventListener('click', (e) => {
                     singInForm.reset()
 
                     rPass.classList.remove('equal-to')
+
+                    isLogin = true
+
+                    redirect()
 
                 } else {
 
@@ -101,7 +112,7 @@ account.addEventListener('click', (e) => {
         })
 
         // Valida si las contraseñas son iguales
-        // Si lo son agrega un color al outline del input
+        // Si lo son, agrega un color al outline del input correspondiente
         singInForm.addEventListener('keyup', () => {
 
             const equalTo = pass.value.trim()
@@ -120,5 +131,18 @@ account.addEventListener('click', (e) => {
                 }
             }
         })
+    }
+
+    // LOGOUT
+    if (e.target === logoutButton) {
+
+        isLogin = false
+
+        redirect()
+    }
+
+    // DLETE ACCOUNT
+    if (e.target === deleteAccount) {
+
     }
 })

@@ -3,8 +3,9 @@
  * 
  * @param {string} template - ID del template que va a ser insertado
  * @param {string} insertInto - Elemento en el que será insertado el template
+ * @param {boolean} replace - Si se define en true, no quita los hijos existentes. Por defecto en false
  */
-const insertForm = (template, insertInto) => {
+const insertForm = (template, insertInto, replace = false) => {
 
     const templateForm = document.getElementById(template);
     const insertIn = document.getElementById(insertInto);
@@ -13,7 +14,9 @@ const insertForm = (template, insertInto) => {
 
         const form = document.importNode(templateForm.content, true);
 
-        insertIn.textContent = ''
+        if (replace) {
+            insertIn.textContent = ''
+        }
         insertIn.appendChild(form)
     }
 }
@@ -55,4 +58,16 @@ const changePlaceholderValue = (elem, newContent, returnTo, timeout) => {
         elem.placeholder = returnTo
 
     }, timeout);
+}
+
+const redirect = () => {
+
+    if (isLogin) {
+
+        urlPage.replace(`${urlPage.origin}/login/`)
+
+    } else if (!isLogin) {
+
+        urlPage.replace(`${urlPage.origin}/`)
+    }
 }

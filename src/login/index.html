@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Movie Finder</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/styles.min.css">
-    </head>
-    <body>
-        <header class="main-header">
-            <div class="container display-flex align-items-center just-cont-space-between">
-                <a class="logo" href="../">
-                    <span class="main-color movie">M</span> 
-                    <span class="main-color finder">F</span>
-                </a>
-                <ul id="account" class="account display-flex align-items-center">
-                    <li class="account__button">
-                        <button id="login-button" class="button">Cerrar Sesión</button>
-                    </li>
-                    <li class="account__button">
-                        <button id="sing-in-button" class="button">Borrar cuenta</button>
-                    </li>
-                </ul>
-            </div>
+
+<head>
+    <title>Movie Finder</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.min.css">
+</head>
+
+<body id="body">
+    <header class="main-header">
+        <div class="container display-flex align-items-center just-cont-space-between">
+            <a class="logo" href="../">
+                <span class="logo__first-letter logo__movie">M</span>
+                <span class="logo__first-letter logo__finder">F</span>
+            </a>
+            <ul id="account" class="account display-flex align-items-center">
+                <li class="account__button">
+                    <button id="logout-button" class="button">Cerrar Sesión</button>
+                </li>
+                <li class="account__button">
+                    <button id="delete-account-button" class="button">Borrar cuenta</button>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section class="forms__modal forms__modal--search">
+        <form class="form form--search" id="search-form">
+            <input type="text" class="form__input" placeholder="Search a movie">
+            <button class="button button--search">Search</button>
+        </form>
+    </section>
+    <section class="container movies">
+        <header class="movies__header">
+            <h1 class="movies__title">Peliculas</h1>
         </header>
-        <section class="forms__modal forms__modal--search">
-            <form class="form form--search" id="search-form">
-                <input type="text" class="form__input" placeholder="Search a movie">
-                <button class="button button--search">Search</button>
-            </form>
-        </section>
-        <script src="../js/scripts.min.js"></script>
-    </body>
+        <div id="movies" class="movies__movie">
+
+        </div>
+    </section>
+    <template id="movie-template">
+        <div class="movie">
+            <div class="movie__poster">
+                <img class="poster" data-poster="Poster"
+                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
+                    alt="Cap America">
+            </div>
+            <div class="movie__info">
+                <h2 data-title="Avenger" class="movie__title">Avenger</h2>
+                <p data-imdbRating="Rating">imdbRating: 5.6</p>
+            </div>
+        </div>
+    </template>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/scripts.min.js"></script>
+</body id="body">
+
 </html>

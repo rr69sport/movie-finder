@@ -1,158 +1,63 @@
-if (!currentUserLoggedIn()) {
+// if (!currentUserLoggedIn()) {
+insertTemplate('login-and-register-template', 'account')
 
-    insertTemplate('login-and-register-template', 'account')
+account.addEventListener('click', (e) => {
 
-    const loginButton = document.getElementById('login-button');
-    const singInButton = document.getElementById('sing-in-button');
+    // LOGIN
+    if (e.target.id === 'login-button') {
 
-    account.addEventListener('click', (e) => {
+        // Inserta el template al html
+        insertTemplate('login-form-template', 'append-forms', true)
 
-        // LOGIN
-        if (e.target === loginButton) {
+        const loginForm = document.getElementById('login-form');
 
-            // Inserta el template al html
-            insertTemplate('login-template', 'append-forms', true)
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault()
 
-            const loginForm = document.getElementById('login-form');
+            const name = loginForm.loginName.value.trim()
+            const pass = loginForm.loginPass.value.trim()
 
-            loginForm.addEventListener('submit', (e) => {
-                e.preventDefault()
+            if (name !== '' && pass !== '') {
 
-                const name = loginForm.loginName.value.trim()
-                const pass = loginForm.loginPass.value.trim()
-
-                if (name !== '' && pass !== '') {
-
-                    const user = {
-                        id: `${name}${pass}`
-                    }
-
-                    setCurrentUser(user) //Session Storage
-
-                    insertIfLoggedIn() // Search Form
-
-                    getUser(user.id)
-
-                } else {
-                    if (name == '') {
-
-                        alertEmptyField(loginForm.loginName, 'alert', time)
-                        changePlaceholderValue(loginForm.loginName, 'Ingresa un usuario', 'Usuario', time)
-                    }
-                    if (pass == '') {
-
-                        alertEmptyField(loginForm.loginPass, 'alert', time)
-                        changePlaceholderValue(loginForm.loginPass, 'Ingresa una contraseña', 'Contraseña', time)
-                    }
+                const user = {
+                    id: `${name}${pass}`,
+                    name: name,
+                    favorites: []
                 }
-            })
 
-        }
+                setNewUser(user)
 
-        // SING IN
-        if (e.target === singInButton) {
+                // Cambia el botón de acceder por
+                // el de cerrar sesión y favoritos
+                insertTemplate('logged-in-template', 'account', true)
 
-            // Inserta el template al html
-            insertTemplate('sing-in-template', 'append-forms', true)
+                // Inserta el template de búsqueda
+                insertTemplate('search-form-template', 'append-forms', true)
 
-            const singInForm = document.getElementById('sing-in-form')
+                // Reemplaza la clase del contenedor
+                // del template de búsqueda 
+                replaceClass('append-forms', 'forms__modal--account', 'forms__modal--search')
 
-            const getName = singInForm.singInName
-            const getPass = singInForm.singInPass
-            const getRPass = singInForm.repeatPass
+            } else {
+                if (name == '') {
 
-            singInForm.addEventListener('submit', (e) => {
-                e.preventDefault()
-
-                const name = getName.value.trim()
-                const pass = getPass.value.trim()
-                const rPass = getRPass.value.trim()
-
-                if (name !== '' &&
-                    pass !== '' &&
-                    rPass !== '') {
-
-                    if (pass === rPass) {
-
-                        const user = {
-                            id: `${name}${pass}`,
-                            favoriteMovies: []
-                        }
-
-                        setCurrentUser(user.id) //Session Storage
-
-                        setNewUser(user) // Local Storage
-
-                        insertIfLoggedIn() // Search Form
-
-                    } else {
-
-                        alertEmptyField(getRPass, 'alert', time, true)
-
-                    }
-
-                } else {
-                    if (getName.value.trim() == '') {
-
-                        alertEmptyField(singInForm.singInName, 'alert', time)
-
-                        changePlaceholderValue(singInForm.singInName, 'Ingresa un usuario', 'Usuario', time)
-                    }
-                    if (getPass.value.trim() == '') {
-
-                        alertEmptyField(singInForm.singInPass, 'alert', time)
-
-                        changePlaceholderValue(singInForm.singInPass, 'Ingresa una contraseña', 'Contraseña', time)
-                    }
-                    if (getRPass.value.trim() == '') {
-
-                        alertEmptyField(singInForm.repeatPass, 'alert', time)
-
-                        changePlaceholderValue(singInForm.repeatPass, 'Repite la contraseña', 'Repite la contraseña', time)
-                    }
+                    alertEmptyField(loginForm.loginName, 'alert', time)
+                    changePlaceholderValue(loginForm.loginName, 'Ingresa un usuario', 'Usuario', time)
                 }
-            })
+                if (pass == '') {
 
-            // Valida si las contraseñas son iguales
-            // Si lo son, agrega un color al outline del input correspondiente
-            singInForm.addEventListener('keyup', () => {
-
-                const equalTo = getPass.value.trim()
-                const Pass = getRPass.value.trim()
-
-                if (equalTo !== '' && getRPass !== '') {
-
-                    if (Pass === equalTo) {
-
-                        getRPass.classList.add('equal-to')
-
-                    } else {
-
-                        getRPass.classList.remove('equal-to')
-
-                    }
+                    alertEmptyField(loginForm.loginPass, 'alert', time)
+                    changePlaceholderValue(loginForm.loginPass, 'Ingresa una contraseña', 'Contraseña', time)
                 }
-            })
-        }
+            }
+        })
+    }
 
-    })
+    if (e.target.id === 'favorites-button') {
+        console.log('Clickeó favoritos');
+    }
 
-} else {
-
-    insertIfLoggedIn() // Search Form
-
-    const logoutButton = document.getElementById('logout-button');
-
-    account.addEventListener('click', (e) => {
-        if (e.target === logoutButton) {
-
-            insertTemplate('login-and-register-template', 'account', true)
-
-            singOff()
-
-            currentUserLoggedIn()
-
-            removeTemplate('append-forms')
-        }
-    })
-}
+    if (e.target.id === 'logout-button') {
+        console.log('Se desloqueó');
+    }
+})

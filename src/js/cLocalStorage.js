@@ -11,18 +11,28 @@ const setNewUser = (newUser) => {
     } else {
 
         const users = JSON.parse(loSt.getItem('users'))
+
+        // users.forEach(user => {
+        //     if (user.id === newUser.id) {
+
+        //     } else {
+        //         console.log(`El usuario ${user.name} no existe`);
+        //     }
+        // });
+
         users.push(newUser)
+
         loSt.setItem('users', JSON.stringify(users))
     }
 }
 
-const getUser = (userId) => {
+// const getUser = (userId) => {
 
-    const users = JSON.parse(loSt.getItem('users'))
+//     const users = JSON.parse(loSt.getItem('users'))
 
-    users.forEach(user => {
-        if (user.id === userId) {
-            insertIfLoggedIn() // Search Form
-        }
-    });
-}
+//     users.forEach(user => {
+//         if (user.id === userId) {
+//             insertIfLoggedIn() // Search Form
+//         }
+//     });
+// }

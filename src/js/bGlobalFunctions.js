@@ -38,25 +38,11 @@ const removeTemplate = (removeTo) => {
  * @param {string} attr - Clase de css que se le debe asignar
  * @param {number} timeout - El tiempo que debe pasar antes que la clase css que se asignó, se quite
  */
-const alertEmptyField = (elem, attr, timeout, typePassword = false) => {
+const alertEmptyField = (elem, attr, timeout) => {
 
     if (elem) {
 
         elem.classList.add(attr)
-
-        if (typePassword) {
-
-            elem.setAttribute('type', 'text')
-
-            elem.value = 'Las contraseñas deben coincidir'
-
-            setTimeout(() => {
-
-                elem.setAttribute('type', 'password')
-                elem.value = ''
-
-            }, timeout);
-        }
 
         setTimeout(() => {
 
@@ -97,11 +83,13 @@ const changePlaceholderValue = (elem, newContent, returnTo, timeout) => {
 /**
  * Alterna una clase de css por otra
  * 
- * @param {HTMLElement} elem - ID del elemento que se quiere reemplazar una clase
+ * @param {string} element - ID del elemento que se quiere reemplazar una clase
  * @param {string} oldClass - Clase a reemplazar
  * @param {string} newClass - Clase nueva
  */
-const replaceClass = (elem, oldClass, newClass) => {
+const replaceClass = (element, oldClass, newClass) => {
+
+    const elem = document.getElementById(element)
 
     if (elem && elem.classList.contains(oldClass)) {
 
@@ -109,25 +97,5 @@ const replaceClass = (elem, oldClass, newClass) => {
 
     } else {
         console.error(`La función "replaceClass()" dice: El elemento "${elem}" no existe o no tiene la clase "${oldClass}".`);
-    }
-}
-
-/**
- * Inserta los templates en el html
- * si la constante "isLoggedIn" es true, retorna true
- * sino retirna false
- */
-const insertIfLoggedIn = () => {
-    if (currentUserLoggedIn()) {
-        // Reemplaza la clase de donde se insertan los formularios
-        replaceClass(appendForms, 'forms__modal--account', 'forms__modal--search')
-
-        // Inserta el template de búsqueda
-        insertTemplate('search-template', 'append-forms', true)
-
-        // Cambia los botones de acceder y registrarse a
-        // favoritos y cerrar sesión
-        insertTemplate('logged-in-template', 'account', true)
-
     }
 }

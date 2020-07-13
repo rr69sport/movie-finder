@@ -1,24 +1,28 @@
-const ls = localStorage
+const loSt = localStorage
 
-const setUser = (user) => {
+const setNewUser = (newUser) => {
 
-    if (ls.getItem('users') === null) {
+    if (loSt.getItem('users') === null) {
 
         const registeredUsers = []
-        registeredUsers.push(user)
-        ls.setItem('users', JSON.stringify(registeredUsers))
+        registeredUsers.push(newUser)
+        loSt.setItem('users', JSON.stringify(registeredUsers))
 
     } else {
 
-        const users = JSON.parse(ls.getItem('users'))
-        users.push(user)
-        ls.setItem('users', JSON.stringify(users))
+        const users = JSON.parse(loSt.getItem('users'))
+        users.push(newUser)
+        loSt.setItem('users', JSON.stringify(users))
     }
 }
 
-const getUsers = () => {
-    const users = JSON.parse(ls.getItem('users'))
+const getUser = (userId) => {
+
+    const users = JSON.parse(loSt.getItem('users'))
+
     users.forEach(user => {
-        console.log(user);
+        if (user.id === userId) {
+            insertIfLoggedIn() // Search Form
+        }
     });
 }

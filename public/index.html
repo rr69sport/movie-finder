@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.min.css?t=1594532030779">
+    <link rel="stylesheet" href="./css/styles.min.css?t=1594606828232">
 </head>
 
 <body>
@@ -22,6 +22,10 @@
         </div>
     </header>
 
+    <!-- Si se registra un usuario existente 
+    o se accede con un usuario que no existe -->
+    <section id="messages"></section>
+
     <!-- FORMS -->
     <section class="forms__modal forms__modal--account" id="append-forms"></section>
 
@@ -35,8 +39,9 @@
 
     <!-- FOOTER -->
     <footer class="main-footer">
-        <p>Ilustración SVG extraída de <a class="link" target="_blanck"
-                href="https://undraw.co/illustrations">undraw</a></p>
+        <p>Ilustración SVG extraída de
+            <a class="link" target="_blanck" href="https://undraw.co/illustrations">undraw</a>
+        </p>
     </footer>
 
     <!-- Formulario crear cuenta -->
@@ -51,7 +56,7 @@
             <label class="form__label">
                 <input type="password" name="repeatPass" class="form__input" placeholder="Repetir contraseña">
             </label>
-            <button class="form__button button button--call-to-action">Create Account</button>
+            <button class="form__button button button--call-to-action">Registrarse</button>
         </form>
     </template>
 
@@ -96,6 +101,10 @@
         </li>
     </template>
 
+    <template id="nonexistentUser-template">
+        <p class="messages"></p>
+    </template>
+
     <!-- Película -->
     <template id="movie-template">
         <div class="movie">
@@ -111,7 +120,7 @@
         </div>
     </template>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./js/scripts.min.js?t=1594532030779"></script>
+    <script src="./js/scripts.min.js?t=1594606828232"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+if (!currentUserLoggedIn()) {
 
     insertTemplate('login-and-register-template', 'account')
 
@@ -27,12 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         id: `${name}${pass}`
                     }
 
-                    // getUser(user)
-                    console.log(user);
+                    setCurrentUser(user) //Session Storage
 
-                    isLoggedIn = true
+                    insertIfLoggedIn() // Search Form
 
-                    insertIfLoggedIn()
+                    getUser(user.id)
 
                 } else {
                     if (name == '') {
@@ -80,11 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             favoriteMovies: []
                         }
 
-                        setUser(user)
+                        setCurrentUser(user.id) //Session Storage
 
-                        isLoggedIn = true
+                        setNewUser(user) // Local Storage
 
-                        insertIfLoggedIn()
+                        insertIfLoggedIn() // Search Form
 
                     } else {
 
@@ -137,4 +136,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
     })
-})
+
+} else {
+
+    insertIfLoggedIn() // Search Form
+
+    const logoutButton = document.getElementById('logout-button');
+
+    account.addEventListener('click', (e) => {
+        if (e.target === logoutButton) {
+
+            insertTemplate('login-and-register-template', 'account', true)
+
+            singOff()
+
+            currentUserLoggedIn()
+
+            removeTemplate('append-forms')
+        }
+    })
+}

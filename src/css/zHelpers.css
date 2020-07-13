@@ -56,3 +56,33 @@ puede ser un link o un botón
         opacity: .75;
     } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
 }
+
+/* 
+Si el usuario ingresado en register existe,
+o si se ingresa en login un usuario que no existe,
+se dispara este mensaje */
+.messages{
+    position: fixed;
+    top: 0;
+    left: 50%;
+
+    margin: 0;
+    padding: var(--unit);
+
+    transform: translate(-50%);
+
+    opacity: 1;
+
+    color: var(--dark-color);
+    background-color: var(--main-color);
+
+    z-index: 110;
+
+    animation: slideDown .25s linear;
+}
+@keyframes slideDown { 
+    from {
+        transform:translate(-50%) scale(.85);
+        opacity: 0;
+    } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
+}

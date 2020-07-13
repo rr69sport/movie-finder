@@ -23,6 +23,14 @@ const insertTemplate = (template, insertInto, replace = false) => {
     }
 }
 
+const removeTemplate = (removeTo) => {
+
+    const elem = document.getElementById(removeTo);
+    if (elem) {
+        elem.textContent = ''
+    }
+}
+
 /**
  * Asigna una clase css a "elem", pasado el tiempo asignado, la quita
  * 
@@ -110,7 +118,7 @@ const replaceClass = (elem, oldClass, newClass) => {
  * sino retirna false
  */
 const insertIfLoggedIn = () => {
-    if (isLoggedIn) {
+    if (currentUserLoggedIn()) {
         // Reemplaza la clase de donde se insertan los formularios
         replaceClass(appendForms, 'forms__modal--account', 'forms__modal--search')
 

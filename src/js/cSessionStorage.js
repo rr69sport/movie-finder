@@ -1,7 +1,7 @@
 const seSt = sessionStorage
 
-const setCurrentUser = (user) => {
-    seSt.setItem('currentUser', JSON.stringify(user))
+const setCurrentUser = (userId) => {
+    seSt.setItem('currentUser', JSON.stringify(userId))
 }
 
 const getCurrentUser = () => {

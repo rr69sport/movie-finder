@@ -1,5 +1,6 @@
 const loSt = localStorage
 
+// Guarda el usuario registrado
 const setNewUser = (newUser) => {
 
     if (loSt.getItem('users') === null) {
@@ -12,27 +13,35 @@ const setNewUser = (newUser) => {
 
         const users = JSON.parse(loSt.getItem('users'))
 
-        // users.forEach(user => {
-        //     if (user.id === newUser.id) {
+        let exists = ifUserExists(newUser.id)
 
-        //     } else {
-        //         console.log(`El usuario ${user.name} no existe`);
-        //     }
-        // });
-
-        users.push(newUser)
+        if (exists) {
+            alert(`El usuario ${newUser.id} ya existe`)
+        } else {
+            users.push(newUser)
+        }
 
         loSt.setItem('users', JSON.stringify(users))
     }
 }
 
-// const getUser = (userId) => {
+// Verifica que el usuario exista
+const ifUserExists = (userId) => {
 
-//     const users = JSON.parse(loSt.getItem('users'))
+    const users = JSON.parse(loSt.getItem('users'))
 
-//     users.forEach(user => {
-//         if (user.id === userId) {
-//             insertIfLoggedIn() // Search Form
-//         }
-//     });
-// }
+    let exists = 0
+
+    users.forEach(user => {
+        if (user.id === userId) {
+            exists = 1
+        }
+    })
+
+    if (exists === 1) {
+        return true
+    } else {
+        return false
+    }
+
+}

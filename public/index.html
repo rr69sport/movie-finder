@@ -6,7 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.min.css?t=1594616744301">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon.ico">
+    <link rel="manifest" href="./assets/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="./css/styles.min.css?t=1594803635293">
 </head>
 
 <body>
@@ -21,6 +26,14 @@
             <ul id="account" class="account display-flex align-items-center"></ul>
         </div>
     </header>
+
+    <!-- FAVORITES MOVIES-->
+    <section id="favorites" class="favorites">
+        <div class="close fixed">
+            <button id="close-favorites" class="button button--close">X</button>
+        </div>
+        <div id="favorites__movies"></div>
+    </section>
 
     <!-- FORMS -->
     <section class="forms__modal forms__modal--account" id="append-forms"></section>
@@ -42,14 +55,36 @@
 
     <!-- Formulario de login -->
     <template id="login-form-template">
+        <div class="close">
+            <button data-close="close" class="button button--close">X</button>
+        </div>
         <form class="form fade-in" id="login-form">
             <label class="form__label">
-                <input type="text" name="loginName" class="form__input" placeholder="Nombre de usuario">
+                <input type="text" id="login-name" class="form__input" placeholder="Nombre de usuario">
             </label>
             <label class="form__label">
-                <input type="password" name="loginPass" class="form__input" placeholder="Contraseña">
+                <input type="password" id="login-pass" class="form__input" placeholder="Contraseña">
             </label>
             <button class="form__button button button--call-to-action">Acceder</button>
+        </form>
+    </template>
+
+    <!-- Formulario crear cuenta -->
+    <template id="sing-in-template">
+        <div class="close">
+            <button data-close="close" class="button button--close">X</button>
+        </div>
+        <form class="form fade-in" id="sing-in-form">
+            <label class="form__label">
+                <input type="text" id="sing-in-name" class="form__input" placeholder="Nombre de usuario">
+            </label>
+            <label class="form__label">
+                <input type="password" id="sing-in-pass" class="form__input" placeholder="Contraseña">
+            </label>
+            <label class="form__label">
+                <input type="password" id="repeat-pass" class="form__input" placeholder="Repetir contraseña">
+            </label>
+            <button class="form__button button button--call-to-action">Create Account</button>
         </form>
     </template>
 
@@ -64,7 +99,10 @@
     <!-- Botón de Login -->
     <template id="login-and-register-template">
         <li class="account__button">
-            <button id="login-button" class="button button--call-to-action">Acceder</button>
+            <button id="register-button" class="button button--call-to-action">Registrarse</button>
+        </li>
+        <li class="account__button">
+            <button id="login-button" class="button">Acceder</button>
         </li>
     </template>
 
@@ -76,6 +114,20 @@
         <li class="account__button">
             <button id="logout-button" class="button">Cerrar Sesión</button>
         </li>
+    </template>
+
+    <!-- Template para los favoritos -->
+    <template id="favorites-template">
+        <div class="favorite display-flex">
+            <div class="favorite__img">
+                <img class="img"
+                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
+                    alt="">
+            </div>
+            <div class="favorite__info display-flex align-items-center">
+                <p>Avengers</p>
+            </div>
+        </div>
     </template>
 
     <!-- Película -->
@@ -92,8 +144,24 @@
             </div>
         </div>
     </template>
+
+    <!-- Mensaje de Bienvenida 
+    Se muestra si no existe usuario guardado en sessionStorage -->
+    <template id="messages-template">
+        <div class="messages">
+            <h2 class="messages__title display-flex just-cont-space-between">
+                <span>Gracias por preferirnos</span>
+                <span class="messages__close" data-close="close">X</span>
+            </h2>
+            <p>Con su nickname y su contraseña se genera un ID que es único.</p>
+            <p>Se utiliza para validar que en login no ingrese un usuario que no exista y en registro
+                para
+                que no se cree dos veces el mismo usuario.</p>
+            <p>Esperamos que disfrute de nuestro servicio :)</p>
+        </div>
+    </template>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./js/scripts.min.js?t=1594616744301"></script>
+    <script src="./js/scripts.min.js?t=1594803635293"></script>
 </body>
 
 </html>

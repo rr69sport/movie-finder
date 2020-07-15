@@ -1,0 +1,17 @@
+.messages{
+    padding:.5em 1em;
+    width: 100%;
+    background-color: var(--dark-color-hover);
+    z-index: 120;
+}
+.messages__title{
+    margin: .5em 0;
+    color: var(--main-color);
+}
+.messages__close{
+    padding:0 .25em;
+}
+.messages__close:hover{
+    background-color: var(--dark-color);
+    cursor: pointer;
+}

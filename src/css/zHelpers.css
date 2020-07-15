@@ -14,6 +14,12 @@
     margin-left: auto;
 }
 
+.fixed{
+    position: fixed;
+    margin-left: .45em;
+    z-index: 220;
+}
+
 /* Estilos para los "a" */
 /*
 Reescribe estilos del reset.css
@@ -27,32 +33,4 @@ puede ser un link o un botón
 }
 .link:hover{
     text-decoration: underline;
-}
-
-/* Si la contraseña de usuario al repetirla es la misma, asigna esta clase */
-.equal-to{
-    outline-color: rgb(102, 255, 0);
-}
-
-/* Si un campo de formulario está vacío se asigna esta clase */
-.alert,
-.alert::placeholder{
-    outline-color: var(--main-color);
-    color: var(--main-color);
-}
-
-.equal-to,
-.alert{
-    outline-width: 3px;
-    outline-style: solid;
-}
-
-/* Fade in */
-.fade-in{
-    animation: fadeIn .25s linear;
-}
-@keyframes fadeIn { 
-    from {
-        opacity: .75;
-    } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
 }

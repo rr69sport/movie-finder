@@ -46,3 +46,14 @@
     border-color: var(--dark-color);
     background-color: var(--dark-color-hover);
 }
+.close{
+    background-color: var(--dark-color-hover);
+}
+.button--close{
+    margin-left: auto;
+    width: 40px;
+    border: 1px solid var(--dark-color-hover);
+}
+.button--close:hover{
+    background-color: var(--dark-color);
+}

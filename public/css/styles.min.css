@@ -137,6 +137,17 @@ input{
     border-color: var(--dark-color);
     background-color: var(--dark-color-hover);
 }
+.close{
+    background-color: var(--dark-color-hover);
+}
+.button--close{
+    margin-left: auto;
+    width: 40px;
+    border: 1px solid var(--dark-color-hover);
+}
+.button--close:hover{
+    background-color: var(--dark-color);
+}
 /* Contenedor de formularios */
 .forms__modal{
     position: fixed;
@@ -307,6 +318,47 @@ input{
     transform: scale(1);
     opacity: 1;
 }
+.favorites{
+    position: fixed;
+    top: var(--header-height);
+    right: -280px;
+    width: 100%;
+    max-width: 280px;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--dark-color-hover);
+    z-index: 200;
+    overflow-x: auto;
+    transition: right var(--time-transition) ease;
+}
+.favorites__right{
+    right: 0;
+}
+.favorite{
+    position: relative;
+    top: 1.75em;
+    display: block;
+    margin: .5em;
+    padding: .5em;
+    height: 80px;
+    background-color: var(--dark-color);
+}
+.favorite__img,
+.img{
+    height: 100%;
+}
+.favorite__info{
+    width: 100%;
+    padding-left: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+@media screen and (max-width:800px){
+    .favorites{
+        top: calc(var(--header-height) * 2 + 1.29em);
+    }
+}
+
 .display-flex{
     display: flex;
 }
@@ -321,6 +373,12 @@ input{
     max-width: var(--max-width);
     margin-right: auto;
     margin-left: auto;
+}
+
+.fixed{
+    position: fixed;
+    margin-left: .45em;
+    z-index: 220;
 }
 
 /* Estilos para los "a" */
@@ -378,4 +436,22 @@ puede ser un link o un botón
     from {
         opacity: .75;
     } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
+}
+
+.messages{
+    padding:.5em 1em;
+    width: 100%;
+    background-color: var(--dark-color-hover);
+    z-index: 120;
+}
+.messages__title{
+    margin: .5em 0;
+    color: var(--main-color);
+}
+.messages__close{
+    padding:0 .25em;
+}
+.messages__close:hover{
+    background-color: var(--dark-color);
+    cursor: pointer;
 }

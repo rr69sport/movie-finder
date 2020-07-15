@@ -143,7 +143,7 @@ gulp.task("scripts-dev", () => {
 // Production
 gulp.task("images-production", () => {
     return gulp
-        .src("src/assets/images/**/*")
+        .src("src/assets/**/**")
         .pipe(plumber())
         .pipe(imagemin([
             imagemin.gifsicle({ interlaced: true }),
@@ -156,12 +156,12 @@ gulp.task("images-production", () => {
                 ]
             })
         ]))
-        .pipe(gulp.dest("public/assets/images"))
+        .pipe(gulp.dest("public/assets/"))
 })
 // Docs folder
 gulp.task("images-docs", () => {
     return gulp
-        .src("src/assets/images/**/*")
+        .src("src/assets/**/**")
         .pipe(plumber())
         .pipe(imagemin([
             imagemin.gifsicle({ interlaced: true }),
@@ -174,14 +174,14 @@ gulp.task("images-docs", () => {
                 ]
             })
         ]))
-        .pipe(gulp.dest("docs/assets/images"))
+        .pipe(gulp.dest("docs/assets/"))
 })
 // Development
 gulp.task("images-dev", () => {
     return gulp
-        .src("src/assets/images/**/*")
+        .src("src/assets/**/**")
         .pipe(plumber())
-        .pipe(gulp.dest("public/assets/images/"))
+        .pipe(gulp.dest("public/assets/"))
 })
 
 // Watchers

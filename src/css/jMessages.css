@@ -9,7 +9,8 @@
     color: var(--main-color);
 }
 .messages__close{
-    padding:0 .25em;
+    padding:.5em;
+    border:1px solid var(--dark-color);
 }
 .messages__close:hover{
     background-color: var(--dark-color);

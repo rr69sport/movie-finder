@@ -26,6 +26,7 @@ const insertTemplate = (template, insertInto, replace = false) => {
 const removeTemplate = (removeTo) => {
 
     const elem = document.getElementById(removeTo);
+
     if (elem) {
         elem.textContent = ''
     }
@@ -98,4 +99,37 @@ const replaceClass = (element, oldClass, newClass) => {
     } else {
         console.error(`La función "replaceClass()" dice: El elemento "${elem}" no existe o no tiene la clase "${oldClass}".`);
     }
+}
+
+
+const insertIfExistsUser = () => {
+    // Cambia el botón de acceder por
+    // el de cerrar sesión y favoritos
+    insertTemplate('logged-in-template', 'account', true)
+
+    // Inserta el template de búsqueda
+    insertTemplate('search-form-template', 'append-forms', true)
+
+    // Reemplaza la clase del contenedor
+    // del template de búsqueda 
+    replaceClass('append-forms', 'forms__modal--account', 'forms__modal--search')
+}
+
+const createElemForAlert = (elem, messagge, arrayClass, appendTo) => {
+
+    const el = document.createElement(elem)
+    const append = document.getElementById(appendTo);
+
+    arrayClass.forEach(addClass => {
+        el.classList.add(addClass)
+    });
+
+    el.textContent = messagge
+
+
+    append.appendChild(el)
+
+    setTimeout(() => {
+        append.textContent = ''
+    }, 1750);
 }

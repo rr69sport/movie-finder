@@ -1,7 +1,10 @@
 const seSt = sessionStorage
 
 const setCurrentUser = (userId) => {
+
     seSt.setItem('currentUser', JSON.stringify(userId))
+
+    insertIfExistsUser()
 }
 
 const getCurrentUser = () => {
@@ -18,4 +21,7 @@ const currentUserLoggedIn = () => {
 
 const singOff = () => {
     seSt.removeItem('currentUser')
+    if (favorites.classList.contains('favorites__right')) {
+        favorites.classList.remove('favorites__right')
+    }
 }

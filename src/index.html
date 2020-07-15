@@ -27,6 +27,9 @@
         </div>
     </header>
 
+    <!-- FORMS -->
+    <section class="forms__modal forms__modal--account" id="append-forms"></section>
+
     <!-- FAVORITES MOVIES-->
     <section id="favorites" class="favorites">
         <div class="close fixed">
@@ -35,16 +38,69 @@
         <div id="favorites__movies"></div>
     </section>
 
-    <!-- FORMS -->
-    <section class="forms__modal forms__modal--account" id="append-forms"></section>
-
     <!-- MOVIES -->
-    <section class="container movies">
-        <header class="movies__header">
-            <h1 class="movies__title">Peliculas</h1>
-        </header>
-        <div id="movies" class="movies__movie"></div>
+    <section id="movies" class="container movies">
+        <div class="movie">
+            <div class="movie__poster">
+                <img class="poster"
+                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
+                    alt="Cap America">
+            </div>
+            <div class="movie__info">
+                <h2 class="movie__title">Avenger</h2>
+                <button data-id="show-info" data-omdb="textorandom"
+                    class=" movie__button button button--call-to-action">Información</button>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie__poster">
+                <img class="poster"
+                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
+                    alt="Cap America">
+            </div>
+            <div class="movie__info">
+                <h2 class="movie__title">Avenger</h2>
+                <button data-id="show-info" class=" movie__button button button--call-to-action">Información</button>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie__poster">
+                <img class="poster"
+                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
+                    alt="Cap America">
+            </div>
+            <div class="movie__info">
+                <h2 class="movie__title">Avenger</h2>
+                <button data-id="show-info" class=" movie__button button button--call-to-action">Información</button>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie__poster">
+                <img class="poster"
+                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
+                    alt="Cap America">
+            </div>
+            <div class="movie__info">
+                <h2 class="movie__title">Avenger</h2>
+                <button data-id="show-info" class=" movie__button button button--call-to-action">Información</button>
+            </div>
+        </div>
+        <div class="movie">
+            <div class="movie__poster">
+                <img class="poster"
+                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
+                    alt="Cap America">
+            </div>
+            <div class="movie__info">
+                <h2 class="movie__title">Avenger</h2>
+                <button data-id="show-info" class=" movie__button button button--call-to-action">Información</button>
+            </div>
+        </div>
     </section>
+
+    <!-- Si se intenta registrar un usuario existente
+    o si se intenta acceder con un usuario inexistente -->
+    <section id="alerts"></section>
 
     <!-- FOOTER -->
     <footer class="main-footer">
@@ -91,7 +147,7 @@
     <!-- Formulario de búsqueda -->
     <template id="search-form-template">
         <form class="form form--search" id="search-form">
-            <input type="text" class="form__input" placeholder="Search a movie">
+            <input id="search" type="text" class="form__input" placeholder="Search a movie">
             <button class="button button--search">Buscar</button>
         </form>
     </template>
@@ -157,6 +213,7 @@
             <p>Se utiliza para validar que en login no ingrese un usuario que no exista y en registro
                 para
                 que no se cree dos veces el mismo usuario.</p>
+            <p>Si se alerta de que el usuario a registrar ya existe, solo cambia un caracter en cualquier campo.</p>
             <p>Esperamos que disfrute de nuestro servicio :)</p>
         </div>
     </template>

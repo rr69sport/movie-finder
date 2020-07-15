@@ -1,15 +1,39 @@
 // const button = document.getElementById('button');
 const apikey = '8651a58e'
-const link = `http://www.omdbapi.com/?apikey=${apikey}&s=avenger&plot=full`
 
-// button.addEventListener('click', () => {
-//     axios({
-//         method: 'GET',
-//         url: link
-//     }).then(res => {
-//         const movies = res.data.Search
-//         movies.forEach(movie => {
-//             console.log(movie.imdbID);
-//         });
-//     })
-// })
+const searchMovies = (movie) => {
+    const link = `http://www.omdbapi.com/?apikey=${apikey}&s=${movie}`
+    axios({
+        method: 'GET',
+        url: link
+    }).then(res => {
+        if (res.data.Response === 'True') {
+            appendMovies(res.data.Search);
+        } else {
+            createElemForAlert('p',
+                `Película no encontrada`,
+                ['alerts__alert', 'alert'],
+                'alerts')
+        }
+    }).catch(err => {
+        createElemForAlert('p',
+            `${err} no se encontró`,
+            ['alerts__alert', 'alert'],
+            'alerts')
+    })
+}
+
+const searchTitle = (movie) => {
+    const link = `http://www.omdbapi.com/?apikey=${apikey}&t=${movie}&plot=full`
+    axios({
+        method: 'GET',
+        url: link
+    }).then(res => {
+        console.log(res);
+    }).catch(err => {
+        createElemForAlert('p',
+            `${err} no se encontró`,
+            ['alerts__alert', 'alert'],
+            'alerts')
+    })
+}

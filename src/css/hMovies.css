@@ -1,11 +1,13 @@
 /* Contenedor general */
 .movies{
     padding: var(--unit);
-}
-.movies__movie{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: var(--unit);
+
+    margin-bottom: calc(var(--unit) * 2);
+
+    text-align: center;
 }
 
 /* Cada pelicula */
@@ -24,28 +26,17 @@
 /* La información */
 .movie__info{
     position: absolute;
-    top: 0;
     right: 0;
+    bottom: 0;
 
     width: 100%;
-    height: 100%;
-
-    display: grid;
-    place-items: center;
 
     background-color: rgba(10, 10, 10, .75);
-    color: var(--main-color);
-
-    transform: scale(.90);
-    opacity: 0;
-    transition-property: transform, opacity;
 }
-.movie__poster,
-.movie__info{
+.movie__poster{
     transition-timing-function: ease;
     transition-duration: var(--time-transition);
 }
-
 
 /* Hovers */
 .movie:hover .movie__poster{
@@ -54,4 +45,13 @@
 .movie:hover .movie__info{
     transform: scale(1);
     opacity: 1;
+}
+.movie__button{
+    width: 100%;
+}
+@media screen and (min-width: 1000px){
+    .movies{
+        padding-left: 0;
+        padding-right: 0;
+    }
 }

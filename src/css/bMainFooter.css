@@ -5,6 +5,7 @@
 
     width: 100%;
 
+    background-color: var(--dark-color-hover);
     text-align: center;
     font-size: .85em;
 }

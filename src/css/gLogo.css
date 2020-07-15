@@ -4,6 +4,8 @@
     padding: .35em;
 
     transition: background-color var(--time-transition) ease;
+
+    border-left: 1px solid var(--dark-color);
 }
 .logo:hover{
     background-color: var(--dark-color);

@@ -72,6 +72,7 @@ input{
 
     width: 100%;
 
+    background-color: var(--dark-color-hover);
     text-align: center;
     font-size: .85em;
 }
@@ -194,7 +195,7 @@ input{
 .form--search{
     display: flex;
     align-items: center;
-    padding: 1em 1.5em;
+    padding: var(--unit);
     border-top: 1px solid var(--dark-color);
 }
 
@@ -223,11 +224,73 @@ input{
 .account{
     height: var(--header-height);
     text-align: center;
+    border-right: 1px solid var(--dark-color);
 }
 
 /* Debe tener como hijo un componente botón */
 .account__button{
     flex: 1 1 auto;
+}
+/* Si la contraseña de usuario al repetirla es la misma, asigna esta clase */
+.equal-to{
+    outline-color: rgb(102, 255, 0);
+}
+
+/* Si un campo de formulario está vacío se asigna esta clase */
+.alert::-moz-placeholder{
+    outline-color: var(--main-color);
+    color: var(--main-color);
+}
+.alert::-ms-input-placeholder{
+    outline-color: var(--main-color);
+    color: var(--main-color);
+}
+.alert,
+.alert::placeholder{
+    outline-color: var(--main-color);
+    color: var(--main-color);
+}
+
+.equal-to,
+.alert{
+    outline-width: 3px;
+    outline-style: solid;
+}
+
+/* Fade in */
+.fade-in{
+    -webkit-animation: fadeIn .25s linear;
+            animation: fadeIn .25s linear;
+}
+@-webkit-keyframes fadeIn { 
+    from {
+        opacity: .75;
+    } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
+}
+@keyframes fadeIn { 
+    from {
+        opacity: .75;
+    } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
+}
+.alerts__alert{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    max-width: 290px;
+
+    padding: var(--unit);
+
+    background-color: var(--main-color);
+    color: var(--dark-color-hover);
+    text-align: center;
+    font-size: 1.3em;
+
+    outline-color: inherit;
+
+    transform: translate(-50%,-50%);
+    z-index: 240;
 }
 .logo{
     display: block;
@@ -235,6 +298,8 @@ input{
     padding: .35em;
 
     transition: background-color var(--time-transition) ease;
+
+    border-left: 1px solid var(--dark-color);
 }
 .logo:hover{
     background-color: var(--dark-color);
@@ -262,11 +327,13 @@ input{
 /* Contenedor general */
 .movies{
     padding: var(--unit);
-}
-.movies__movie{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: var(--unit);
+
+    margin-bottom: calc(var(--unit) * 2);
+
+    text-align: center;
 }
 
 /* Cada pelicula */
@@ -287,28 +354,17 @@ input{
 /* La información */
 .movie__info{
     position: absolute;
-    top: 0;
     right: 0;
+    bottom: 0;
 
     width: 100%;
-    height: 100%;
-
-    display: grid;
-    place-items: center;
 
     background-color: rgba(10, 10, 10, .75);
-    color: var(--main-color);
-
-    transform: scale(.90);
-    opacity: 0;
-    transition-property: transform, opacity;
 }
-.movie__poster,
-.movie__info{
+.movie__poster{
     transition-timing-function: ease;
     transition-duration: var(--time-transition);
 }
-
 
 /* Hovers */
 .movie:hover .movie__poster{
@@ -317,6 +373,15 @@ input{
 .movie:hover .movie__info{
     transform: scale(1);
     opacity: 1;
+}
+.movie__button{
+    width: 100%;
+}
+@media screen and (min-width: 1000px){
+    .movies{
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 .favorites{
     position: fixed;
@@ -359,6 +424,24 @@ input{
     }
 }
 
+.messages{
+    padding:.5em 1em;
+    width: 100%;
+    background-color: var(--dark-color-hover);
+    z-index: 120;
+}
+.messages__title{
+    margin: .5em 0;
+    color: var(--main-color);
+}
+.messages__close{
+    padding:.5em;
+    border:1px solid var(--dark-color);
+}
+.messages__close:hover{
+    background-color: var(--dark-color);
+    cursor: pointer;
+}
 .display-flex{
     display: flex;
 }
@@ -394,64 +477,4 @@ puede ser un link o un botón
 }
 .link:hover{
     text-decoration: underline;
-}
-
-/* Si la contraseña de usuario al repetirla es la misma, asigna esta clase */
-.equal-to{
-    outline-color: rgb(102, 255, 0);
-}
-
-/* Si un campo de formulario está vacío se asigna esta clase */
-.alert::-moz-placeholder{
-    outline-color: var(--main-color);
-    color: var(--main-color);
-}
-.alert::-ms-input-placeholder{
-    outline-color: var(--main-color);
-    color: var(--main-color);
-}
-.alert,
-.alert::placeholder{
-    outline-color: var(--main-color);
-    color: var(--main-color);
-}
-
-.equal-to,
-.alert{
-    outline-width: 3px;
-    outline-style: solid;
-}
-
-/* Fade in */
-.fade-in{
-    -webkit-animation: fadeIn .25s linear;
-            animation: fadeIn .25s linear;
-}
-@-webkit-keyframes fadeIn { 
-    from {
-        opacity: .75;
-    } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
-}
-@keyframes fadeIn { 
-    from {
-        opacity: .75;
-    } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
-}
-
-.messages{
-    padding:.5em 1em;
-    width: 100%;
-    background-color: var(--dark-color-hover);
-    z-index: 120;
-}
-.messages__title{
-    margin: .5em 0;
-    color: var(--main-color);
-}
-.messages__close{
-    padding:0 .25em;
-}
-.messages__close:hover{
-    background-color: var(--dark-color);
-    cursor: pointer;
 }

@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    insertTemplate('login-and-register-template', 'account')
-
     // Si sessionStorage retorna null
     // muestra un msj de aviso
     if (!currentUserLoggedIn()) {
         insertTemplate('messages-template', 'append-forms', true)
+
+        insertTemplate('login-and-register-template', 'account')
+
+    } else {
+
+        getUserLogin(getCurrentUser())
     }
 
 })
@@ -36,7 +40,7 @@ account.addEventListener('click', (e) => {
     // LOGOUT
     if (e.target.id === 'logout-button') {
 
-        console.log('Se desloqueó');
+        singOff()
 
         removeTemplate('append-forms')
 
@@ -65,19 +69,7 @@ appendForms.addEventListener('submit', (e) => {
                 id: `${name}${pass}`
             }
 
-            // Agrega el usuario actual sessionStorage
-            setCurrentUser(user.id)
-
-            // Cambia el botón de acceder por
-            // el de cerrar sesión y favoritos
-            insertTemplate('logged-in-template', 'account', true)
-
-            // Inserta el template de búsqueda
-            insertTemplate('search-form-template', 'append-forms', true)
-
-            // Reemplaza la clase del contenedor
-            // del template de búsqueda 
-            replaceClass('append-forms', 'forms__modal--account', 'forms__modal--search')
+            getUserLogin(user.id)
 
         } else {
             if (name == '') {
@@ -117,20 +109,6 @@ appendForms.addEventListener('submit', (e) => {
 
                 setNewUser(user)
 
-                // Agrega el usuario actual sessionStorage
-                setCurrentUser(user.id)
-
-                // Cambia el botón de acceder por
-                // el de cerrar sesión y favoritos
-                insertTemplate('logged-in-template', 'account', true)
-
-                // Inserta el template de búsqueda
-                insertTemplate('search-form-template', 'append-forms', true)
-
-                // Reemplaza la clase del contenedor
-                // del template de búsqueda 
-                replaceClass('append-forms', 'forms__modal--account', 'forms__modal--search')
-
 
             } else {
 
@@ -161,7 +139,13 @@ appendForms.addEventListener('submit', (e) => {
     }
 
     if (e.target.id === 'search-form') {
-        console.log('Está buscando');
+        const search = document.getElementById('search');
+        const movieTitle = search.value.trim().toLowerCase()
+
+        if (movieTitle !== '') {
+            searchMovies(movieTitle)
+        }
+        // searchTitle(movieTitle)
     }
 })
 
@@ -194,13 +178,20 @@ appendForms.addEventListener('keyup', (e) => {
 
 })
 
-// Escucha para el botón de cerrar
+// Escucha para el botón de cerrar de los formularios
 appendForms.addEventListener('click', (e) => {
     if (e.target.dataset.close === 'close') {
         appendForms.textContent = ''
     }
 })
 
+// Evento para la sección favoritos
 closeFavs.addEventListener('click', () => {
     favorites.classList.remove('favorites__right')
+})
+
+// Evento para detectar qué película 
+// se quiere mostrar la información
+moviesSection.addEventListener('click', (e) => {
+    console.log(e.target);
 })

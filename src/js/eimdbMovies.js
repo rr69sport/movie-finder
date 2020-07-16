@@ -32,12 +32,12 @@ const searchMovies = (movie) => {
 }
 
 const searchTitle = (movie) => {
-    const link = `https://www.omdbapi.com/?apikey=${apikey}&t=${movie}&plot=full`
+    const link = `https://www.omdbapi.com/?apikey=${apikey}&i=${movie}&plot=full`
     axios({
         method: 'GET',
         url: link
     }).then(res => {
-        console.log(res);
+        insertInfo(res.data);
     }).catch(err => {
         createElemForAlert('p',
             `${err} no se encontró`,

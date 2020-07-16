@@ -1,136 +1,54 @@
-const createElem = (elem) => {
+const insertMovie = (movie) => {
 
-    const el = document.createElement(elem.toUpperCase())
+    const movieElems = document.createElement('DIV')
+    movieElems.classList.add('movie')
 
-    return el
+    movieElems.innerHTML = `<button class="button movie__favorite" data-favoriteid="${movie.imdbID}">
+            <img src="./assets/favorites/bookmark.svg" class="movie__favorite--svg" data-addfavorite="add-favorite">
+        </button>
+        <div class="movie__poster">
+            <img src="${movie.Poster}" class="poster">
+        </div>
+        <div class="movie__info">
+            <h2 class="movie__title">${movie.Title}</h2>
+            <button class="movie__button button button--call-to-action" data-id="show-info" data-imdbid="${movie.imdbID}">Información</button>
+        </div>`
+    fragment.appendChild(movieElems)
 }
-
-const addContent = (elem, content) => {
-
-    elem.textContent = content
-
-    return elem
-}
-
-const addChildrens = (elem, childrens) => {
-
-    childrens.forEach(child => {
-        elem.appendChild(child)
-    })
-
-    return elem
-}
-
-const addDataAttr = (elem, dataAttr) => {
-
-    for (const key in dataAttr) {
-        if (dataAttr.hasOwnProperty(key)) {
-            const attr = dataAttr[key];
-            elem.setAttribute(`data-${key}`, attr)
-        }
-    }
-
-    return elem
-}
-
-const addAttrs = (elem, attrs) => {
-
-    for (const key in attrs) {
-        if (attrs.hasOwnProperty(key)) {
-            const attr = attrs[key];
-            elem.setAttribute(key, attr)
-
-        }
-    }
-
-    return elem
-}
-
-
-// Refactorizar urgente
-const appendMovies = (movie) => {
-
-    // Movie container
-    const movieElem = createElem('div')
-    addAttrs(movieElem, {
-        class: 'movie'
-    })
-
-    // Favorite button
-    const favoriteButton = createElem('button')
-    addAttrs(favoriteButton, {
-        class: 'button movie__favorite'
-    })
-    addDataAttr(favoriteButton, {
-        favorite: 'favorite',
-        favoriteId: movie.imdbID
-    })
-
-    // Favorite icon > child Favorite button
-    const favoriteImg = createElem('img')
-    addAttrs(favoriteImg, {
-        src: './assets/favorites/bookmark.svg'
-    })
-    addDataAttr(favoriteImg, {
-        addfavorite: 'add-favorite'
-    })
-    favoriteButton.appendChild(favoriteImg)
-
-
-    // Poster movie
-    const moviePoster = createElem('div')
-    addAttrs(moviePoster, {
-        class: 'movie__poster'
-    })
-    // Poster > child Poster movie
-    const poster = createElem('img')
-    addAttrs(poster, {
-        src: movie.Poster,
-        class: 'poster'
-    })
-    moviePoster.appendChild(poster)
-
-    // Movie info
-    const movieInfo = createElem('div')
-    addAttrs(movieInfo, {
-        class: 'movie__info'
-    })
-    // Title > child Movie info
-    const movieTitle = createElem('h2')
-    addAttrs(movieTitle, {
-        class: 'movie__title'
-    })
-    addContent(movieTitle, movie.Title)
-
-    // Show info > child Movie info
-    const showInfoButton = createElem('button')
-    addAttrs(showInfoButton, {
-        class: 'button movie__favorite'
-    })
-    addAttrs(showInfoButton, {
-        class: 'movie__button button button--call-to-action'
-    })
-    addDataAttr(showInfoButton, {
-        id: 'show-info',
-        imdbID: movie.imdbID
-    })
-    addContent(showInfoButton, 'Información')
-
-    movieInfo.appendChild(movieTitle)
-    movieInfo.appendChild(showInfoButton)
-
-    movieElem.appendChild(favoriteButton)
-    movieElem.appendChild(moviePoster)
-    movieElem.appendChild(movieInfo)
-
-    fragment.appendChild(movieElem)
-}
-
 const insertMovies = (movies) => {
 
     movies.forEach(movie => {
-        appendMovies(movie)
+        insertMovie(movie)
     });
+
+    moviesSection.appendChild(fragment)
+}
+
+const insertInfo = (movie) => {
+
+    const movieInfo = document.createElement('DIV')
+    movieInfo.classList.add('movies__info')
+
+    movieInfo.innerHTML = `<div class="close">
+                <button data-close="close" class="button button--close">X</button>
+            </div>
+            <div class="movies__info--img">
+                <img src="${movie.Poster}">
+            </div>
+            <div class="movies__info--details">
+                <h1 class="movies__info--title">${movie.Title}</h1>
+                <p>Actors: ${movie.Actors}</p>
+                <p>Writes: ${movie.Writer}</p>
+                <p>Production: ${movie.Production}</p>
+                <p>Director: ${movie.Director}</p>
+                <p>Genre: ${movie.Genre}</p>
+                <p>Language: ${movie.Language}</p>
+                <p>Plot: ${movie.Plot}</p>
+                <p>Runtime: ${movie.Runtime}</p>
+                <p>Year: ${movie.Year}</p>
+                <p>Ranking: ${movie.imdbRating}</p>
+            </div>`
+    fragment.appendChild(movieInfo)
 
     moviesSection.appendChild(fragment)
 }

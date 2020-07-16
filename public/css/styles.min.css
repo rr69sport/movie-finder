@@ -384,63 +384,75 @@ input{
 .movie__button:hover{
     background-color: var(--dark-color-hover);
 }
-.movies__info{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-
-    padding: var(--unit);
-    
-    width: 100%;
-    max-width: 400px;
-    max-height: 100vh;
-    
-    background-color: var(--dark-color);
-    
-    transform: translate(-50%, -50%);
-
-    border: 3px solid var(--dark-color-hover);
-
-    z-index: var(--z-index-fixed);
-
-    overflow-x: auto;
-}
 
 /* Botón de Favoritos */
-.movie__favorite,
-.movie__favorite--img{
+.movie__favorite{
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 1;
-}
-.movie__favorite{
+
+    padding: 0;
+
     width: 60px;
     height: 60px;
     
-
     background-color: rgba(100,100, 100,.02);
     -webkit-backdrop-filter: blur(4px);
             backdrop-filter: blur(4px);
-}
-.movie__favorite--img{
-    margin: .5em;
-    fill: var(--main-color);
-}
-.movie__favorite--img:hover{
-    fill: var(--dark-color);
-}
 
-.movie__favorite--add-favorite{
-
+    z-index: 1;
 }
-
+.movie__favorite--svg{
+    padding: .25em;
+}
 /* Medias queries */
 @media screen and (min-width: 1000px){
     .movies{
         padding-left: 0;
         padding-right: 0;
     }
+}
+
+/* Imformación completa */
+.movies__info{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    
+    width: 100%;
+    max-width: 600px;
+    max-height: 100vh;
+    
+    background-color: var(--dark-color);
+    
+    transform: translate(-50%, -50%);
+
+    border: 3px solid var(--dark-color);
+
+    z-index: var(--z-index-fixed);
+
+    overflow-x: auto;
+}
+.movies__info--img{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.movies__info--details{
+    background-color: rgba(248, 248, 255, .85);
+    color: var(--dark-color);
+    padding: var(--unit);
+}
+.movies__info--title{
+    margin-top: 0;
+    padding: .5em;
+    color: var(--main-color);
+    background-color: var(--dark-color);
+}
+.movies__info--details > * {
+    line-height: 1.35;
 }
 .favorites{
     position: fixed;

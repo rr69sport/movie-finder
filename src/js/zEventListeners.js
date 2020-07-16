@@ -203,7 +203,7 @@ moviesSection.addEventListener('click', (e) => {
 
     if (e.target.dataset.id === 'show-info') {
 
-        console.log(e.target.dataset.imdbid);
+        searchTitle(e.target.dataset.imdbid);
     }
 
     if (e.target.dataset.close === 'close') {
@@ -211,9 +211,8 @@ moviesSection.addEventListener('click', (e) => {
         moviesSection.removeChild(e.target.parentElement.parentElement)
     }
 
-    if (e.target.dataset.favorite === 'favorite' ||
-        e.target.dataset.addfavorite === 'add-favorite') {
+    if (e.target.dataset.addfavorite === 'add-favorite') {
 
-        console.log(e.target.dataset.imdbid);
+        console.log(e.target.parentElement.dataset.favoriteid);
     }
 })

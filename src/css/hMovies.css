@@ -2,7 +2,8 @@
 .movies{
     padding: var(--unit);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    place-items: center;
     gap: var(--unit);
 
     margin-bottom: calc(var(--unit) * 2);
@@ -34,7 +35,8 @@
 
     width: 100%;
 
-    background-color: var(--dark-color);
+    background-color: rgba(23, 32, 42,.4);
+    backdrop-filter: blur(2px);
 
     border-top: 3px solid var(--dark-color-hover);
 }
@@ -81,13 +83,12 @@
     position: absolute;
     top: 0;
     right: 0;
-
+    z-index: 1;
 }
 .movie__favorite{
     width: 60px;
     height: 60px;
     
-    z-index: var(--z-index-fixed);
 
     background-color: rgba(100,100, 100,.02);
     backdrop-filter: blur(4px);

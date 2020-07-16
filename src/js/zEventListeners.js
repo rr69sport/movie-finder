@@ -43,6 +43,8 @@ account.addEventListener('click', (e) => {
 
         removeTemplate('append-forms')
 
+        removeTemplate('movies')
+
         replaceClass('append-forms', 'forms__modal--search', 'forms__modal--account')
 
         insertTemplate('login-and-register-template', 'account', true)
@@ -137,16 +139,19 @@ appendForms.addEventListener('submit', (e) => {
         }
     }
 
+    // Search form
     if (e.target.id === 'search-form') {
         const searchForm = document.getElementById('search-form');
         const search = document.getElementById('search');
         const movieTitle = search.value.trim().toLowerCase()
 
         if (movieTitle !== '') {
+
             searchMovies(movieTitle)
+
             searchForm.reset()
+
         }
-        // searchTitle(movieTitle)
     }
 })
 
@@ -188,20 +193,27 @@ appendForms.addEventListener('click', (e) => {
 
 // Evento para la sección favoritos
 closeFavs.addEventListener('click', () => {
+
     favorites.classList.remove('favorites__right')
 })
 
 // Evento para detectar qué película 
 // se quiere mostrar la información
 moviesSection.addEventListener('click', (e) => {
+
     if (e.target.dataset.id === 'show-info') {
+
         console.log(e.target.dataset.imdbid);
     }
+
     if (e.target.dataset.close === 'close') {
+
         moviesSection.removeChild(e.target.parentElement.parentElement)
     }
+
     if (e.target.dataset.favorite === 'favorite' ||
         e.target.dataset.addfavorite === 'add-favorite') {
+
         console.log(e.target.dataset.imdbid);
     }
 })

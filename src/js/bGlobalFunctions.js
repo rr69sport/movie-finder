@@ -131,5 +131,5 @@ const createElemForAlert = (elem, messagge, arrayClass, appendTo) => {
 
     setTimeout(() => {
         append.textContent = ''
-    }, 1750);
+    }, time);
 }

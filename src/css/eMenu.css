@@ -2,7 +2,7 @@
 .account{
     height: var(--header-height);
     text-align: center;
-    border-right: 1px solid var(--dark-color);
+    border-right: 1px solid var(--dark-color-lighten);
 }
 
 /* Debe tener como hijo un componente botón */

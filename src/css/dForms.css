@@ -13,18 +13,18 @@
 
 /* Formularios - Estilos comunes */
 .form{
-    padding: var(--unit);
+    padding: var(--unit-em);
 
-    background-color: var(--dark-color-hover);
+    background-color: var(--dark-color-darken);
 }
 .form__label{
-    margin-bottom: var(--unit);
+    margin-bottom: var(--unit-em);
 }
 .form__input{
-    padding: calc(var(--unit) / 2);
+    padding: calc(var(--unit-em) / 2);
 }
 .form__button{
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--main-color-lighten);
 }
 .form__input,
 .form__button{
@@ -34,7 +34,7 @@
 
 /* Formularios de Login y Registro */
 .forms__modal--account{
-    margin-top: var(--unit);
+    margin-top: var(--unit-em);
 }
 
 /* Formulario de Búsqueda */
@@ -44,8 +44,8 @@
 .form--search{
     display: flex;
     align-items: center;
-    padding: var(--unit);
-    border-top: 1px solid var(--dark-color);
+    padding: var(--unit-em);
+    border-top: 1px solid var(--dark-color-lighten);
 }
 
 @media screen and (min-width: 800px){

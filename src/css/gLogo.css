@@ -4,23 +4,24 @@
     padding: .35em;
 
     transition: background-color var(--time-transition) ease;
+    
 
-    border-left: 1px solid var(--dark-color);
+    border-left: 1px solid var(--dark-color-lighten);
 }
 .logo:hover{
-    background-color: var(--dark-color);
+    background-color: var(--dark-color-lighten);
 }
 
 .logo__first-letter{
-    color:var(--main-color);
-    font-size: calc(var(--unit) * 1.5);
+    color:var(--main-color-lighten);
+    font-size: calc(var(--unit-em) * 1.5);
     font-weight: 700;
 }
 
 @media screen and (min-width: 450px){
     .logo__movie::after,
     .logo__finder::after{
-        color: var(--light-color);
+        color: var(--light-color-lighten);
         font-weight: 100;
     }
     .logo__movie::after{

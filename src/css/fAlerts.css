@@ -6,8 +6,8 @@
 /* Si un campo de formulario está vacío se asigna esta clase */
 .alert,
 .alert::placeholder{
-    outline-color: var(--main-color);
-    color: var(--main-color);
+    outline-color: var(--main-color-lighten);
+    color: var(--main-color-lighten);
 }
 
 .equal-to,
@@ -33,10 +33,10 @@
     width: 100%;
     max-width: 290px;
 
-    padding: var(--unit);
+    padding: var(--unit-em);
 
-    background-color: var(--main-color);
-    color: var(--dark-color-hover);
+    background-color: var(--main-color-lighten);
+    color: var(--dark-color-darken);
     text-align: center;
     font-size: 1.3em;
 

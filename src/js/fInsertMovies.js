@@ -1,14 +1,14 @@
 const insertMovie = (movie) => {
 
-    const movieElems = document.createElement('DIV')
+    const movieElems = document.createElement('ARTICLE')
     movieElems.classList.add('movie')
 
     movieElems.innerHTML = `<button class="button movie__favorite" data-favoriteid="${movie.imdbID}">
             <img src="./assets/favorites/bookmark.svg" class="movie__favorite--svg" data-addfavorite="add-favorite">
         </button>
-        <div class="movie__poster">
+        <picture class="movie__poster">
             <img src="${movie.Poster}" class="poster">
-        </div>
+        </picture>
         <div class="movie__info">
             <h2 class="movie__title">${movie.Title}</h2>
             <button class="movie__button button button--call-to-action" data-id="show-info" data-imdbid="${movie.imdbID}">Información</button>
@@ -26,16 +26,16 @@ const insertMovies = (movies) => {
 
 const insertInfo = (movie) => {
 
-    const movieInfo = document.createElement('DIV')
+    const movieInfo = document.createElement('ARTICLE')
     movieInfo.classList.add('movies__info')
 
     movieInfo.innerHTML = `<div class="close">
                 <button data-close="close" class="button button--close">X</button>
             </div>
-            <div class="movies__info--img">
+            <picture class="movies__info--img">
                 <img src="${movie.Poster}">
-            </div>
-            <div class="movies__info--details">
+            </picture>
+            <section class="movies__info--details">
                 <h1 class="movies__info--title">${movie.Title}</h1>
                 <p>Actors: ${movie.Actors}</p>
                 <p>Writes: ${movie.Writer}</p>
@@ -47,7 +47,7 @@ const insertInfo = (movie) => {
                 <p>Runtime: ${movie.Runtime}</p>
                 <p>Year: ${movie.Year}</p>
                 <p>Ranking: ${movie.imdbRating}</p>
-            </div>`
+            </section>`
     fragment.appendChild(movieInfo)
 
     moviesSection.appendChild(fragment)

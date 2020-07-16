@@ -6,9 +6,9 @@
     width: 100%;
     height: var(--header-height);
 
-    padding: 0 var(--unit);
+    padding: 0 var(--unit-em);
 
-    color: var(--light-color);
-    background-color: var(--dark-color-hover);
+    color: var(--light-color-lighten);
+    background-color: var(--dark-color-darken);
     z-index: var(--z-index-fixed);
 }

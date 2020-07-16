@@ -11,8 +11,8 @@ body{
 
     font-family: sans-serif;
 
-    color: var(--light-color);
-    background: fixed var(--dark-color) url('../assets/images/index/undraw_movie_night_fldd.svg') center no-repeat;
+    color: var(--light-color-lighten);
+    background: fixed var(--dark-color-lighten) url('../assets/images/index/undraw_movie_night_fldd.svg') center no-repeat;
     background-size: contain;
 }
 ul {

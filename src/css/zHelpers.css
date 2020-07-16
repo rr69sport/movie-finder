@@ -27,8 +27,10 @@ Se tiene en cuenta que un "a"
 puede ser un link o un botón
 */
 .link{
+    color: var(--main-color-lighten);
+
     text-transform: uppercase;
-    color: var(--main-color);
+    
     font-size: .82em;
 }
 .link:hover{

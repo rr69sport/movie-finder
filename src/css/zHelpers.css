@@ -17,7 +17,7 @@
 .fixed{
     position: fixed;
     margin-left: .45em;
-    z-index: 220;
+    z-index: var(--z-index-fixed);
 }
 
 /* Estilos para los "a" */

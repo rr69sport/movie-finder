@@ -2,12 +2,17 @@
     position: fixed;
     top: var(--header-height);
     right: -280px;
+
     width: 100%;
     max-width: 280px;
     height: calc(100vh - var(--header-height));
+
     background-color: var(--dark-color-hover);
-    z-index: 200;
+
     overflow-x: auto;
+
+    z-index: var(--z-index-fixed);
+
     transition: right var(--time-transition) ease;
 }
 .favorites__right{
@@ -16,10 +21,14 @@
 .favorite{
     position: relative;
     top: 1.75em;
+
     display: block;
+
     margin: .5em;
     padding: .5em;
+
     height: 80px;
+
     background-color: var(--dark-color);
 }
 .favorite__img,
@@ -28,9 +37,12 @@
 }
 .favorite__info{
     width: 100%;
+
     padding-left: 1em;
+
     text-align: center;
     text-transform: uppercase;
+    
     color: var(--main-color);
 }
 @media screen and (max-width:800px){

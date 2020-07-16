@@ -9,16 +9,16 @@
     --dark-color       : rgb(39, 55, 70);
     --dark-color-hover : rgb(23, 32, 42);
 
-
     /* Units */
     --unit             : 1em;
     --header-height    : calc(var(--unit) * 3);
     --max-width         : 1000px;
 
-
     /* Times */
     --time-transition  : .15s;
     --time-animation   : 1s;
+
+    --z-index-fixed: 50;
 }
 *,
 *::after,
@@ -88,7 +88,7 @@ input{
 
     color: var(--light-color);
     background-color: var(--dark-color-hover);
-    z-index: 100;
+    z-index: var(--z-index-fixed);
 }
 /* Todos los botones */
 .button{
@@ -159,7 +159,7 @@ input{
 
     transform: translateX(50%);
 
-    z-index: 100;
+    z-index: var(--z-index-fixed);
 }
 
 /* Formularios - Estilos comunes */
@@ -290,7 +290,7 @@ input{
     outline-color: inherit;
 
     transform: translate(-50%,-50%);
-    z-index: 240;
+    z-index: var(--z-index-fixed);
 }
 .logo{
     display: block;
@@ -343,6 +343,9 @@ input{
     overflow: hidden;
     border: 3px solid var(--dark-color-hover);
 }
+.movie__title{
+    color: var(--main-color);
+}
 
 /* La imágen */
 .movie__poster{
@@ -359,7 +362,9 @@ input{
 
     width: 100%;
 
-    background-color: rgba(10, 10, 10, .75);
+    background-color: var(--dark-color);
+
+    border-top: 3px solid var(--dark-color-hover);
 }
 .movie__poster{
     transition-timing-function: ease;
@@ -368,15 +373,67 @@ input{
 
 /* Hovers */
 .movie:hover .movie__poster{
-    transform: scale(1.1);
-}
-.movie:hover .movie__info{
-    transform: scale(1);
-    opacity: 1;
+    transform: scale(1.05);
 }
 .movie__button{
     width: 100%;
 }
+.movie__button:hover{
+    background-color: var(--dark-color-hover);
+}
+.movies__info{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    padding: var(--unit);
+    
+    width: 100%;
+    max-width: 400px;
+    max-height: 100vh;
+    
+    background-color: var(--dark-color);
+    
+    transform: translate(-50%, -50%);
+
+    border: 3px solid var(--dark-color-hover);
+
+    z-index: var(--z-index-fixed);
+
+    overflow-x: auto;
+}
+
+/* Botón de Favoritos */
+.movie__favorite,
+.movie__favorite--img{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+.movie__favorite{
+    width: 60px;
+    height: 60px;
+    
+    z-index: var(--z-index-fixed);
+
+    background-color: rgba(100,100, 100,.02);
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+}
+.movie__favorite--img{
+    margin: .5em;
+    fill: var(--main-color);
+}
+.movie__favorite--img:hover{
+    fill: var(--dark-color);
+}
+
+.movie__favorite--add-favorite{
+
+}
+
+/* Medias queries */
 @media screen and (min-width: 1000px){
     .movies{
         padding-left: 0;
@@ -387,12 +444,17 @@ input{
     position: fixed;
     top: var(--header-height);
     right: -280px;
+
     width: 100%;
     max-width: 280px;
     height: calc(100vh - var(--header-height));
+
     background-color: var(--dark-color-hover);
-    z-index: 200;
+
     overflow-x: auto;
+
+    z-index: var(--z-index-fixed);
+
     transition: right var(--time-transition) ease;
 }
 .favorites__right{
@@ -401,10 +463,14 @@ input{
 .favorite{
     position: relative;
     top: 1.75em;
+
     display: block;
+
     margin: .5em;
     padding: .5em;
+
     height: 80px;
+
     background-color: var(--dark-color);
 }
 .favorite__img,
@@ -413,9 +479,12 @@ input{
 }
 .favorite__info{
     width: 100%;
+
     padding-left: 1em;
+
     text-align: center;
     text-transform: uppercase;
+    
     color: var(--main-color);
 }
 @media screen and (max-width:800px){
@@ -426,9 +495,12 @@ input{
 
 .messages{
     padding:.5em 1em;
+
     width: 100%;
+
     background-color: var(--dark-color-hover);
-    z-index: 120;
+
+    z-index: var(--z-index-fixed);
 }
 .messages__title{
     margin: .5em 0;
@@ -461,7 +533,7 @@ input{
 .fixed{
     position: fixed;
     margin-left: .45em;
-    z-index: 220;
+    z-index: var(--z-index-fixed);
 }
 
 /* Estilos para los "a" */

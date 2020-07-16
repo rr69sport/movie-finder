@@ -43,5 +43,5 @@
     outline-color: inherit;
 
     transform: translate(-50%,-50%);
-    z-index: 240;
+    z-index: var(--z-index-fixed);
 }

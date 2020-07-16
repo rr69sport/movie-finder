@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon.ico">
     <link rel="manifest" href="./assets/favicon_io/site.webmanifest">
-    <link rel="stylesheet" href="./css/styles.min.css?t=1594853071296">
+    <link rel="stylesheet" href="./css/styles.min.css?t=1594871109085">
 </head>
 
 <body>
@@ -40,62 +40,21 @@
 
     <!-- MOVIES -->
     <section id="movies" class="container movies">
-        <div class="movie">
+        <!-- <div class="movie">
+            <button data-favorite="favorite" class="button movie__favorite">
+                <img data-addfavorite="add-favorite" src="./assets/favorites/bookmark.svg" alt="">
+            </button>
             <div class="movie__poster">
                 <img class="poster"
                     src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
-                    alt="Cap America">
+                    alt="">
             </div>
             <div class="movie__info">
                 <h2 class="movie__title">Avenger</h2>
                 <button data-id="show-info" data-omdb="textorandom"
-                    class=" movie__button button button--call-to-action">Información</button>
+                    class="movie__button button button--call-to-action">Información</button>
             </div>
-        </div>
-        <div class="movie">
-            <div class="movie__poster">
-                <img class="poster"
-                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
-                    alt="Cap America">
-            </div>
-            <div class="movie__info">
-                <h2 class="movie__title">Avenger</h2>
-                <button data-id="show-info" class=" movie__button button button--call-to-action">Información</button>
-            </div>
-        </div>
-        <div class="movie">
-            <div class="movie__poster">
-                <img class="poster"
-                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
-                    alt="Cap America">
-            </div>
-            <div class="movie__info">
-                <h2 class="movie__title">Avenger</h2>
-                <button data-id="show-info" class=" movie__button button button--call-to-action">Información</button>
-            </div>
-        </div>
-        <div class="movie">
-            <div class="movie__poster">
-                <img class="poster"
-                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
-                    alt="Cap America">
-            </div>
-            <div class="movie__info">
-                <h2 class="movie__title">Avenger</h2>
-                <button data-id="show-info" class=" movie__button button button--call-to-action">Información</button>
-            </div>
-        </div>
-        <div class="movie">
-            <div class="movie__poster">
-                <img class="poster"
-                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
-                    alt="Cap America">
-            </div>
-            <div class="movie__info">
-                <h2 class="movie__title">Avenger</h2>
-                <button data-id="show-info" class=" movie__button button button--call-to-action">Información</button>
-            </div>
-        </div>
+        </div> -->
     </section>
 
     <!-- Si se intenta registrar un usuario existente
@@ -186,21 +145,6 @@
         </div>
     </template>
 
-    <!-- Película -->
-    <template id="movie-template">
-        <div class="movie">
-            <div class="movie__poster">
-                <img class="poster" data-poster="Poster"
-                    src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
-                    alt="Cap America">
-            </div>
-            <div class="movie__info">
-                <h2 data-title="Avenger" class="movie__title">Avenger</h2>
-                <p data-imdbRating="Rating">imdbRating: 5.6</p>
-            </div>
-        </div>
-    </template>
-
     <!-- Mensaje de Bienvenida 
     Se muestra si no existe usuario guardado en sessionStorage -->
     <template id="messages-template">
@@ -218,7 +162,7 @@
         </div>
     </template>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./js/scripts.min.js?t=1594853071296"></script>
+    <script src="./js/scripts.min.js?t=1594871109085"></script>
 </body>
 
 </html>

@@ -17,3 +17,5 @@ const alerts = document.getElementById('alerts');
 
 // Time to change message in alerts
 const time = 1900
+
+const fragment = document.createDocumentFragment()

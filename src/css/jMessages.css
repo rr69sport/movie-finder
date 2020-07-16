@@ -1,8 +1,11 @@
 .messages{
     padding:.5em 1em;
+
     width: 100%;
+
     background-color: var(--dark-color-hover);
-    z-index: 120;
+
+    z-index: var(--z-index-fixed);
 }
 .messages__title{
     margin: .5em 0;

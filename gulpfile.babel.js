@@ -143,7 +143,7 @@ gulp.task("scripts-dev", () => {
 // Production
 gulp.task("images-production", () => {
     return gulp
-        .src("src/assets/**/**")
+        .src("src/assets/**/*")
         .pipe(plumber())
         .pipe(imagemin([
             imagemin.gifsicle({ interlaced: true }),
@@ -161,7 +161,7 @@ gulp.task("images-production", () => {
 // Docs folder
 gulp.task("images-docs", () => {
     return gulp
-        .src("src/assets/**/**")
+        .src("src/assets/**/*")
         .pipe(plumber())
         .pipe(imagemin([
             imagemin.gifsicle({ interlaced: true }),
@@ -179,8 +179,19 @@ gulp.task("images-docs", () => {
 // Development
 gulp.task("images-dev", () => {
     return gulp
-        .src("src/assets/**/**")
+        .src("src/assets/**/*")
         .pipe(plumber())
+        .pipe(imagemin([
+            imagemin.gifsicle({ interlaced: true }),
+            imagemin.mozjpeg({ quality: 75, progressive: true }),
+            imagemin.optipng({ optimizationLevel: 5 }),
+            imagemin.svgo({
+                plugins: [
+                    { removeViewBox: true },
+                    { cleanupIDs: false }
+                ]
+            })
+        ]))
         .pipe(gulp.dest("public/assets/"))
 })
 

@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
-
 account.addEventListener('click', (e) => {
 
     // LOGIN
@@ -139,11 +138,13 @@ appendForms.addEventListener('submit', (e) => {
     }
 
     if (e.target.id === 'search-form') {
+        const searchForm = document.getElementById('search-form');
         const search = document.getElementById('search');
         const movieTitle = search.value.trim().toLowerCase()
 
         if (movieTitle !== '') {
             searchMovies(movieTitle)
+            searchForm.reset()
         }
         // searchTitle(movieTitle)
     }
@@ -193,5 +194,14 @@ closeFavs.addEventListener('click', () => {
 // Evento para detectar qué película 
 // se quiere mostrar la información
 moviesSection.addEventListener('click', (e) => {
-    console.log(e.target);
+    if (e.target.dataset.id === 'show-info') {
+        console.log(e.target.dataset.imdbid);
+    }
+    if (e.target.dataset.close === 'close') {
+        moviesSection.removeChild(e.target.parentElement.parentElement)
+    }
+    if (e.target.dataset.favorite === 'favorite' ||
+        e.target.dataset.addfavorite === 'add-favorite') {
+        console.log(e.target.dataset.imdbid);
+    }
 })

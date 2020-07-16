@@ -8,7 +8,8 @@ const searchMovies = (movie) => {
         url: link
     }).then(res => {
         if (res.data.Response === 'True') {
-            appendMovies(res.data.Search);
+            insertMovies(res.data.Search);
+            console.log(res.data.Search);
         } else {
             createElemForAlert('p',
                 `Película no encontrada`,

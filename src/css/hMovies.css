@@ -17,6 +17,9 @@
     overflow: hidden;
     border: 3px solid var(--dark-color-hover);
 }
+.movie__title{
+    color: var(--main-color);
+}
 
 /* La imágen */
 .movie__poster{
@@ -31,7 +34,9 @@
 
     width: 100%;
 
-    background-color: rgba(10, 10, 10, .75);
+    background-color: var(--dark-color);
+
+    border-top: 3px solid var(--dark-color-hover);
 }
 .movie__poster{
     transition-timing-function: ease;
@@ -40,15 +45,66 @@
 
 /* Hovers */
 .movie:hover .movie__poster{
-    transform: scale(1.1);
-}
-.movie:hover .movie__info{
-    transform: scale(1);
-    opacity: 1;
+    transform: scale(1.05);
 }
 .movie__button{
     width: 100%;
 }
+.movie__button:hover{
+    background-color: var(--dark-color-hover);
+}
+.movies__info{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    padding: var(--unit);
+    
+    width: 100%;
+    max-width: 400px;
+    max-height: 100vh;
+    
+    background-color: var(--dark-color);
+    
+    transform: translate(-50%, -50%);
+
+    border: 3px solid var(--dark-color-hover);
+
+    z-index: var(--z-index-fixed);
+
+    overflow-x: auto;
+}
+
+/* Botón de Favoritos */
+.movie__favorite,
+.movie__favorite--img{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+.movie__favorite{
+    width: 60px;
+    height: 60px;
+    
+    z-index: var(--z-index-fixed);
+
+    background-color: rgba(100,100, 100,.02);
+    backdrop-filter: blur(4px);
+}
+.movie__favorite--img{
+    margin: .5em;
+    fill: var(--main-color);
+}
+.movie__favorite--img:hover{
+    fill: var(--dark-color);
+}
+
+.movie__favorite--add-favorite{
+
+}
+
+/* Medias queries */
 @media screen and (min-width: 1000px){
     .movies{
         padding-left: 0;

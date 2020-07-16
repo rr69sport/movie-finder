@@ -10,5 +10,5 @@
 
     color: var(--light-color);
     background-color: var(--dark-color-hover);
-    z-index: 100;
+    z-index: var(--z-index-fixed);
 }

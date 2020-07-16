@@ -2,7 +2,7 @@
 const apikey = '8651a58e'
 
 const searchMovies = (movie) => {
-    const link = `http://www.omdbapi.com/?apikey=${apikey}&s=${movie}`
+    const link = `https://www.omdbapi.com/?apikey=${apikey}&s=${movie}`
     axios({
         method: 'GET',
         url: link
@@ -25,7 +25,7 @@ const searchMovies = (movie) => {
 }
 
 const searchTitle = (movie) => {
-    const link = `http://www.omdbapi.com/?apikey=${apikey}&t=${movie}&plot=full`
+    const link = `https://www.omdbapi.com/?apikey=${apikey}&t=${movie}&plot=full`
     axios({
         method: 'GET',
         url: link

@@ -30,12 +30,12 @@ body{
     top: var(--header-height);
 
     margin: 0;
-
-    font-family: sans-serif;
-
-    color: var(--light-color-lighten);
+    
     background: fixed var(--dark-color-lighten) url('../assets/images/index/undraw_movie_night_fldd.svg') center no-repeat;
     background-size: contain;
+    
+    color: var(--light-color-lighten);
+    font-family: sans-serif;
 }
 ul {
     margin-top: 0;
@@ -59,6 +59,7 @@ label{
 }
 input{
     border: 1px solid #eee;
+    outline: none;
 }
 @media screen and (max-width: 800px) {
     body{
@@ -72,9 +73,12 @@ input{
 
     width: 100%;
 
-    background-color: var(--dark-color-hover);
+    background-color: var(--dark-color-darken);
+
     text-align: center;
     font-size: .85em;
+
+    z-index: var(--z-index-fixed);
 }
 .main-header{
     position: fixed;
@@ -97,6 +101,7 @@ input{
 
     padding: calc(var(--unit-em) / 2);
 
+    /* Transición común a todos los botones */
     transition-duration: var(--time-transition);
     transition-timing-function: ease;
 
@@ -149,7 +154,7 @@ input{
     background-color: var(--dark-color-lighten);
 }
 /* Contenedor de formularios */
-.forms__modal{
+.append-forms{
     position: fixed;
     top: var(--header-height);
     right: 50%;
@@ -159,6 +164,15 @@ input{
     transform: translateX(50%);
 
     z-index: var(--z-index-fixed);
+}
+/* Formularios de Login y Registro */
+.append-forms--profile{
+    margin-top: var(--unit-em);
+}
+
+/* Formulario de Búsqueda */
+.append-forms--search{
+    width: 100%;
 }
 
 /* Formularios - Estilos comunes */
@@ -170,26 +184,19 @@ input{
 .form__label{
     margin-bottom: var(--unit-em);
 }
+.form__label--short{
+    width: calc(100% - 45px);
+}
 .form__input{
     padding: calc(var(--unit-em) / 2);
 }
-.form__button{
+.form__trigger{
     border: 1px solid var(--main-color-lighten);
 }
 .form__input,
-.form__button{
+.form__trigger{
     width: 100%;
     font-size: 100%;
-}
-
-/* Formularios de Login y Registro */
-.forms__modal--account{
-    margin-top: var(--unit-em);
-}
-
-/* Formulario de Búsqueda */
-.forms__modal--search{
-    width: 100%;
 }
 .form--search{
     display: flex;
@@ -199,7 +206,7 @@ input{
 }
 
 @media screen and (min-width: 800px){
-    .forms__modal--search{
+    .append-forms--search{
         top: 0;
         max-width: 310px;
     }
@@ -210,12 +217,12 @@ input{
     }
 }
 @media screen and (min-width: 950px){
-    .forms__modal--search{
+    .append-forms--search{
         max-width: 400px;
     }
 }
 @media screen and (min-width: 1120px){
-    .forms__modal--search{
+    .append-forms--search{
         max-width: 450px;
     }
 }
@@ -324,28 +331,27 @@ input{
 }
 /* Contenedor general */
 .movies{
-    padding: var(--unit-em);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     place-items: center;
     gap: var(--unit-em);
-
-    margin-bottom: calc(var(--unit-em) * 2);
+    
+    margin-bottom: calc(var(--unit-em) * 2.5);
+    padding: var(--unit-em);
 
     text-align: center;
 }
-
 /* Cada pelicula */
 .movie{
     position: relative;
 
     overflow: hidden;
+
     border: 3px solid var(--dark-color-darken);
 }
 .movie__title{
     color: var(--main-color-lighten);
 }
-
 /* La imágen */
 .movie__poster{
     transition-property: transform, -webkit-filter;
@@ -361,9 +367,9 @@ input{
 
     width: 100%;
 
-    background-color: rgba(23, 32, 42,.4);
-    -webkit-backdrop-filter: blur(2px);
-            backdrop-filter: blur(2px);
+    background-color: rgba(23, 32, 42,.8);
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
 
     border-top: 3px solid var(--dark-color-darken);
 }
@@ -394,11 +400,14 @@ input{
     width: 60px;
     height: 60px;
     
-    background-color: rgba(100,100, 100,.02);
-    -webkit-backdrop-filter: blur(4px);
-            backdrop-filter: blur(4px);
+    background-color: rgba(23, 32, 42,.2); /* Usa la transición background de los botones */
+    -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
 
     z-index: 1;
+}
+.movie__favorite:hover{
+    background-color: rgba(23, 32, 42,.4);
 }
 .movie__favorite--svg{
     padding: .25em;
@@ -412,7 +421,7 @@ input{
 }
 
 /* Imformación completa */
-.movies__info{
+.movie-info{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -431,25 +440,31 @@ input{
 
     overflow-x: auto;
 }
-.movies__info--img{
+.movies-info__poster{
     position: fixed;
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
-    z-index: -1;
+
+    opacity: .15;
 }
-.movies__info--details{
-    background-color: rgba(248, 248, 255, .85);
-    color: var(--dark-color-lighten);
+.movies-info__details{
     padding: var(--unit-em);
+
+    color: var(--dark-color-darken);
+
+    background-color: var(--light-color-lighten);
 }
-.movies__info--title{
+.movies-info__title{
     margin-top: 0;
     padding: .5em;
-    color: var(--main-color-lighten);
+
     background-color: var(--dark-color-lighten);
+
+    color: var(--main-color-lighten);
 }
-.movies__info--details > * {
+.movies-info__details > * {
     line-height: 1.35;
 }
 .favorites{
@@ -469,7 +484,7 @@ input{
 
     transition: right var(--time-transition) ease;
 }
-.favorites__right{
+.favorites__active{
     right: 0;
 }
 .favorite{
@@ -505,7 +520,7 @@ input{
     }
 }
 
-.messages{
+.welcome{
     padding:.5em 1em;
 
     width: 100%;
@@ -514,25 +529,31 @@ input{
 
     z-index: var(--z-index-fixed);
 }
-.messages__title{
+.welcome__title{
     margin: .5em 0;
     color: var(--main-color-lighten);
 }
-.messages__close{
-    padding:.5em;
-    border:1px solid var(--dark-color-lighten);
-}
-.messages__close:hover{
-    background-color: var(--dark-color-lighten);
-    cursor: pointer;
-}
 /* 
 Componentes que siempre van a ser hijos 
-de otro componente y que por lo gral,
+de otro componente y que por lo general,
 tendrán otro micro componente como hijo
 */
-.close{
+
+/* 
+    Debe ser hijo directo del componente a remover
+    y un componente hijo con 
+    atributo data "data-removecomponent="remove-component""
+*/
+.remove-component{
     background-color: var(--dark-color-darken);
+    position: absolute;
+    top: var(--unit-em);
+    right: var(--unit-em);
+}
+.remove-component__trigger{
+    /* margin-left: auto;
+    padding: calc(var(--unit-em) / 2);
+    font-size: 1.5em; */
 }
 .container{
     max-width: var(--max-width);
@@ -571,4 +592,9 @@ puede ser un link o un botón
 }
 .link:hover{
     text-decoration: underline;
+}
+
+.dark-color-lighten{
+    color: var(--dark-color-lighten);
+    background-color: var(--dark-color-darken);
 }

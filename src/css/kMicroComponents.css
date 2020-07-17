@@ -1,8 +1,22 @@
 /* 
 Componentes que siempre van a ser hijos 
-de otro componente y que por lo gral,
+de otro componente y que por lo general,
 tendrán otro micro componente como hijo
 */
-.close{
+
+/* 
+    Debe ser hijo directo del componente a remover
+    y un componente hijo con 
+    atributo data "data-removecomponent="remove-component""
+*/
+.remove-component{
     background-color: var(--dark-color-darken);
+    position: absolute;
+    top: var(--unit-em);
+    right: var(--unit-em);
+}
+.remove-component__trigger{
+    /* margin-left: auto;
+    padding: calc(var(--unit-em) / 2);
+    font-size: 1.5em; */
 }

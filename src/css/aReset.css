@@ -8,12 +8,12 @@ body{
     top: var(--header-height);
 
     margin: 0;
-
-    font-family: sans-serif;
-
-    color: var(--light-color-lighten);
+    
     background: fixed var(--dark-color-lighten) url('../assets/images/index/undraw_movie_night_fldd.svg') center no-repeat;
     background-size: contain;
+    
+    color: var(--light-color-lighten);
+    font-family: sans-serif;
 }
 ul {
     margin-top: 0;
@@ -37,6 +37,7 @@ label{
 }
 input{
     border: 1px solid #eee;
+    outline: none;
 }
 @media screen and (max-width: 800px) {
     body{

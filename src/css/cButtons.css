@@ -4,6 +4,7 @@
 
     padding: calc(var(--unit-em) / 2);
 
+    /* Transición común a todos los botones */
     transition-duration: var(--time-transition);
     transition-timing-function: ease;
 

@@ -11,7 +11,7 @@ const searchMovies = (movie) => {
     }).then(res => {
         if (res.data.Response === 'True') {
 
-            removeTemplate('movies')
+            removeComponentsFrom('movies')
             insertMovies(res.data.Search);
 
         } else {

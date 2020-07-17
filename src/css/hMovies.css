@@ -1,27 +1,26 @@
 /* Contenedor general */
 .movies{
-    padding: var(--unit-em);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     place-items: center;
     gap: var(--unit-em);
-
-    margin-bottom: calc(var(--unit-em) * 2);
+    
+    margin-bottom: calc(var(--unit-em) * 2.5);
+    padding: var(--unit-em);
 
     text-align: center;
 }
-
 /* Cada pelicula */
 .movie{
     position: relative;
 
     overflow: hidden;
+
     border: 3px solid var(--dark-color-darken);
 }
 .movie__title{
     color: var(--main-color-lighten);
 }
-
 /* La imágen */
 .movie__poster{
     transition-property: transform, filter;
@@ -35,8 +34,8 @@
 
     width: 100%;
 
-    background-color: rgba(23, 32, 42,.4);
-    backdrop-filter: blur(2px);
+    background-color: rgba(23, 32, 42,.8);
+    backdrop-filter: blur(3px);
 
     border-top: 3px solid var(--dark-color-darken);
 }
@@ -67,10 +66,13 @@
     width: 60px;
     height: 60px;
     
-    background-color: rgba(100,100, 100,.02);
-    backdrop-filter: blur(4px);
+    background-color: rgba(23, 32, 42,.2); /* Usa la transición background de los botones */
+    backdrop-filter: blur(2px);
 
     z-index: 1;
+}
+.movie__favorite:hover{
+    background-color: rgba(23, 32, 42,.4);
 }
 .movie__favorite--svg{
     padding: .25em;
@@ -84,7 +86,7 @@
 }
 
 /* Imformación completa */
-.movies__info{
+.movie-info{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -103,24 +105,30 @@
 
     overflow-x: auto;
 }
-.movies__info--img{
+.movies-info__poster{
     position: fixed;
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
-    z-index: -1;
+
+    opacity: .15;
 }
-.movies__info--details{
-    background-color: rgba(248, 248, 255, .85);
-    color: var(--dark-color-lighten);
+.movies-info__details{
     padding: var(--unit-em);
+
+    color: var(--dark-color-darken);
+
+    background-color: var(--light-color-lighten);
 }
-.movies__info--title{
+.movies-info__title{
     margin-top: 0;
     padding: .5em;
-    color: var(--main-color-lighten);
+
     background-color: var(--dark-color-lighten);
+
+    color: var(--main-color-lighten);
 }
-.movies__info--details > * {
+.movies-info__details > * {
     line-height: 1.35;
 }

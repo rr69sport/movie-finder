@@ -5,7 +5,10 @@
 
     width: 100%;
 
-    background-color: var(--dark-color-hover);
+    background-color: var(--dark-color-darken);
+
     text-align: center;
     font-size: .85em;
+
+    z-index: var(--z-index-fixed);
 }

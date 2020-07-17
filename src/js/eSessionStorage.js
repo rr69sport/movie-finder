@@ -21,7 +21,7 @@ const currentUserLoggedIn = () => {
 
 const singOff = () => {
     seSt.removeItem('currentUser')
-    if (favorites.classList.contains('favorites__right')) {
-        favorites.classList.remove('favorites__right')
+    if (favorites.classList.contains('favorites__active')) {
+        favorites.classList.remove('favorites__active')
     }
 }

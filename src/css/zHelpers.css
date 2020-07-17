@@ -36,3 +36,8 @@ puede ser un link o un botón
 .link:hover{
     text-decoration: underline;
 }
+
+.dark-color-lighten{
+    color: var(--dark-color-lighten);
+    background-color: var(--dark-color-darken);
+}

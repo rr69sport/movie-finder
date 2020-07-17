@@ -15,7 +15,7 @@
 
     transition: right var(--time-transition) ease;
 }
-.favorites__right{
+.favorites__active{
     right: 0;
 }
 .favorite{

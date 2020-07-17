@@ -1,4 +1,4 @@
-.messages{
+.welcome{
     padding:.5em 1em;
 
     width: 100%;
@@ -7,15 +7,7 @@
 
     z-index: var(--z-index-fixed);
 }
-.messages__title{
+.welcome__title{
     margin: .5em 0;
     color: var(--main-color-lighten);
-}
-.messages__close{
-    padding:.5em;
-    border:1px solid var(--dark-color-lighten);
-}
-.messages__close:hover{
-    background-color: var(--dark-color-lighten);
-    cursor: pointer;
 }

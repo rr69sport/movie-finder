@@ -1,5 +1,5 @@
 /* Contenedor de formularios */
-.forms__modal{
+.append-forms{
     position: fixed;
     top: var(--header-height);
     right: 50%;
@@ -9,6 +9,15 @@
     transform: translateX(50%);
 
     z-index: var(--z-index-fixed);
+}
+/* Formularios de Login y Registro */
+.append-forms--profile{
+    margin-top: var(--unit-em);
+}
+
+/* Formulario de Búsqueda */
+.append-forms--search{
+    width: 100%;
 }
 
 /* Formularios - Estilos comunes */
@@ -20,26 +29,19 @@
 .form__label{
     margin-bottom: var(--unit-em);
 }
+.form__label--short{
+    width: calc(100% - 45px);
+}
 .form__input{
     padding: calc(var(--unit-em) / 2);
 }
-.form__button{
+.form__trigger{
     border: 1px solid var(--main-color-lighten);
 }
 .form__input,
-.form__button{
+.form__trigger{
     width: 100%;
     font-size: 100%;
-}
-
-/* Formularios de Login y Registro */
-.forms__modal--account{
-    margin-top: var(--unit-em);
-}
-
-/* Formulario de Búsqueda */
-.forms__modal--search{
-    width: 100%;
 }
 .form--search{
     display: flex;
@@ -49,7 +51,7 @@
 }
 
 @media screen and (min-width: 800px){
-    .forms__modal--search{
+    .append-forms--search{
         top: 0;
         max-width: 310px;
     }
@@ -60,12 +62,12 @@
     }
 }
 @media screen and (min-width: 950px){
-    .forms__modal--search{
+    .append-forms--search{
         max-width: 400px;
     }
 }
 @media screen and (min-width: 1120px){
-    .forms__modal--search{
+    .append-forms--search{
         max-width: 450px;
     }
 }

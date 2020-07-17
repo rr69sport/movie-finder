@@ -88,6 +88,7 @@ input{
 
     color: var(--light-color-lighten);
     background-color: var(--dark-color-darken);
+    
     z-index: var(--z-index-fixed);
 }
 /* Todos los botones */
@@ -113,20 +114,20 @@ input{
 }
 
 /* Botones de acción */
-.button--call-to-action{
+.button--cta{
     color: var(--light-color-lighten);
     background-color: var(--main-color-lighten);
 
     transition-property:background-color, color;
 }
-.button--call-to-action:hover{
+.button--cta:hover{
     color: var(--main-color-darken);
     background-color: var(--dark-color-lighten);
     
 }
 
 /* Botón de búsqueda */
-.button--search{
+.button--secondary{
     color: var(--main-color-lighten);
     background-color: var(--dark-color-lighten);
 
@@ -134,19 +135,17 @@ input{
 
     transition-property: background-color, border-color;
 }
-.button--search:hover{
+
+.button--secondary:hover{
     border-color: var(--dark-color-lighten);
     background-color: var(--dark-color-darken);
 }
-.close{
-    background-color: var(--dark-color-darken);
-}
-.button--close{
+.button--tertiary{
     margin-left: auto;
     width: 40px;
     border: 1px solid var(--dark-color-darken);
 }
-.button--close:hover{
+.button--tertiary:hover{
     background-color: var(--dark-color-lighten);
 }
 /* Contenedor de formularios */
@@ -221,14 +220,14 @@ input{
     }
 }
 /* Componente usado ordenar botones */
-.account{
+.profile-nav{
     height: var(--header-height);
     text-align: center;
     border-right: 1px solid var(--dark-color-lighten);
 }
 
 /* Debe tener como hijo un componente botón */
-.account__button{
+.profile-nav__option{
     flex: 1 1 auto;
 }
 /* Si la contraseña de usuario al repetirla es la misma, asigna esta clase */
@@ -293,19 +292,17 @@ input{
     z-index: var(--z-index-fixed);
 }
 .logo{
-    display: block;
+    /* display: block; */
 
     padding: .35em;
 
     transition: background-color var(--time-transition) ease;
     
-
     border-left: 1px solid var(--dark-color-lighten);
 }
 .logo:hover{
     background-color: var(--dark-color-lighten);
 }
-
 .logo__first-letter{
     color:var(--main-color-lighten);
     font-size: calc(var(--unit-em) * 1.5);
@@ -319,7 +316,7 @@ input{
         font-weight: 100;
     }
     .logo__movie::after{
-    content: 'ovie'
+        content: 'ovie'
     }
     .logo__finder::after{
         content: 'inder'
@@ -424,11 +421,11 @@ input{
     max-width: 600px;
     max-height: 100vh;
     
-    background-color: var(--dark-color);
+    background-color: var(--dark-color-lighten);
     
     transform: translate(-50%, -50%);
 
-    border: 3px solid var(--dark-color);
+    border: 3px solid var(--dark-color-lighten);
 
     z-index: var(--z-index-fixed);
 
@@ -443,14 +440,14 @@ input{
 }
 .movies__info--details{
     background-color: rgba(248, 248, 255, .85);
-    color: var(--dark-color);
+    color: var(--dark-color-lighten);
     padding: var(--unit-em);
 }
 .movies__info--title{
     margin-top: 0;
     padding: .5em;
     color: var(--main-color-lighten);
-    background-color: var(--dark-color);
+    background-color: var(--dark-color-lighten);
 }
 .movies__info--details > * {
     line-height: 1.35;
@@ -529,6 +526,20 @@ input{
     background-color: var(--dark-color-lighten);
     cursor: pointer;
 }
+/* 
+Componentes que siempre van a ser hijos 
+de otro componente y que por lo gral,
+tendrán otro micro componente como hijo
+*/
+.close{
+    background-color: var(--dark-color-darken);
+}
+.container{
+    max-width: var(--max-width);
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .display-flex{
     display: flex;
 }
@@ -537,12 +548,6 @@ input{
 }
 .just-cont-space-between{
     justify-content: space-between;
-}
-
-.container{
-    max-width: var(--max-width);
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .fixed{

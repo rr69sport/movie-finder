@@ -1,0 +1,8 @@
+/* 
+Componentes que siempre van a ser hijos 
+de otro componente y que por lo gral,
+tendrán otro micro componente como hijo
+*/
+.close{
+    background-color: var(--dark-color-darken);
+}

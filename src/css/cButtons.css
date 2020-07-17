@@ -21,20 +21,20 @@
 }
 
 /* Botones de acción */
-.button--call-to-action{
+.button--cta{
     color: var(--light-color-lighten);
     background-color: var(--main-color-lighten);
 
     transition-property:background-color, color;
 }
-.button--call-to-action:hover{
+.button--cta:hover{
     color: var(--main-color-darken);
     background-color: var(--dark-color-lighten);
     
 }
 
 /* Botón de búsqueda */
-.button--search{
+.button--secondary{
     color: var(--main-color-lighten);
     background-color: var(--dark-color-lighten);
 
@@ -42,18 +42,16 @@
 
     transition-property: background-color, border-color;
 }
-.button--search:hover{
+
+.button--secondary:hover{
     border-color: var(--dark-color-lighten);
     background-color: var(--dark-color-darken);
 }
-.close{
-    background-color: var(--dark-color-darken);
-}
-.button--close{
+.button--tertiary{
     margin-left: auto;
     width: 40px;
     border: 1px solid var(--dark-color-darken);
 }
-.button--close:hover{
+.button--tertiary:hover{
     background-color: var(--dark-color-lighten);
 }

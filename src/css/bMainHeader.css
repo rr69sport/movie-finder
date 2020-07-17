@@ -10,5 +10,6 @@
 
     color: var(--light-color-lighten);
     background-color: var(--dark-color-darken);
+    
     z-index: var(--z-index-fixed);
 }

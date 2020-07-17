@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!currentUserLoggedIn()) {
         insertTemplate('messages-template', 'append-forms', true)
 
-        insertTemplate('login-and-register-template', 'account')
+        insertTemplate('login-and-register-template', 'profile')
 
     } else {
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
-account.addEventListener('click', (e) => {
+profile.addEventListener('click', (e) => {
 
     // LOGIN
     if (e.target.id === 'login-button') {
@@ -47,7 +47,7 @@ account.addEventListener('click', (e) => {
 
         replaceClass('append-forms', 'forms__modal--search', 'forms__modal--account')
 
-        insertTemplate('login-and-register-template', 'account', true)
+        insertTemplate('login-and-register-template', 'profile', true)
     }
 })
 

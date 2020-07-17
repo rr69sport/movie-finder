@@ -1,3 +1,9 @@
+.container{
+    max-width: var(--max-width);
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .display-flex{
     display: flex;
 }
@@ -6,12 +12,6 @@
 }
 .just-cont-space-between{
     justify-content: space-between;
-}
-
-.container{
-    max-width: var(--max-width);
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .fixed{

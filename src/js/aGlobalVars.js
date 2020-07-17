@@ -1,5 +1,5 @@
 // Account Button
-const account = document.getElementById('account');
+const profile = document.getElementById('profile');
 
 // Parent Element to Forms
 const appendForms = document.getElementById('append-forms');

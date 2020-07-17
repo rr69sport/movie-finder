@@ -105,7 +105,7 @@ const replaceClass = (element, oldClass, newClass) => {
 const insertIfExistsUser = () => {
     // Cambia el botón de acceder por
     // el de cerrar sesión y favoritos
-    insertTemplate('logged-in-template', 'account', true)
+    insertTemplate('logged-in-template', 'profile', true)
 
     // Inserta el template de búsqueda
     insertTemplate('search-form-template', 'append-forms', true)

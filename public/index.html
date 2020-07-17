@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon.ico">
     <link rel="manifest" href="./assets/favicon_io/site.webmanifest">
-    <link rel="stylesheet" href="./css/styles.min.css?t=1594941162093">
+    <link rel="stylesheet" href="./css/styles.min.css?t=1594945954303">
 </head>
 
 <body>
@@ -23,7 +23,9 @@
                 <span class="logo__first-letter logo__finder">F</span>
             </a>
             <!-- Los botones se cargan por JavaScript -->
-            <ul id="account" class="account display-flex align-items-center"></ul>
+            <nav>
+                <ul id="profile" class="profile-nav display-flex align-items-center"></ul>
+            </nav>
         </div>
     </header>
 
@@ -34,45 +36,44 @@
         <!-- FAVORITES MOVIES-->
         <aside id="favorites" class="favorites">
             <div class="close fixed">
-                <button id="close-favorites" class="button button--close">X</button>
+                <button id="close-favorites" class="button button--tertiary">X</button>
             </div>
-            <section id="favorites__movies"></section>
+            <section id="favorites__movies">
+                <div class="favorite display-flex">
+                    <div class="favorite__img">
+                        <img class="img"
+                            src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
+                            alt="">
+                    </div>
+                    <div class="favorite__info display-flex align-items-center">
+                        <p>Avengers</p>
+                    </div>
+                </div>
+                <div class="favorite display-flex">
+                    <div class="favorite__img">
+                        <img class="img"
+                            src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
+                            alt="">
+                    </div>
+                    <div class="favorite__info display-flex align-items-center">
+                        <p>Avengers</p>
+                    </div>
+                </div>
+                <div class="favorite display-flex">
+                    <div class="favorite__img">
+                        <img class="img"
+                            src="https://m.media-amazon.com/images/M/MV5BMTYzOTc2NzU3N15BMl5BanBnXkFtZTcwNjY3MDE3NQ@@._V1_SX300.jpg"
+                            alt="">
+                    </div>
+                    <div class="favorite__info display-flex align-items-center">
+                        <p>Avengers</p>
+                    </div>
+                </div>
+            </section>
         </aside>
 
         <!-- MOVIES -->
-        <section id="movies" class="container movies">
-            <!-- <div class="movies__info">
-                    <div class="close">
-                        <button data-close="close" class="button button--close">X</button>
-                    </div>
-                    <div class="movies__info--img">
-                        <img src="https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
-                            alt="">
-                    </div>
-                    <div class="movies__info--details">
-                        <h1 class="movies__info--title">The Avengers</h1>
-                        <p>Actores: Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth
-                        </p>
-                        <p>Escritores: Joss Whedon (screenplay), Zak Penn (story), Joss Whedon
-                            (story)</p>
-                        <p>Productora: Walt Disney Pictures</p>
-                        <p>Director: Joss Whedon</p>
-                        <p>Género: Action, Adventure, Sci-Fi</p>
-                        <p>Lenguajes: English, Russian, Hindi</p>
-                        <p>Sinópsis: Nick Fury is the director of S.H.I.E.L.D., an international
-                            peace-keeping
-                            agency. The agency is a who's who of Marvel
-                            Super Heroes, with Iron Man, The Incredible Hulk, Thor, Captain America, Hawkeye and Black Widow.
-                            When global security
-                            is threatened by Loki and his cohorts, Nick Fury and his team will need all their powers to save the
-                            world from
-                            disaster.</p>
-                        <p>Duración: 143 min</p>
-                        <p>Año: 2012</p>
-                        <p>Ranking: 8.0</p>
-                    </div>
-                </div>-->
-        </section>
+        <section id="movies" class="container movies"></section>
 
         <!-- Si se intenta registrar un usuario existente
             o si se intenta acceder con un usuario inexistente -->
@@ -89,7 +90,7 @@
     <!-- Formulario de login -->
     <template id="login-form-template">
         <div class="close">
-            <button data-close="close" class="button button--close">X</button>
+            <button data-close="close" class="button button--tertiary">X</button>
         </div>
         <form class="form fade-in" id="login-form">
             <label class="form__label">
@@ -98,14 +99,14 @@
             <label class="form__label">
                 <input type="password" id="login-pass" class="form__input" placeholder="Contraseña">
             </label>
-            <button class="form__button button button--call-to-action">Acceder</button>
+            <button class="form__button button button--cta">Acceder</button>
         </form>
     </template>
 
     <!-- Formulario crear cuenta -->
     <template id="sing-in-template">
         <div class="close">
-            <button data-close="close" class="button button--close">X</button>
+            <button data-close="close" class="button button--tertiary">X</button>
         </div>
         <form class="form fade-in" id="sing-in-form">
             <label class="form__label">
@@ -117,7 +118,7 @@
             <label class="form__label">
                 <input type="password" id="repeat-pass" class="form__input" placeholder="Repetir contraseña">
             </label>
-            <button class="form__button button button--call-to-action">Create Account</button>
+            <button class="form__button button button--cta">Create Account</button>
         </form>
     </template>
 
@@ -125,26 +126,26 @@
     <template id="search-form-template">
         <form class="form form--search" id="search-form">
             <input id="search" type="text" class="form__input" placeholder="Buscar película">
-            <button class="button button--search">Buscar</button>
+            <button class="button button--secondary">Buscar</button>
         </form>
     </template>
 
     <!-- Botón de Login -->
     <template id="login-and-register-template">
-        <li class="account__button">
-            <button id="register-button" class="button button--call-to-action">Registrarse</button>
+        <li class="profile-nav__option">
+            <button id="register-button" class="button button--cta">Registrarse</button>
         </li>
-        <li class="account__button">
+        <li class="profile-nav__option">
             <button id="login-button" class="button">Acceder</button>
         </li>
     </template>
 
     <!-- Botones de Favoritos y Cerrar Sesión -->
     <template id="logged-in-template">
-        <li class="account__button">
-            <button id="favorites-button" class="button button--call-to-action">Favoritos</button>
+        <li class="profile-nav__option">
+            <button id="favorites-button" class="button button--cta">Favoritos</button>
         </li>
-        <li class="account__button">
+        <li class="profile-nav__option">
             <button id="logout-button" class="button">Cerrar Sesión</button>
         </li>
     </template>
@@ -180,7 +181,7 @@
         </div>
     </template>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./js/scripts.min.js?t=1594941162093"></script>
+    <script src="./js/scripts.min.js?t=1594945954303"></script>
 </body>
 
 </html>

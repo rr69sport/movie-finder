@@ -32,5 +32,7 @@ profile.addEventListener('click', (e) => {
         replaceClass('append-forms', 'append-forms--search', 'append-forms--profile')
 
         insertTemplateInto('login-and-register-template', 'profile', true)
+
+        appendFavoritesMovies()
     }
 })

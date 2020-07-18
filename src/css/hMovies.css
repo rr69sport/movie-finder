@@ -59,7 +59,9 @@
     background-color: var(--dark-color-darken);
 }
 
-/* Botón de Favoritos */
+/*
+    Botón de Favoritos
+*/
 .movie__favorite{
     position: absolute;
     top: 0;

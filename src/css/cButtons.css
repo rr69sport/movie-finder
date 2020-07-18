@@ -21,7 +21,6 @@
     cursor: pointer;
 }
 
-/* Botones de acción */
 .button--cta{
     color: var(--light-color-lighten);
     background-color: var(--main-color-lighten);
@@ -34,7 +33,6 @@
     
 }
 
-/* Botón de búsqueda */
 .button--secondary{
     color: var(--main-color-lighten);
     background-color: var(--dark-color-lighten);
@@ -43,11 +41,11 @@
 
     transition-property: background-color, border-color;
 }
-
 .button--secondary:hover{
     border-color: var(--dark-color-lighten);
     background-color: var(--dark-color-darken);
 }
+
 .button--tertiary{
     margin-left: auto;
     width: 40px;

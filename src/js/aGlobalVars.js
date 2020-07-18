@@ -15,6 +15,6 @@ const favsMovies = document.getElementById('favorites__movies');
 const alerts = document.getElementById('alerts');
 
 // Time to change message in alerts
-const time = 1900
+const time = 2500
 
 const fragment = document.createDocumentFragment()

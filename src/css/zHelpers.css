@@ -14,17 +14,11 @@
     justify-content: space-between;
 }
 
-/* .fixed{
-    position: fixed;
-    margin-left: .45em;
-    z-index: var(--z-index-fixed);
-} */
-
-/* Estilos para los "a" */
-/*
-Reescribe estilos del reset.css
-Se tiene en cuenta que un "a" 
-puede ser un link o un botón
+/* 
+    Estilos para los "a"
+    Reescribe estilos del reset.css
+    Se tiene en cuenta que un "a" 
+    puede ser un link o un botón
 */
 .link{
     color: var(--main-color-lighten);

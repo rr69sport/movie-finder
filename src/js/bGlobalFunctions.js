@@ -1,9 +1,10 @@
 const insertIfExistsUser = () => {
+
     // Cambia el botón de acceder por
     // el de cerrar sesión y favoritos
     insertTemplateInto('logged-in-template', 'profile', true)
 
-    // Inserta el template de búsqueda
+    // Inserta el formulario de búsqueda
     insertTemplateInto('search-form-template', 'append-forms', true)
 
     // Reemplaza la clase del contenedor

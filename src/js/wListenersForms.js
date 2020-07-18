@@ -2,7 +2,7 @@ appendForms.addEventListener('submit', (e) => {
 
     e.preventDefault()
 
-    // Login Form
+    // LOGIN FORM
     if (e.target.id === 'login-form') {
 
         const loginName = document.getElementById('login-name');
@@ -35,7 +35,7 @@ appendForms.addEventListener('submit', (e) => {
         }
     }
 
-    // Create account
+    // CREATE ACCOUNT
     if (e.target.id === 'sing-in-form') {
 
         const getName = document.getElementById('sing-in-name')
@@ -88,7 +88,7 @@ appendForms.addEventListener('submit', (e) => {
         }
     }
 
-    // Search form
+    // SEARCH FORM
     if (e.target.id === 'search-form') {
         const searchForm = document.getElementById('search-form');
         const search = document.getElementById('search');

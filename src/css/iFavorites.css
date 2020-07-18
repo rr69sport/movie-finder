@@ -32,7 +32,9 @@
     border: 3px solid var(--dark-color-lighten);
 }
 .favorite__info{
-    border-color: inherit; /* Heredada las otras propiedades de "movie__info" */
+
+    /* Heredada las otras propiedades de "movie__info" */
+    border-color: inherit;
 }
 @media screen and (max-width:800px){
     .favorites{

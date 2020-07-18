@@ -80,6 +80,7 @@ const inserFavorite = (movie) => {
 
 }
 
+// Inserta en el DOM todas las películas favoritas guardadas en localStorage
 const appendFavoritesMovies = () => {
 
     const currentUser = getCurrentUser()

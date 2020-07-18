@@ -1,4 +1,6 @@
-/* Contenedor de formularios */
+/*
+    Contenedor de formularios
+*/
 .append-forms{
     position: fixed;
     top: var(--header-height);
@@ -10,17 +12,24 @@
 
     z-index: var(--z-index-fixed);
 }
-/* Formularios de Login y Registro */
+
+/*
+    Formularios de Login y Registro
+*/
 .append-forms--profile{
     margin-top: var(--unit-em);
 }
 
-/* Formulario de Búsqueda */
+/*
+    Formulario de Búsqueda
+*/
 .append-forms--search{
     width: 100%;
 }
 
-/* Formularios - Estilos comunes */
+/*
+    Formularios - Estilos comunes
+*/
 .form{
     padding: var(--unit-em);
 
@@ -35,6 +44,10 @@
 .form__input{
     padding: calc(var(--unit-em) / 2);
 }
+
+/*
+    Contenedor de botones
+*/
 .form__trigger{
     border: 1px solid var(--main-color-lighten);
 }

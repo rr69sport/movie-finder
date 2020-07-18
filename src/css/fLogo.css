@@ -1,6 +1,4 @@
 .logo{
-    /* display: block; */
-
     padding: .35em;
 
     transition: background-color var(--time-transition) ease;

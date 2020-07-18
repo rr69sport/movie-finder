@@ -1,6 +1,7 @@
 // const button = document.getElementById('button');
 const apikey = '8651a58e'
 
+// Hace la petición con las películas que coincidan con la búsqueda
 const searchMovies = (movie) => {
 
     const link = `https://www.omdbapi.com/?apikey=${apikey}&s=${movie}`
@@ -41,6 +42,7 @@ const searchMovies = (movie) => {
     })
 }
 
+// Hace la petición con la película que el usuario quere ver más información
 const searchTitle = (movie) => {
 
     const link = `https://www.omdbapi.com/?apikey=${apikey}&i=${movie}&plot=full`
@@ -66,6 +68,8 @@ const searchTitle = (movie) => {
     })
 }
 
+// Cuando el usuario agrega a favoritos
+// Hace la petición del id, del título y la ima´gen para añadirla a favoritos
 const getDataFavoriteMovie = (movie) => {
 
     const link = `https://www.omdbapi.com/?apikey=${apikey}&i=${movie}`

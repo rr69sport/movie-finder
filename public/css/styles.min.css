@@ -237,67 +237,6 @@ input{
 .profile-nav__option{
     flex: 1 1 auto;
 }
-/* Si la contraseña de usuario al repetirla es la misma, asigna esta clase */
-.equal-to{
-    outline-color: rgb(102, 255, 0);
-}
-
-/* Si un campo de formulario está vacío se asigna esta clase */
-.alert::-moz-placeholder{
-    outline-color: var(--main-color-lighten);
-    color: var(--main-color-lighten);
-}
-.alert::-ms-input-placeholder{
-    outline-color: var(--main-color-lighten);
-    color: var(--main-color-lighten);
-}
-.alert,
-.alert::placeholder{
-    outline-color: var(--main-color-lighten);
-    color: var(--main-color-lighten);
-}
-
-.equal-to,
-.alert{
-    outline-width: 3px;
-    outline-style: solid;
-}
-
-/* Fade in */
-.fade-in{
-    -webkit-animation: fadeIn .25s linear;
-            animation: fadeIn .25s linear;
-}
-@-webkit-keyframes fadeIn { 
-    from {
-        opacity: .75;
-    } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
-}
-@keyframes fadeIn { 
-    from {
-        opacity: .75;
-    } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
-}
-.alerts__alert{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-
-    width: 100%;
-    max-width: 290px;
-
-    padding: var(--unit-em);
-
-    background-color: var(--main-color-lighten);
-    color: var(--dark-color-darken);
-    text-align: center;
-    font-size: 1.3em;
-
-    outline-color: inherit;
-
-    transform: translate(-50%,-50%);
-    z-index: var(--z-index-fixed);
-}
 .logo{
     /* display: block; */
 
@@ -329,7 +268,9 @@ input{
         content: 'inder'
     }
 }
-/* Contenedor general */
+/* 
+    Contenedor general
+*/
 .movies{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -341,7 +282,10 @@ input{
 
     text-align: center;
 }
-/* Cada pelicula */
+
+/* 
+    Cada pelicula
+*/
 .movie{
     position: relative;
 
@@ -352,14 +296,11 @@ input{
 .movie__title{
     color: var(--main-color-lighten);
 }
-/* La imágen */
 .movie__poster{
     transition-property: transform, -webkit-filter;
     transition-property: transform, filter;
     transition-property: transform, filter, -webkit-filter;
 }
-
-/* La información */
 .movie__info{
     position: absolute;
     right: 0;
@@ -378,7 +319,9 @@ input{
     transition-duration: var(--time-transition);
 }
 
-/* Hovers */
+/* 
+    Hovers
+*/
 .movie:hover .movie__poster{
     transform: scale(1.05);
 }
@@ -420,8 +363,14 @@ input{
     }
 }
 
-/* Imformación completa */
+/* 
+    Imformación completa
+*/
 .movie-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     position: fixed;
     top: 50%;
     left: 50%;
@@ -441,20 +390,19 @@ input{
     overflow-x: auto;
 }
 .movies-info__poster{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    opacity: .15;
+    margin: calc(var(--unit-em) * 2) 0;
 }
-.movies-info__details{
+.movies-info__details{    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
     padding: var(--unit-em);
 
-    color: var(--dark-color-darken);
+    color: var(--light-color-darken);
 
-    background-color: var(--light-color-lighten);
+    background-color: rgba(23, 32, 42,.9);
 }
 .movies-info__title{
     margin-top: 0;
@@ -471,6 +419,8 @@ input{
     position: fixed;
     top: var(--header-height);
     right: -280px;
+
+    padding-bottom: calc(var(--unit-em) * 3);
 
     width: 100%;
     max-width: 280px;
@@ -489,30 +439,17 @@ input{
 }
 .favorite{
     position: relative;
-    top: 1.75em;
-
-    display: block;
 
     margin: .5em;
-    padding: .5em;
-
-    height: 80px;
 
     background-color: var(--dark-color-lighten);
-}
-.favorite__img,
-.img{
-    height: 100%;
-}
-.favorite__info{
-    width: 100%;
-
-    padding-left: var(--unit-em);
 
     text-align: center;
-    text-transform: uppercase;
-    
-    color: var(--main-color-lighten);
+
+    border: 3px solid var(--dark-color-lighten);
+}
+.favorite__info{
+    border-color: inherit; /* Heredada las otras propiedades de "movie__info" */
 }
 @media screen and (max-width:800px){
     .favorites{
@@ -520,6 +457,104 @@ input{
     }
 }
 
+/* 
+Componentes que siempre van a ser hijos 
+de otro componente y que por lo general,
+tendrán otro componente como hijo
+*/
+
+/* ========================================= */
+/* 
+    Debe ser hijo directo del componente a remover
+    y un componente hijo con 
+    atributo data "data-removecomponent="remove-component""
+*/
+.remove-component{
+    position: absolute;
+    top: var(--unit-em);
+    right: var(--unit-em);
+
+    background-color: var(--dark-color-darken);
+
+    z-index: var(--z-index-fixed);
+}
+.remove-component__trigger{
+    /* A futuro */
+}
+
+/* ========================================== */
+/*
+    Si la contraseña de usuario al repetirla es la misma, asigna esta clase
+*/
+.equal-to{
+    outline-color: rgb(102, 255, 0);
+}
+
+/*
+    Si un campo de formulario está vacío se asigna esta clase
+*/
+.alert::-moz-placeholder{
+    outline-color: var(--main-color-lighten);
+    color: var(--main-color-lighten);
+}
+.alert::-ms-input-placeholder{
+    outline-color: var(--main-color-lighten);
+    color: var(--main-color-lighten);
+}
+.alert,
+.alert::placeholder{
+    outline-color: var(--main-color-lighten);
+    color: var(--main-color-lighten);
+}
+
+.equal-to,
+.alert{
+    outline-width: 3px;
+    outline-style: solid;
+}
+
+/*
+    Fade in
+*/
+.fade-in{
+    -webkit-animation: fadeIn .25s linear;
+            animation: fadeIn .25s linear;
+}
+@-webkit-keyframes fadeIn { 
+    from {
+        opacity: .75;
+    } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
+}
+@keyframes fadeIn { 
+    from {
+        opacity: .75;
+    } /* Por defecto si no se asigna "to" toma el valor inicial del elemento */
+}
+.alerts__alert{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    max-width: 290px;
+
+    padding: var(--unit-em);
+
+    background-color: var(--main-color-lighten);
+    color: var(--dark-color-darken);
+    text-align: center;
+    font-size: 1.3em;
+
+    outline-color: inherit;
+
+    transform: translate(-50%,-50%);
+    z-index: var(--z-index-fixed);
+}
+
+/* ====================== */
+/* 
+    Mensaje de bienvenida
+*/
 .welcome{
     padding:.5em 1em;
 
@@ -532,28 +567,6 @@ input{
 .welcome__title{
     margin: .5em 0;
     color: var(--main-color-lighten);
-}
-/* 
-Componentes que siempre van a ser hijos 
-de otro componente y que por lo general,
-tendrán otro micro componente como hijo
-*/
-
-/* 
-    Debe ser hijo directo del componente a remover
-    y un componente hijo con 
-    atributo data "data-removecomponent="remove-component""
-*/
-.remove-component{
-    background-color: var(--dark-color-darken);
-    position: absolute;
-    top: var(--unit-em);
-    right: var(--unit-em);
-}
-.remove-component__trigger{
-    /* margin-left: auto;
-    padding: calc(var(--unit-em) / 2);
-    font-size: 1.5em; */
 }
 .container{
     max-width: var(--max-width);
@@ -571,11 +584,11 @@ tendrán otro micro componente como hijo
     justify-content: space-between;
 }
 
-.fixed{
+/* .fixed{
     position: fixed;
     margin-left: .45em;
     z-index: var(--z-index-fixed);
-}
+} */
 
 /* Estilos para los "a" */
 /*
@@ -592,9 +605,4 @@ puede ser un link o un botón
 }
 .link:hover{
     text-decoration: underline;
-}
-
-.dark-color-lighten{
-    color: var(--dark-color-lighten);
-    background-color: var(--dark-color-darken);
 }

@@ -3,6 +3,8 @@
     top: var(--header-height);
     right: -280px;
 
+    padding-bottom: calc(var(--unit-em) * 3);
+
     width: 100%;
     max-width: 280px;
     height: calc(100vh - var(--header-height));
@@ -20,30 +22,17 @@
 }
 .favorite{
     position: relative;
-    top: 1.75em;
-
-    display: block;
 
     margin: .5em;
-    padding: .5em;
-
-    height: 80px;
 
     background-color: var(--dark-color-lighten);
-}
-.favorite__img,
-.img{
-    height: 100%;
-}
-.favorite__info{
-    width: 100%;
-
-    padding-left: var(--unit-em);
 
     text-align: center;
-    text-transform: uppercase;
-    
-    color: var(--main-color-lighten);
+
+    border: 3px solid var(--dark-color-lighten);
+}
+.favorite__info{
+    border-color: inherit; /* Heredada las otras propiedades de "movie__info" */
 }
 @media screen and (max-width:800px){
     .favorites{

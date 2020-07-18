@@ -1,4 +1,6 @@
-/* Contenedor general */
+/* 
+    Contenedor general
+*/
 .movies{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -10,7 +12,10 @@
 
     text-align: center;
 }
-/* Cada pelicula */
+
+/* 
+    Cada pelicula
+*/
 .movie{
     position: relative;
 
@@ -21,12 +26,9 @@
 .movie__title{
     color: var(--main-color-lighten);
 }
-/* La imágen */
 .movie__poster{
     transition-property: transform, filter;
 }
-
-/* La información */
 .movie__info{
     position: absolute;
     right: 0;
@@ -44,7 +46,9 @@
     transition-duration: var(--time-transition);
 }
 
-/* Hovers */
+/* 
+    Hovers
+*/
 .movie:hover .movie__poster{
     transform: scale(1.05);
 }
@@ -85,8 +89,14 @@
     }
 }
 
-/* Imformación completa */
+/* 
+    Imformación completa
+*/
 .movie-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     position: fixed;
     top: 50%;
     left: 50%;
@@ -106,20 +116,19 @@
     overflow-x: auto;
 }
 .movies-info__poster{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    opacity: .15;
+    margin: calc(var(--unit-em) * 2) 0;
 }
-.movies-info__details{
+.movies-info__details{    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
     padding: var(--unit-em);
 
-    color: var(--dark-color-darken);
+    color: var(--light-color-darken);
 
-    background-color: var(--light-color-lighten);
+    background-color: rgba(23, 32, 42,.9);
 }
 .movies-info__title{
     margin-top: 0;

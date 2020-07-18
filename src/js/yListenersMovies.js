@@ -1,8 +1,3 @@
-// Evento para la sección favoritos
-closeFavs.addEventListener('click', () => {
-    favorites.classList.remove('favorites__active')
-})
-
 // Evento para detectar qué película 
 // se quiere mostrar la información
 moviesSection.addEventListener('click', (e) => {
@@ -19,6 +14,6 @@ moviesSection.addEventListener('click', (e) => {
 
     if (e.target.dataset.addfavorite === 'add-favorite') {
 
-        console.log(e.target.parentElement.dataset.favoriteid);
+        getDataFavoriteMovie(e.target.parentElement.dataset.favoriteid);
     }
 })

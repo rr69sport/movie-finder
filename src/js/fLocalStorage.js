@@ -5,6 +5,7 @@ const loSt = localStorage
 const ifUserExists = (userId) => {
 
     if (loSt.getItem('movie-finder-users') !== null) {
+
         const users = JSON.parse(loSt.getItem('movie-finder-users'))
 
         let exists = 0
@@ -81,4 +82,60 @@ const getUserLogin = (userId) => {
     } else {
         setCurrentUser(userId)
     }
+}
+
+// Guarda en localStorage las películas favoritas
+// Si no existe, la agrega, sino la borra
+const updateFavoriteMovies = (movieID) => {
+
+    const currentUser = getCurrentUser()
+
+    const users = JSON.parse(loSt.getItem('movie-finder-users'))
+
+    const user = users.find(user => {
+        return user.id === currentUser
+    })
+
+    const movies = user.favoriteMovies
+
+    let exists = 0
+
+    if (movies.length > 0) {
+
+        const updateMovies = movies.find(movie => {
+
+            return movie.idMovie === movieID.idMovie
+
+        });
+
+        if (updateMovies) {
+
+            for (let i = 0; i < movies.length; i++) {
+
+                const movie = movies[i];
+
+                if (movie.idMovie === movieID.idMovie) {
+
+                    movies.splice(i, 1)
+
+                }
+            }
+
+        } else {
+
+            if (exists === 0) {
+
+                movies.push(movieID)
+            }
+        }
+
+    } else {
+
+        movies.push(movieID)
+    }
+
+    loSt.setItem('movie-finder-users', JSON.stringify(users))
+
+    appendFavoritesMovies(movies)
+
 }

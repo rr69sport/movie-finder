@@ -14,11 +14,11 @@
     justify-content: space-between;
 }
 
-.fixed{
+/* .fixed{
     position: fixed;
     margin-left: .45em;
     z-index: var(--z-index-fixed);
-}
+} */
 
 /* Estilos para los "a" */
 /*
@@ -35,9 +35,4 @@ puede ser un link o un botón
 }
 .link:hover{
     text-decoration: underline;
-}
-
-.dark-color-lighten{
-    color: var(--dark-color-lighten);
-    background-color: var(--dark-color-darken);
 }

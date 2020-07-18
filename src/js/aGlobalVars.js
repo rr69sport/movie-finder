@@ -9,7 +9,6 @@ const moviesSection = document.getElementById('movies');
 
 // Favorites section
 const favorites = document.getElementById('favorites');
-const closeFavs = document.getElementById('close-favorites');
 const favsMovies = document.getElementById('favorites__movies');
 
 // Alerts

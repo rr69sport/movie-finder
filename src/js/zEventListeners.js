@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // Si sessionStorage retorna null
-    // muestra un msj de aviso
+    // muestra un msj de bienvenida
     if (!currentUserLoggedIn()) {
+
         insertTemplateInto('welcome-template', 'append-forms', true)
 
         insertTemplateInto('login-and-register-template', 'profile')
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
 
         getUserLogin(getCurrentUser())
+
     }
 
 })

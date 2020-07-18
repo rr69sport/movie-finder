@@ -136,6 +136,6 @@ const updateFavoriteMovies = (movieID) => {
 
     loSt.setItem('movie-finder-users', JSON.stringify(users))
 
-    appendFavoritesMovies(movies)
+    appendFavoritesMovies()
 
 }

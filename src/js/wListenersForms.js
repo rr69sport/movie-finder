@@ -19,6 +19,8 @@ appendForms.addEventListener('submit', (e) => {
 
             getUserLogin(user.id)
 
+            appendFavoritesMovies()
+
         } else {
             if (name == '') {
 

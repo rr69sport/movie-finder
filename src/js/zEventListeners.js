@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         getUserLogin(getCurrentUser())
 
+        appendFavoritesMovies()
+
     }
 
 })

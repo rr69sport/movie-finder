@@ -23,9 +23,3 @@ favorites.addEventListener('click', (e) => {
     }
 
 })
-
-// favsMovies.addEventListener('click', (e) => {
-//     if (e.target.dataset.removecomponent === 'remove-component') {
-//         updateFavoriteMovies({ idMovie: e.target.dataset.imdbid })
-//     }
-// })

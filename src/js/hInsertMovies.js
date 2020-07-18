@@ -80,7 +80,17 @@ const inserFavorite = (movie) => {
 
 }
 
-const appendFavoritesMovies = (movies) => {
+const appendFavoritesMovies = () => {
+
+    const currentUser = getCurrentUser()
+
+    const users = JSON.parse(loSt.getItem('movie-finder-users'))
+
+    const user = users.find(user => {
+        return user.id === currentUser
+    })
+
+    const movies = user.favoriteMovies
 
     favsMovies.textContent = ''
 

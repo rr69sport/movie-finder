@@ -7,7 +7,6 @@
     place-items: center;
     gap: var(--unit-em);
     
-    margin-bottom: calc(var(--unit-em) * 2.5);
     padding: var(--unit-em);
 
     text-align: center;

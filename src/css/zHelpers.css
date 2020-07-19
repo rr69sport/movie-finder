@@ -1,4 +1,5 @@
 .container{
+    width: 100%;
     max-width: var(--max-width);
     margin-right: auto;
     margin-left: auto;
@@ -29,4 +30,10 @@
 }
 .link:hover{
     text-decoration: underline;
+}
+.close{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }

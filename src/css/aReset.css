@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 body{
+    display: flex;
+    flex-direction: column;
+
+    min-height: calc(100vh - var(--header-height));
+
     position: relative;
     top: var(--header-height);
 
@@ -41,6 +46,9 @@ input{
 }
 @media screen and (max-width: 800px) {
     body{
+        
         top: calc(var(--header-height) * 2 + 1.29em);
+
+        min-height: calc(100vh - (var(--header-height) * 2 + 1.29em));
     }
 }

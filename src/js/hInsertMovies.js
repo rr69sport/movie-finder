@@ -69,7 +69,7 @@ const inserFavorite = (movie) => {
             <button data-imdbid="${movie.idMovie}" data-removecomponent="remove-component" class="remove-component__trigger button button--secondary">X</button>
         </div>
         <div class="favorite__info movie__info">
-            <p class="${movie.title}">Avengers End Games</p>
+            <p>${movie.title}</p>
             <button class="movie__button button button--cta" data-id="show-info" data-imdbid="${movie.idMovie}">Información</button>
         </div>
         <picture>

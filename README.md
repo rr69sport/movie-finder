@@ -8,3 +8,5 @@
 * Cada película tendrá su vista de detalles ofreciendo más información de la misma.
 * Se deben poder añadir películas a favoritos y constar con una vista de las mismas (Persistente en el tiempo).
 * Usar la API de OMDB para llevar a cabo la práctica.
+
+![Movie Finder](https://ramsua.github.io/movie-finder)

@@ -221,7 +221,8 @@ gulp.task('docs',
 // Development
 gulp.task('dev', () => {
     server({
-        server: './public'
+        server: './public',
+        browser: 'brave' // msedge, firefox, brave,
     })
     gulp.watch(['./src/*.html', './src/**/*.html'], gulp.series('html-dev')).on('change', reload)
     gulp.watch('./src/css/*.css', gulp.series('css-dev'))

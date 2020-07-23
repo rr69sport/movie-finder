@@ -102,15 +102,15 @@
     top: 50%;
     left: 50%;
     
-    width: 100%;
-    max-width: 600px;
+    width: 97.5%;
+    max-width: var(--max-width);
     max-height: 100vh;
     
     background-color: var(--dark-color-lighten);
     
     transform: translate(-50%, -50%);
 
-    border: 3px solid var(--dark-color-lighten);
+    border: 3px solid var(--dark-color-darken);
 
     z-index: var(--z-index-fixed);
 
@@ -127,9 +127,9 @@
 
     padding: var(--unit-em);
 
-    color: var(--light-color-darken);
+    color: var(--dark-color-darken);
 
-    background-color: rgba(23, 32, 42,.9);
+    background-color: rgba(248, 248, 255,.9);
 }
 .movies-info__title{
     margin-top: 0;
@@ -138,6 +138,8 @@
     background-color: var(--dark-color-lighten);
 
     color: var(--main-color-lighten);
+
+    text-transform: uppercase;
 }
 .movies-info__details > * {
     line-height: 1.35;

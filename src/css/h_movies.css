@@ -66,18 +66,18 @@
     top: 0;
     right: 0;
 
-    padding: 0;
+    padding: .25em;
 
     width: 60px;
     height: 60px;
     
-    background-color: rgba(23, 32, 42,.2); /* Usa la transición background de los botones */
+    background-color: rgba(23, 32, 42,.9); /* Usa la transición background de los botones */
     backdrop-filter: blur(2px);
 
     z-index: 1;
 }
 .movie__favorite:hover{
-    background-color: rgba(23, 32, 42,.4);
+    background-color: rgba(23, 32, 42,.75);
 }
 .movie__favorite--svg{
     padding: .25em;

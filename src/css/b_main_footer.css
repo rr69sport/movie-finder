@@ -1,15 +1,15 @@
-.main-footer{
-    margin-top: auto;
-    /* position: fixed;
+.main-footer {
+	margin-top: auto;
+	/* position: fixed;
     left: 0;
     bottom: 0;
 
     width: 100%; */
 
-    background-color: var(--dark-color-darken);
+	background-color: var(--dark-color-darken);
 
-    text-align: center;
-    font-size: .85em;
+	text-align: center;
+	font-size: 0.85em;
 
-    /* z-index: -1; */
+	/* z-index: -1; */
 }

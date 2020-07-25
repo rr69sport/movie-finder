@@ -1,86 +1,86 @@
 /*
     Contenedor de formularios
 */
-.append-forms{
-    position: fixed;
-    top: var(--header-height);
-    right: 50%;
+.append-forms {
+	position: fixed;
+	top: var(--header-height);
+	right: 50%;
 
-    width: 290px;
+	width: 290px;
 
-    transform: translateX(50%);
+	transform: translateX(50%);
 
-    z-index: var(--z-index-fixed);
+	z-index: var(--z-index-fixed);
 }
 
 /*
     Formularios de Login y Registro
 */
-.append-forms--profile{
-    margin-top: var(--unit-em);
+.append-forms--profile {
+	margin-top: var(--unit-em);
 }
 
 /*
     Formulario de Búsqueda
 */
-.append-forms--search{
-    width: 100%;
+.append-forms--search {
+	width: 100%;
 }
 
 /*
     Formularios - Estilos comunes
 */
-.form{
-    padding: var(--unit-em);
+.form {
+	padding: var(--unit-em);
 
-    background-color: var(--dark-color-darken);
+	background-color: var(--dark-color-darken);
 }
-.form__label{
-    margin-bottom: var(--unit-em);
+.form__label {
+	margin-bottom: var(--unit-em);
 }
-.form__label--short{
-    width: calc(100% - 45px);
+.form__label--short {
+	width: calc(100% - 45px);
 }
-.form__input{
-    padding: calc(var(--unit-em) / 2);
+.form__input {
+	padding: calc(var(--unit-em) / 2);
 }
 
 /*
     Contenedor de botones
 */
-.form__trigger{
-    border: 1px solid var(--main-color-lighten);
+.form__trigger {
+	border: 1px solid var(--main-color-lighten);
 }
 .form__input,
-.form__trigger{
-    width: 100%;
-    font-size: 100%;
+.form__trigger {
+	width: 100%;
+	font-size: 100%;
 }
-.form--search{
-    display: flex;
-    align-items: center;
-    padding: var(--unit-em);
-    border-top: 1px solid var(--dark-color-lighten);
+.form--search {
+	display: flex;
+	align-items: center;
+	padding: var(--unit-em);
+	border-top: 1px solid var(--dark-color-lighten);
 }
 
-@media screen and (min-width: 800px){
-    .append-forms--search{
-        top: 0;
-        max-width: 310px;
-    }
-    .form--search{
-        padding: 0;
-        height: var(--header-height);
-        border: none;
-    }
+@media screen and (min-width: 800px) {
+	.append-forms--search {
+		top: 0;
+		max-width: 310px;
+	}
+	.form--search {
+		padding: 0;
+		height: var(--header-height);
+		border: none;
+	}
 }
-@media screen and (min-width: 950px){
-    .append-forms--search{
-        max-width: 400px;
-    }
+@media screen and (min-width: 950px) {
+	.append-forms--search {
+		max-width: 400px;
+	}
 }
-@media screen and (min-width: 1120px){
-    .append-forms--search{
-        max-width: 450px;
-    }
+@media screen and (min-width: 1120px) {
+	.append-forms--search {
+		max-width: 450px;
+	}
 }

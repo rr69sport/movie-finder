@@ -1,56 +1,55 @@
 /* Todos los botones */
-.button{
-    display: block;
+.button {
+	display: block;
 
-    padding: calc(var(--unit-em) / 2);
+	padding: calc(var(--unit-em) / 2);
 
-    /* Transición común a todos los botones */
-    transition-duration: var(--time-transition);
-    transition-timing-function: ease;
+	/* Transición común a todos los botones */
+	transition-duration: var(--time-transition);
+	transition-timing-function: ease;
 
-    font-size: 100%;
+	font-size: 100%;
 
-    background-color: transparent;
-    color: inherit;
+	background-color: transparent;
+	color: inherit;
 
-    border: none;
-    outline: none;
+	border: none;
+	outline: none;
 }
-.button:hover{
-    color: var(--main-color-darken);
-    cursor: pointer;
-}
-
-.button--cta{
-    color: var(--light-color-lighten);
-    background-color: var(--main-color-lighten);
-
-    transition-property:background-color, color;
-}
-.button--cta:hover{
-    color: var(--main-color-darken);
-    background-color: var(--dark-color-lighten);
-    
+.button:hover {
+	color: var(--main-color-darken);
+	cursor: pointer;
 }
 
-.button--secondary{
-    color: var(--main-color-lighten);
-    background-color: var(--dark-color-lighten);
+.button--cta {
+	color: var(--light-color-lighten);
+	background-color: var(--main-color-lighten);
 
-    border: 1px solid transparent;
-
-    transition-property: background-color, border-color;
+	transition-property: background-color, color;
 }
-.button--secondary:hover{
-    border-color: var(--dark-color-lighten);
-    background-color: var(--dark-color-darken);
+.button--cta:hover {
+	color: var(--main-color-darken);
+	background-color: var(--dark-color-lighten);
 }
 
-.button--tertiary{
-    margin-left: auto;
-    width: 40px;
-    border: 1px solid var(--dark-color-darken);
+.button--secondary {
+	color: var(--main-color-lighten);
+	background-color: var(--dark-color-lighten);
+
+	border: 1px solid transparent;
+
+	transition-property: background-color, border-color;
 }
-.button--tertiary:hover{
-    background-color: var(--dark-color-lighten);
+.button--secondary:hover {
+	border-color: var(--dark-color-lighten);
+	background-color: var(--dark-color-darken);
+}
+
+.button--tertiary {
+	margin-left: auto;
+	width: 40px;
+	border: 1px solid var(--dark-color-darken);
+}
+.button--tertiary:hover {
+	background-color: var(--dark-color-lighten);
 }

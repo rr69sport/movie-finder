@@ -1,19 +1,19 @@
-// Evento para detectar qué película 
+// Evento para detectar qué película
 // se quiere mostrar la información
 moviesSection.addEventListener('click', (e) => {
 
-    if (e.target.dataset.id === 'show-info') {
+	if (e.target.dataset.id === 'show-info') {
 
-        searchTitle(e.target.dataset.imdbid);
-    }
+		searchTitle(e.target.dataset.imdbid);
+	}
 
-    if (e.target.dataset.removecomponent === 'remove-component') {
+	if (e.target.dataset.removecomponent === 'remove-component') {
 
-        moviesSection.removeChild(e.target.parentElement.parentElement)
-    }
+		moviesSection.removeChild(e.target.parentElement.parentElement)
+	}
 
-    if (e.target.dataset.addfavorite === 'add-favorite') {
+	if (e.target.dataset.addfavorite === 'add-favorite') {
 
-        getDataFavoriteMovie(e.target.parentElement.dataset.favoriteid);
-    }
+		getDataFavoriteMovie(e.target.parentElement.dataset.favoriteid);
+	}
 })

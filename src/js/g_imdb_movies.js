@@ -4,97 +4,97 @@ const apikey = '8651a58e'
 // Hace la petición con las películas que coincidan con la búsqueda
 const searchMovies = (movie) => {
 
-    const link = `https://www.omdbapi.com/?apikey=${apikey}&s=${movie}`
+	const link = `https://www.omdbapi.com/?apikey=${apikey}&s=${movie}`
 
-    axios({
+	axios({
 
-        method: 'GET',
-        url: link
+		method: 'GET',
+		url: link
 
-    }).then(res => {
+	}).then(res => {
 
-        if (res.data.Response === 'True') {
+		if (res.data.Response === 'True') {
 
-            removeComponentsFrom('movies')
+			removeComponentsFrom('movies')
 
-            insertMovies(res.data.Search);
+			insertMovies(res.data.Search);
 
-        } else {
+		} else {
 
-            createElemForAlert('p',
+			createElemForAlert('p',
 
-                `Película no encontrada`,
+				`Película no encontrada`,
 
-                ['alerts__alert', 'alert'],
+				['alerts__alert', 'alert'],
 
-                'alerts')
-        }
+				'alerts')
+		}
 
-    }).catch(err => {
+	}).catch(err => {
 
-        createElemForAlert('p',
+		createElemForAlert('p',
 
-            `${err} no se encontró`,
+			`${err} no se encontró`,
 
-            ['alerts__alert', 'alert'],
+			['alerts__alert', 'alert'],
 
-            'alerts')
-    })
+			'alerts')
+	})
 }
 
 // Hace la petición con la película que el usuario quere ver más información
 const searchTitle = (movie) => {
 
-    const link = `https://www.omdbapi.com/?apikey=${apikey}&i=${movie}&plot=full`
+	const link = `https://www.omdbapi.com/?apikey=${apikey}&i=${movie}&plot=full`
 
-    axios({
+	axios({
 
-        method: 'GET',
-        url: link
+		method: 'GET',
+		url: link
 
-    }).then(res => {
+	}).then(res => {
 
-        insertInfo(res.data);
+		insertInfo(res.data);
 
-    }).catch(err => {
+	}).catch(err => {
 
-        createElemForAlert('p',
+		createElemForAlert('p',
 
-            `${err} no se encontró`,
+			`${err} no se encontró`,
 
-            ['alerts__alert', 'alert'],
+			['alerts__alert', 'alert'],
 
-            'alerts')
-    })
+			'alerts')
+	})
 }
 
 // Cuando el usuario agrega a favoritos
 // Hace la petición del id, del título y la ima´gen para añadirla a favoritos
 const getDataFavoriteMovie = (movie) => {
 
-    const link = `https://www.omdbapi.com/?apikey=${apikey}&i=${movie}`
+	const link = `https://www.omdbapi.com/?apikey=${apikey}&i=${movie}`
 
-    axios({
+	axios({
 
-        method: 'GET',
-        url: link
+		method: 'GET',
+		url: link
 
-    }).then(res => {
+	}).then(res => {
 
-        updateFavoriteMovies({
-            idMovie: res.data.imdbID,
-            title: res.data.Title,
-            poster: res.data.Poster
-        });
+		updateFavoriteMovies({
+			idMovie: res.data.imdbID,
+			title: res.data.Title,
+			poster: res.data.Poster
+		});
 
-    }).catch(err => {
+	}).catch(err => {
 
-        createElemForAlert('p',
+		createElemForAlert('p',
 
-            `${err} no se encontró`,
+			`${err} no se encontró`,
 
-            ['alerts__alert', 'alert'],
+			['alerts__alert', 'alert'],
 
-            'alerts')
-    })
+			'alerts')
+	})
 }

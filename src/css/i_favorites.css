@@ -1,44 +1,43 @@
-.favorites{
-    position: fixed;
-    top: var(--header-height);
-    right: -280px;
+.favorites {
+	position: fixed;
+	top: var(--header-height);
+	right: -280px;
 
-    /* padding-bottom: calc(var(--unit-em) * 3); */
+	/* padding-bottom: calc(var(--unit-em) * 3); */
 
-    width: 100%;
-    max-width: 280px;
-    height: calc(100vh - var(--header-height));
+	width: 100%;
+	max-width: 280px;
+	height: calc(100vh - var(--header-height));
 
-    background-color: var(--dark-color-darken);
+	background-color: var(--dark-color-darken);
 
-    overflow-x: auto;
+	overflow-x: auto;
 
-    z-index: var(--z-index-fixed);
+	z-index: var(--z-index-fixed);
 
-    transition: right var(--time-transition) ease;
+	transition: right var(--time-transition) ease;
 }
-.favorites__active{
-    right: 0;
+.favorites__active {
+	right: 0;
 }
-.favorite{
-    position: relative;
+.favorite {
+	position: relative;
 
-    margin: .5em;
+	margin: 0.5em;
 
-    background-color: var(--dark-color-lighten);
+	background-color: var(--dark-color-lighten);
 
-    text-align: center;
+	text-align: center;
 
-    border: 3px solid var(--dark-color-lighten);
+	border: 3px solid var(--dark-color-lighten);
 }
-.favorite__info{
-
-    /* Heredada las otras propiedades de "movie__info" */
-    border-color: inherit;
+.favorite__info {
+	/* Heredada las otras propiedades de "movie__info" */
+	border-color: inherit;
 }
-@media screen and (max-width:800px){
-    .favorites{
-        top: calc(var(--header-height) * 2 + 1.29em);
-        height: calc(100vh - (var(--header-height) * 2 + 1.29em));
-    }
+@media screen and (max-width: 800px) {
+	.favorites {
+		top: calc(var(--header-height) * 2 + 1.29em);
+		height: calc(100vh - (var(--header-height) * 2 + 1.29em));
+	}
 }

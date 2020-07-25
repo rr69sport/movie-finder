@@ -1,54 +1,55 @@
 *,
 *::after,
-*::before { 
-    box-sizing: border-box;
+*::before {
+	box-sizing: border-box;
 }
-body{
-    display: flex;
-    flex-direction: column;
+body {
+	display: flex;
+	flex-direction: column;
 
-    min-height: calc(100vh - var(--header-height));
+	min-height: calc(100vh - var(--header-height));
 
-    position: relative;
-    top: var(--header-height);
+	position: relative;
+	top: var(--header-height);
 
-    margin: 0;
-    
-    background: fixed var(--dark-color-lighten) url('../assets/images/index/undraw_movie_night_fldd.svg') center no-repeat;
-    background-size: contain;
-    
-    color: var(--light-color-lighten);
-    font-family: sans-serif;
+	margin: 0;
+
+	background: fixed var(--dark-color-lighten)
+		url('../assets/images/index/undraw_movie_night_fldd.svg') center
+		no-repeat;
+	background-size: contain;
+
+	color: var(--light-color-lighten);
+	font-family: sans-serif;
 }
 ul {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
 
-    list-style: none;
+	list-style: none;
 }
-a{
-    text-decoration: none;
-    color: inherit;
+a {
+	text-decoration: none;
+	color: inherit;
 }
-img{
-    display: block;
-    
-    max-width: 100%;
-    height: auto;
+img {
+	display: block;
+
+	max-width: 100%;
+	height: auto;
 }
-label{
-    display: block;
+label {
+	display: block;
 }
-input{
-    border: 1px solid #eee;
-    outline: none;
+input {
+	border: 1px solid #eee;
+	outline: none;
 }
 @media screen and (max-width: 800px) {
-    body{
-        
-        top: calc(var(--header-height) * 2 + 1.29em);
+	body {
+		top: calc(var(--header-height) * 2 + 1.29em);
 
-        min-height: calc(100vh - (var(--header-height) * 2 + 1.29em));
-    }
+		min-height: calc(100vh - (var(--header-height) * 2 + 1.29em));
+	}
 }

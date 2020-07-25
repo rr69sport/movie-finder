@@ -1,11 +1,11 @@
 // Crea un elemento por cada resultado de búsqueda
 const insertMovie = (movie) => {
 
-    const movieElems = document.createElement('ARTICLE')
-    movieElems.classList.add('movie')
-    movieElems.dataset.id = movie.imdbID
+	const movieElems = document.createElement('ARTICLE')
+	movieElems.classList.add('movie')
+	movieElems.dataset.id = movie.imdbID
 
-    movieElems.innerHTML = `<button class="button movie__favorite" data-favoriteid="${movie.imdbID}">
+	movieElems.innerHTML = `<button class="button movie__favorite" data-favoriteid="${movie.imdbID}">
             <img src="./assets/favorites/bookmark.svg" class="movie__favorite--svg" data-addfavorite="add-favorite">
         </button>
         <picture class="movie__poster">
@@ -15,26 +15,26 @@ const insertMovie = (movie) => {
             <h2 class="movie__title">${movie.Title}</h2>
             <button class="movie__button button button--cta" data-id="show-info" data-imdbid="${movie.imdbID}">Información</button>
         </div>`
-    fragment.appendChild(movieElems)
+	fragment.appendChild(movieElems)
 }
 
 // Inserta todoslos resultados de búsqueda al DOM
 const insertMovies = (movies) => {
 
-    movies.forEach(movie => {
-        insertMovie(movie)
-    });
+	movies.forEach(movie => {
+		insertMovie(movie)
+	});
 
-    moviesSection.appendChild(fragment)
+	moviesSection.appendChild(fragment)
 }
 
 // Inserta los detalles de cada película al DOM
 const insertInfo = (movie) => {
 
-    const movieInfo = document.createElement('ARTICLE')
-    movieInfo.classList.add('movie-info')
+	const movieInfo = document.createElement('ARTICLE')
+	movieInfo.classList.add('movie-info')
 
-    movieInfo.innerHTML = `<div class="remove-component">
+	movieInfo.innerHTML = `<div class="remove-component">
             <button data-removecomponent="remove-component"
             class="remove-component__trigger button button--secondary">X</button>
         </div>
@@ -54,18 +54,18 @@ const insertInfo = (movie) => {
             <p>Year: <span>${movie.Year}</span></p>
             <p>Ranking: <span>${movie.imdbRating}</span></p>
         </section>`
-    fragment.appendChild(movieInfo)
+	fragment.appendChild(movieInfo)
 
-    moviesSection.appendChild(fragment)
+	moviesSection.appendChild(fragment)
 }
 
 // Crea un elemento por cada película favorita
 const inserFavorite = (movie) => {
 
-    const favMovie = document.createElement('ARTICLE')
-    favMovie.classList.add('favorite')
+	const favMovie = document.createElement('ARTICLE')
+	favMovie.classList.add('favorite')
 
-    favMovie.innerHTML = `<div class="remove-component">
+	favMovie.innerHTML = `<div class="remove-component">
             <button data-imdbid="${movie.idMovie}" data-removecomponent="remove-component" class="remove-component__trigger button button--secondary">X</button>
         </div>
         <div class="favorite__info movie__info">
@@ -76,28 +76,28 @@ const inserFavorite = (movie) => {
             <img src="${movie.poster}">
         </picture>`
 
-    fragment.appendChild(favMovie)
+	fragment.appendChild(favMovie)
 
 }
 
 // Inserta en el DOM todas las películas favoritas guardadas en localStorage
 const appendFavoritesMovies = () => {
 
-    const currentUser = getCurrentUser()
+	const currentUser = getCurrentUser()
 
-    const users = JSON.parse(loSt.getItem('movie-finder-users'))
+	const users = JSON.parse(loSt.getItem('movie-finder-users'))
 
-    const user = users.find(user => {
-        return user.id === currentUser
-    })
+	const user = users.find(user => {
+		return user.id === currentUser
+	})
 
-    const movies = user.favoriteMovies
+	const movies = user.favoriteMovies
 
-    favsMovies.textContent = ''
+	favsMovies.textContent = ''
 
-    movies.forEach(movie => {
-        inserFavorite(movie)
-    })
+	movies.forEach(movie => {
+		inserFavorite(movie)
+	})
 
-    favsMovies.appendChild(fragment)
+	favsMovies.appendChild(fragment)
 }

@@ -1,39 +1,39 @@
-.container{
-    width: 100%;
-    max-width: var(--max-width);
-    margin-right: auto;
-    margin-left: auto;
+.container {
+	width: 100%;
+	max-width: var(--max-width);
+	margin-right: auto;
+	margin-left: auto;
 }
 
-.display-flex{
-    display: flex;
+.display-flex {
+	display: flex;
 }
-.align-items-center{
-    align-items: center;
+.align-items-center {
+	align-items: center;
 }
-.just-cont-space-between{
-    justify-content: space-between;
+.just-cont-space-between {
+	justify-content: space-between;
 }
 
-/* 
+/*
     Estilos para los "a"
     Reescribe estilos del reset.css
-    Se tiene en cuenta que un "a" 
+    Se tiene en cuenta que un "a"
     puede ser un link o un botón
 */
-.link{
-    color: var(--main-color-lighten);
+.link {
+	color: var(--main-color-lighten);
 
-    text-transform: uppercase;
-    
-    font-size: .82em;
+	text-transform: uppercase;
+
+	font-size: 0.82em;
 }
-.link:hover{
-    text-decoration: underline;
+.link:hover {
+	text-decoration: underline;
 }
-.close{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+.close {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
 }

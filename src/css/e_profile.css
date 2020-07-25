@@ -1,11 +1,11 @@
 /* Componente usado ordenar botones */
-.profile-nav{
-    height: var(--header-height);
-    text-align: center;
-    border-right: 1px solid var(--dark-color-lighten);
+.profile-nav {
+	height: var(--header-height);
+	text-align: center;
+	border-right: 1px solid var(--dark-color-lighten);
 }
 
 /* Debe tener como hijo un componente botón */
-.profile-nav__option{
-    flex: 1 1 auto;
+.profile-nav__option {
+	flex: 1 1 auto;
 }

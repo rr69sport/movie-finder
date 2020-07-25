@@ -1,29 +1,29 @@
-.logo{
-    padding: .35em;
+.logo {
+	padding: 0.35em;
 
-    transition: background-color var(--time-transition) ease;
-    
-    border-left: 1px solid var(--dark-color-lighten);
+	transition: background-color var(--time-transition) ease;
+
+	border-left: 1px solid var(--dark-color-lighten);
 }
-.logo:hover{
-    background-color: var(--dark-color-lighten);
+.logo:hover {
+	background-color: var(--dark-color-lighten);
 }
-.logo__first-letter{
-    color:var(--main-color-lighten);
-    font-size: calc(var(--unit-em) * 1.5);
-    font-weight: 700;
+.logo__first-letter {
+	color: var(--main-color-lighten);
+	font-size: calc(var(--unit-em) * 1.5);
+	font-weight: 700;
 }
 
-@media screen and (min-width: 450px){
-    .logo__movie::after,
-    .logo__finder::after{
-        color: var(--light-color-lighten);
-        font-weight: 100;
-    }
-    .logo__movie::after{
-        content: 'ovie'
-    }
-    .logo__finder::after{
-        content: 'inder'
-    }
+@media screen and (min-width: 450px) {
+	.logo__movie::after,
+	.logo__finder::after {
+		color: var(--light-color-lighten);
+		font-weight: 100;
+	}
+	.logo__movie::after {
+		content: 'ovie';
+	}
+	.logo__finder::after {
+		content: 'inder';
+	}
 }

@@ -1,15 +1,15 @@
-.main-header{
-    position: fixed;
-    top: 0;
-    left: 0;
+.main-header {
+	position: fixed;
+	top: 0;
+	left: 0;
 
-    width: 100%;
-    height: var(--header-height);
+	width: 100%;
+	height: var(--header-height);
 
-    padding: 0 var(--unit-em);
+	padding: 0 var(--unit-em);
 
-    color: var(--light-color-lighten);
-    background-color: var(--dark-color-darken);
-    
-    z-index: var(--z-index-fixed);
+	color: var(--light-color-lighten);
+	background-color: var(--dark-color-darken);
+
+	z-index: var(--z-index-fixed);
 }

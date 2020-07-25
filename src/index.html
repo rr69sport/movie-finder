@@ -2,169 +2,169 @@
 <html lang="es" prefix="og:http://ogp.me/ns/website#">
 
 <head>
-    <title>Movie Finder</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" user-scalable="no">
+	<title>Movie Finder</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" user-scalable="no">
 
-    <!-- META TAGS -->
-    <meta name="author" content="Ramsua">
-    <meta name="description" content="Buscador de películas usando la API de imdb">
-    <meta name="keywords" content="Movies, Buscador, API, JavaScript">
+	<!-- META TAGS -->
+	<meta name="author" content="Ramsua">
+	<meta name="description" content="Buscador de películas usando la API de imdb">
+	<meta name="keywords" content="Movies, Buscador, API, JavaScript">
 
-    <!-- OPEN GRAPH (Facebook) -->
-    <meta property="og:title" content="Movie Finder">
-    <meta property="og:type" content="website">
-    <meta property="og:description" v content="Buscador de películas usando la API de imdb">
-    <meta property="og:url" content="https://ramsua.github.io/movie-finder/">
-    <meta property="og:image" content="https://ramsua.github.io/movie-finder/assets/images/meta_data/Movie-Finder.png">
+	<!-- OPEN GRAPH (Facebook) -->
+	<meta property="og:title" content="Movie Finder">
+	<meta property="og:type" content="website">
+	<meta property="og:description" v content="Buscador de películas usando la API de imdb">
+	<meta property="og:url" content="https://ramsua.github.io/movie-finder/">
+	<meta property="og:image" content="https://ramsua.github.io/movie-finder/assets/images/meta_data/Movie-Finder.png">
 
-    <!-- TWITTER CARDS (Twitter) -->
-    <meta name="twitter:card" content="summary_large_image"> <!-- Tamaño de la imágen -->
-    <meta name="twitter:site" content="@RichardRamSua">
-    <meta name="twitter:creator" content="@RichardRamSua">
-    <meta name="twitter:title" content="Movie Finder">
-    <meta name="twitter:description" v content="Buscador de películas usando la API de imdb">
-    <meta name="twitter:image" content="https://ramsua.github.io/movie-finder/assets/images/meta_data/Movie-Finder.png">
+	<!-- TWITTER CARDS (Twitter) -->
+	<meta name="twitter:card" content="summary_large_image"> <!-- Tamaño de la imágen -->
+	<meta name="twitter:site" content="@RichardRamSua">
+	<meta name="twitter:creator" content="@RichardRamSua">
+	<meta name="twitter:title" content="Movie Finder">
+	<meta name="twitter:description" v content="Buscador de películas usando la API de imdb">
+	<meta name="twitter:image" content="https://ramsua.github.io/movie-finder/assets/images/meta_data/Movie-Finder.png">
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon.ico">
-    <link rel="manifest" href="./assets/favicon_io/site.webmanifest">
-    <link rel="stylesheet" href="./css/styles.min.css">
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon.ico">
+	<link rel="manifest" href="./assets/favicon_io/site.webmanifest">
+	<link rel="stylesheet" href="./css/styles.min.css">
 </head>
 
 <body>
-    <!-- HEADER -->
-    <header class="main-header">
-        <div class="container display-flex align-items-center just-cont-space-between">
-            <a class="logo" href="./">
-                <span class="logo__first-letter logo__movie">M</span>
-                <span class="logo__first-letter logo__finder">F</span>
-            </a>
-            <!-- Los botones se cargan por JavaScript -->
-            <nav>
-                <ul id="profile" class="profile-nav display-flex align-items-center"></ul>
-            </nav>
-        </div>
-    </header>
+	<!-- HEADER -->
+	<header class="main-header">
+		<div class="container display-flex align-items-center just-cont-space-between">
+			<a class="logo" href="./">
+				<span class="logo__first-letter logo__movie">M</span>
+				<span class="logo__first-letter logo__finder">F</span>
+			</a>
+			<!-- Los botones se cargan por JavaScript -->
+			<nav>
+				<ul id="profile" class="profile-nav display-flex align-items-center"></ul>
+			</nav>
+		</div>
+	</header>
 
-    <main class="container">
-        <!-- FORMS -->
-        <section class="append-forms append-forms--profile" id="append-forms"></section>
+	<main class="container">
+		<!-- FORMS -->
+		<section class="append-forms append-forms--profile" id="append-forms"></section>
 
-        <!-- MOVIES -->
-        <section id="movies" class="movies"></section>
+		<!-- MOVIES -->
+		<section id="movies" class="movies"></section>
 
-        <!-- Si se intenta registrar un usuario existente
+		<!-- Si se intenta registrar un usuario existente
             o si se intenta acceder con un usuario inexistente -->
-        <section id="alerts"></section>
-    </main>
+		<section id="alerts"></section>
+	</main>
 
-    <!-- FAVORITES MOVIES-->
-    <aside id="favorites" class="favorites">
-        <div class="close">
-            <button id="close-favorites" class="button button--cta">X</button>
-        </div>
-        <section id="favorites__movies"></section>
-    </aside>
+	<!-- FAVORITES MOVIES-->
+	<aside id="favorites" class="favorites">
+		<div class="close">
+			<button id="close-favorites" class="button button--cta">X</button>
+		</div>
+		<section id="favorites__movies"></section>
+	</aside>
 
-    <!-- FOOTER -->
-    <footer class="main-footer">
-        <p>Ilustración SVG extraída de
-            <a class="link" target="_blanck" href="https://undraw.co/illustrations">undraw</a>
-        </p>
-    </footer>
+	<!-- FOOTER -->
+	<footer class="main-footer">
+		<p>Ilustración SVG extraída de
+			<a class="link" target="_blanck" href="https://undraw.co/illustrations">undraw</a>
+		</p>
+	</footer>
 
-    <!-- Formulario de login -->
-    <template id="login-form-template">
-        <div class="remove-component">
-            <button data-removecomponent="remove-component"
-                class="remove-component__trigger button button--secondary">X</button>
-        </div>
-        <form class="form fade-in" id="login-form">
-            <label class="form__label form__label--short">
-                <input type="text" id="login-name" class="form__input" placeholder="Nombre de usuario">
-            </label>
-            <label class="form__label">
-                <input type="password" id="login-pass" class="form__input" placeholder="Contraseña">
-            </label>
-            <button class="form__trigger button button--cta">Acceder</button>
-        </form>
-    </template>
+	<!-- Formulario de login -->
+	<template id="login-form-template">
+		<div class="remove-component">
+			<button data-removecomponent="remove-component"
+				class="remove-component__trigger button button--secondary">X</button>
+		</div>
+		<form class="form fade-in" id="login-form">
+			<label class="form__label form__label--short">
+				<input type="text" id="login-name" class="form__input" placeholder="Nombre de usuario">
+			</label>
+			<label class="form__label">
+				<input type="password" id="login-pass" class="form__input" placeholder="Contraseña">
+			</label>
+			<button class="form__trigger button button--cta">Acceder</button>
+		</form>
+	</template>
 
-    <!-- Formulario crear cuenta -->
-    <template id="sing-in-template">
-        <div class="remove-component">
-            <button data-removecomponent="remove-component"
-                class="remove-component__trigger button button--secondary">X</button>
-        </div>
-        <form class="form fade-in" id="sing-in-form">
-            <label class="form__label form__label--short">
-                <input type="text" id="sing-in-name" class="form__input" placeholder="Nombre de usuario">
-            </label>
-            <label class="form__label">
-                <input type="password" id="sing-in-pass" class="form__input" placeholder="Contraseña">
-            </label>
-            <label class="form__label">
-                <input type="password" id="repeat-pass" class="form__input" placeholder="Repetir contraseña">
-            </label>
-            <button class="form__trigger button button--cta">Create Account</button>
-        </form>
-    </template>
+	<!-- Formulario crear cuenta -->
+	<template id="sing-in-template">
+		<div class="remove-component">
+			<button data-removecomponent="remove-component"
+				class="remove-component__trigger button button--secondary">X</button>
+		</div>
+		<form class="form fade-in" id="sing-in-form">
+			<label class="form__label form__label--short">
+				<input type="text" id="sing-in-name" class="form__input" placeholder="Nombre de usuario">
+			</label>
+			<label class="form__label">
+				<input type="password" id="sing-in-pass" class="form__input" placeholder="Contraseña">
+			</label>
+			<label class="form__label">
+				<input type="password" id="repeat-pass" class="form__input" placeholder="Repetir contraseña">
+			</label>
+			<button class="form__trigger button button--cta">Create Account</button>
+		</form>
+	</template>
 
-    <!-- Formulario de búsqueda -->
-    <template id="search-form-template">
-        <form class="form form--search" id="search-form">
-            <input id="search" type="text" class="form__input" placeholder="Buscar película">
-            <button class="button button--secondary">Buscar</button>
-        </form>
-    </template>
+	<!-- Formulario de búsqueda -->
+	<template id="search-form-template">
+		<form class="form form--search" id="search-form">
+			<input id="search" type="text" class="form__input" placeholder="Buscar película">
+			<button class="button button--secondary">Buscar</button>
+		</form>
+	</template>
 
-    <!-- Botón de Login -->
-    <template id="login-and-register-template">
-        <li class="profile-nav__option">
-            <button id="register-button" class="button button--cta">Registrarse</button>
-        </li>
-        <li class="profile-nav__option">
-            <button id="login-button" class="button">Acceder</button>
-        </li>
-    </template>
+	<!-- Botón de Login -->
+	<template id="login-and-register-template">
+		<li class="profile-nav__option">
+			<button id="register-button" class="button button--cta">Registrarse</button>
+		</li>
+		<li class="profile-nav__option">
+			<button id="login-button" class="button">Acceder</button>
+		</li>
+	</template>
 
-    <!-- Botones de Favoritos y Cerrar Sesión -->
-    <template id="logged-in-template">
-        <li class="profile-nav__option">
-            <button id="favorites-button" class="button button--cta">Favoritos</button>
-        </li>
-        <li class="profile-nav__option">
-            <button id="logout-button" class="button">Cerrar Sesión</button>
-        </li>
-    </template>
+	<!-- Botones de Favoritos y Cerrar Sesión -->
+	<template id="logged-in-template">
+		<li class="profile-nav__option">
+			<button id="favorites-button" class="button button--cta">Favoritos</button>
+		</li>
+		<li class="profile-nav__option">
+			<button id="logout-button" class="button">Cerrar Sesión</button>
+		</li>
+	</template>
 
-    <!-- Mensaje de Bienvenida 
+	<!-- Mensaje de Bienvenida
     Se muestra si no existe usuario guardado en sessionStorage -->
-    <template id="welcome-template">
-        <div class="welcome">
-            <div class="remove-component">
-                <button data-removecomponent="remove-component"
-                    class="remove-component__trigger button button--secondary">X</button>
-            </div>
-            <h2 class="welcome__title display-flex just-cont-space-between">
-                Gracias por preferirnos
-                <!-- <span class="messages__close" data-close="close">X</span> -->
-            </h2>
-            <p>Con su nickname y su contraseña se genera un ID que es único.</p>
-            <p>Se utiliza para validar que en login no ingrese un usuario que no exista y en registro
-                para
-                que no se cree dos veces el mismo usuario.</p>
-            <p>Si es alertado de que el usuario a registrar ya existe, solo cambia un caracter en cualquier campo.</p>
-            <p>Esperamos que disfrute de nuestro servicio :)</p>
-        </div>
-    </template>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./js/scripts.min.js"></script>
+	<template id="welcome-template">
+		<div class="welcome">
+			<div class="remove-component">
+				<button data-removecomponent="remove-component"
+					class="remove-component__trigger button button--secondary">X</button>
+			</div>
+			<h2 class="welcome__title display-flex just-cont-space-between">
+				Gracias por preferirnos
+				<!-- <span class="messages__close" data-close="close">X</span> -->
+			</h2>
+			<p>Con su nickname y su contraseña se genera un ID que es único.</p>
+			<p>Se utiliza para validar que en login no ingrese un usuario que no exista y en registro
+				para
+				que no se cree dos veces el mismo usuario.</p>
+			<p>Si es alertado de que el usuario a registrar ya existe, solo cambia un caracter en cualquier campo.</p>
+			<p>Esperamos que disfrute de nuestro servicio :)</p>
+		</div>
+	</template>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="./js/scripts.min.js"></script>
 </body>
 
 </html>

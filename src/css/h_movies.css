@@ -109,7 +109,8 @@
 
 	width: 97.5%;
 	max-width: var(--max-width);
-	max-height: 100vh;
+	min-height: 50vh;
+	max-height: 90vh;
 
 	background-color: var(--dark-color-lighten);
 

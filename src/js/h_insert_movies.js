@@ -5,6 +5,10 @@ const insertMovie = (movie) => {
 	movieElems.classList.add('movie')
 	movieElems.dataset.id = movie.imdbID
 
+	if (movie.Poster === 'N/A') {
+		movie.Poster = `./assets/images/no_image_available/noimageavailable.png`
+	}
+
 	movieElems.innerHTML = `<button class="button movie__favorite" data-favoriteid="${movie.imdbID}">
             <img src="./assets/favorites/bookmark.svg" class="movie__favorite--svg" data-addfavorite="add-favorite">
         </button>
@@ -64,6 +68,10 @@ const inserFavorite = (movie) => {
 
 	const favMovie = document.createElement('ARTICLE')
 	favMovie.classList.add('favorite')
+
+	if (movie.poster === 'N/A') {
+		movie.poster = `./assets/images/no_image_available/noimageavailable.png`
+	}
 
 	favMovie.innerHTML = `<div class="remove-component">
             <button data-imdbid="${movie.idMovie}" data-removecomponent="remove-component" class="remove-component__trigger button button--secondary">X</button>

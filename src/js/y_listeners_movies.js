@@ -16,4 +16,5 @@ moviesSection.addEventListener('click', (e) => {
 
 		getDataFavoriteMovie(e.target.parentElement.dataset.favoriteid);
 	}
+	console.log(e.target)
 })

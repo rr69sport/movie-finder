@@ -15,8 +15,6 @@ tendrán otro componente como hijo
 	top: var(--unit-em);
 	right: var(--unit-em);
 
-	background-color: var(--dark-color-darken);
-
 	z-index: var(--z-index-fixed);
 }
 .remove-component__trigger {

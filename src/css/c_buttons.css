@@ -33,8 +33,8 @@
 }
 
 .button--secondary {
-	color: var(--main-color-lighten);
-	background-color: var(--dark-color-lighten);
+	color: #fff;
+	background-color: var(--main-color-lighten);
 
 	border: 1px solid transparent;
 

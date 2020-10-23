@@ -9,4 +9,4 @@
 -   Se deben poder añadir películas a favoritos y constar con una vista de las mismas (Persistente en el tiempo).
 -   Usar la API de OMDB para llevar a cabo la práctica.
 
-Github Pages [Movie Finder](https://ramsua.github.io/movie-finder)
+Github Pages [Movie Finder](https://rr69sport.github.io/movie-finder)

@@ -1,5 +1,7 @@
 # Prueba de aplicación de OMDB a través de localStorage
 
+![Screenshot](https://github.com/rr69sport/movie-finder/blob/master/movie-finder.png)
+
 ## Requisitos
 
 -   La página inicial debe ser un login con usuario y contraseña.
